@@ -1,0 +1,12 @@
+.scroll {
+  color: brown;
+  text-align: center;
+  margin-top: 15%;
+  animation: scroll 1s linear 1s infinite alternate;
+}
+
+@keyframes scroll {
+  100% {
+    transform: translateY(30px);
+  }
+}

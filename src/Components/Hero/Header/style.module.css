@@ -1,0 +1,19 @@
+.header {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  font-size: larger;
+  margin-top: 0.5%;
+  margin-left: 2%;
+}
+
+.logo a {
+  text-decoration: none;
+  color: aliceblue;
+  cursor: pointer;
+}

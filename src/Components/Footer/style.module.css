@@ -1,0 +1,46 @@
+.section {
+  scroll-snap-align: start;
+  height: 400px;
+}
+
+.footer {
+  text-align: center;
+  color: #878787;
+}
+
+.footer h2 {
+  margin-top: 4%;
+  color: #cecece;
+}
+
+
+.hrThin {
+  position: relative;
+  margin: 4% auto;
+  width: 80%;
+  border: none;
+  height: 0.2px;
+  background: #272727;
+}
+
+.hr {
+  position: relative;
+  margin: 5% auto;
+  width: 90%;
+  border: none;
+  height: 0.5px;
+  background: #878787;
+}
+
+
+.socialIcons ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+}
+
+.socialIcons ul li {
+  margin: 0 1% 2%;
+}

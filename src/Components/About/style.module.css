@@ -1,0 +1,17 @@
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+}
+.mypic img {
+  height: 100vh;
+}
+
+.aboutme {
+  text-align: left;
+  padding:  6% 10%;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+}

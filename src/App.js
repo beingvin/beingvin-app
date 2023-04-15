@@ -1,31 +1,22 @@
 import React from "react";
-import "./App.css";
+import "./css/App.css";
+import Hero from "./Components/Hero/Hero";
+import About from "./Components/About/About";
+import Services from "./Components/Services/Services";
+import Contact from "./Components/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <div className="hero">
-        <div className="title">
-          <h1>HI — I'M VIN,</h1>
-          {/* <p>FRONTEND DEVELOPER AND DESIGNER.</p> */}
-          <div className="back-title">
-            <span>W</span>
-            <span>E</span>
-            <span>B</span>
-            <span> </span>
-            <span>D</span>
-            <span>E</span>
-            <span>V</span>
-            <span>E</span>
-            <span>L</span>
-            <span>O</span>
-            <span>P</span>
-            <span>E</span>
-            <span>R</span>
-          </div>
-        </div>
+    <>
+      <div className="container">
+        <Hero />
+        <About />
+        <Services/>
+        <Contact />
+        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

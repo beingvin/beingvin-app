@@ -1,0 +1,37 @@
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: black;
+  color: aliceblue;
+  padding: 8% 15%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.section div {
+  background-color: #3d3d3d;
+  padding: 5% 8%;
+  border-radius: 10px;
+}
+
+.section div h3 {
+  font-size: 2rem;
+}
+
+.section div span {
+  color:#626262;
+}
+
+.hrThin {
+  position: relative;
+  margin: 4% 0;
+  width: 90%;
+  border: none;
+  height: 0.2px;
+  background: #272727;
+}
+
+.section div p {
+  color:#CECECE;
+}

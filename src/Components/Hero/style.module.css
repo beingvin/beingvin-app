@@ -1,0 +1,37 @@
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  
+}
+
+.hero {
+  position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 200px;
+  }
+
+  .title {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .title h1 {
+    color: #fe005d;
+    font-size: 100px;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .title p {
+    color: #272727;
+    font-size: 1.5rem;
+    position: relative;
+    /* padding-top: 60px; */
+    z-index: 10;
+  }
+  
