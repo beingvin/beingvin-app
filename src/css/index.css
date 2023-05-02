@@ -7,6 +7,8 @@
 }
 
 body {
+  height: 100%;
+  width: 100%;
   background-color: #0f0f0f;
   font-family: 'Poppins', sans-serif;
   
@@ -85,3 +87,4 @@ code {
 .back-title:hover span {
   -webkit-text-stroke-color: #cecece;;
 }
+
