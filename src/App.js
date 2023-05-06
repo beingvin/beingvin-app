@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./css/App.css";
-import Hero from "./Components/Hero/Hero";
+import Layout from "./Pages/Layout";
+import Home from "./Pages/Home";
 import About from "./Components/About/About";
-import Services from "./Components/Services/Services";
-import Contact from "./Components/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
+import Pricing from "./Components/Services/Pricing/Pricing";
+import NoPage from "./Pages/NoPage";
+
 import { motion, useScroll, useSpring } from "framer-motion";
 import {
   BrowserRouter as Router,
@@ -12,30 +13,57 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Pricing from "./Components/Services/Pricing/Pricing";
 
 function App() {
+  const [preloader, setPreloader] = useState(false);
+
   const divRef = useRef(null);
 
   const { scrollYProgress } = useScroll();
 
   const scaleX = useSpring(scrollYProgress);
 
-  return (
-    <>
-      <motion.div className="progress-bar" ref={divRef} style={{ scaleX }} />
+  useEffect(() => {
+    setPreloader(true);
+    setTimeout(() => {
+      setPreloader(false);
+    }, 3000);
+  }, []);
 
-      <div className="container">
-        <Router>
-          <Hero />
-          <About />
-          <Services />
-          <Pricing />
-          <Contact />
-          <Footer />
-        </Router>
-      </div>
-    </>
+  return (
+    <div className="app">
+      {preloader ? (
+        <figure>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </figure>
+      ) : (
+        <>
+          <Router>
+            <motion.div
+              className="progress-bar"
+              ref={divRef}
+              style={{ scaleX }}
+            />
+
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="About" element={<About />} />
+                  <Route path="Pricing" element={<Pricing />} />
+                  <Route path="*" element={<NoPage />} />
+                </Route>
+              </Routes>
+            </div>
+          </Router>
+        </>
+      )}
+    </div>
   );
 }
 

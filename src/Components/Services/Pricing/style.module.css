@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  background-color: #fff;
+  /* background-color: #fff; */
   height: 100%;
   width: 100%;
   padding: 2% 5%;
@@ -22,6 +22,7 @@
 }
 
 .card {
+  background-color: #fff;
   min-width: 350px;
   padding: 0% 3%;
   border: 2px solid #e3e3e3;

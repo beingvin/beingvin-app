@@ -1,0 +1,44 @@
+.banner {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 200px;
+  z-index: 1000;
+}
+
+$width: 8px;
+.panel {
+  position: relative;
+  width: $width;
+  height: 45px;
+  //   border: 1px solid white;
+  overflow: hidden;
+  animation: rotate 6s var(--delay) infinite ease-in-out alternate;
+}
+.panel::before {
+  content: "beingvin";
+  position: absolute;
+  left: var(--left);
+  font-size: 25px;
+  width: max-content;
+  color: hsl(var(--hue), 50%, 81%);
+}
+
+@keyframes rotate {
+    0%, 15% {transform: rotateX(0deg);}
+    85%, 100% {transform: rotateX(720deg);}
+
+}
+
+// .panel:hover{
+//     transform: scale(2);
+// }
+
+@for $i from 0 to 24 {
+  .panel:nth-child(#{$i + 1}) {
+    --left: #{$width * $i * -1};
+    --hue: #{360/24 * $i};
+    --delay:#{$i *0.1s};
+  } 
+}

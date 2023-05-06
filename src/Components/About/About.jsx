@@ -1,22 +1,21 @@
 import React, { useRef } from "react";
 import style from "./style.module.css";
-import vinpic from "./vin.JPG";
+import vinpic from "./img/vin (2).png";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+// import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     targetRef: sectionRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-
   return (
-      
-      <motion.section   className={style.section}>
-      <div ref={sectionRef}  style={{opacity}} className={style.wrapper}>
+    <motion.section className={style.section} id="About">
+      <div ref={sectionRef} style={{ opacity }} className={style.wrapper}>
         <div className={style.mypic}>
           <img src={vinpic} alt="My pic" />
         </div>
@@ -34,6 +33,7 @@ function About() {
             <br /> Connect me for more details .
           </p>
         </div>
+        {/* <TextShpere/> */}
       </div>
     </motion.section>
   );

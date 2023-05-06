@@ -6,8 +6,7 @@ import style from "./style.module.css";
 function ScrollDown() {
   return (
     <div className={style.scroll}>
-      Scroll Down <br/>
-      <FontAwesomeIcon icon={faArrowDown} />
+      <a href="#About"><FontAwesomeIcon icon={faArrowDown} /></a>
     </div>
   );
 }

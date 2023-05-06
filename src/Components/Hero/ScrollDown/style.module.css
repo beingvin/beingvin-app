@@ -1,8 +1,18 @@
 .scroll {
-  color: brown;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  /* transform: translateX(50%); */
+  
+
   text-align: center;
-  margin-top: 15%;
   animation: scroll 1s linear 1s infinite alternate;
+
+}
+
+.scroll a {
+ text-decoration: none;
+ color: #cecece;
 }
 
 @keyframes scroll {

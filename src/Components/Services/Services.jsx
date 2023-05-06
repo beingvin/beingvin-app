@@ -14,14 +14,14 @@ function Services() {
           <span>From 20$</span>
           <hr className={style.hrThin} />
           <p>Design and development of your own singlepage website. </p>
-          <button onClick={() => alert("Learn more")}>Learn More</button>
+          <button onClick={() => navigate("/Pricing")}>Learn More</button>
         </div>
         <div>
           <h3>MULTIPAGE SITE</h3>
           <span>From 50$</span>
           <hr className={style.hrThin} />
           <p>Design and development of your own multipage website. </p>
-          <button onClick={() => alert("Learn more")}>Learn More</button>
+          <button onClick={() => navigate("/Pricing")}>Learn More</button>
         </div>
         <div>
           <h3>LANDING PAGE</h3>
@@ -39,7 +39,7 @@ function Services() {
             developer. I will create a website design that will fully comply
             with your wishes, goals and objectives.
           </p>
-          <button>Learn More</button>
+          <button onClick={() => navigate("/Pricing")}>Learn More</button>
         </div>
       </div>
     </section>
