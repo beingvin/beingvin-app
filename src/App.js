@@ -1,18 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./css/App.css";
-import Layout from "./Pages/Layout";
-import Home from "./Pages/Home";
-import About from "./Components/About/About";
-import Pricing from "./Components/Services/Pricing/Pricing";
-import NoPage from "./Pages/NoPage";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import AnimatePage from "./Pages/AnimatePage";
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -51,14 +42,7 @@ function App() {
             />
 
             <div className="container">
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<Home />} />
-                  <Route path="About" element={<About />} />
-                  <Route path="Pricing" element={<Pricing />} />
-                  <Route path="*" element={<NoPage />} />
-                </Route>
-              </Routes>
+              <AnimatePage />
             </div>
           </Router>
         </>

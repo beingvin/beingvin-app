@@ -11,10 +11,25 @@ import {
   faRupeeSign,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 function LearnMore() {
+  const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
   return (
-    <div className={style.container}>
+    <motion.div
+      className={style.container}
+      initial={{ opacity: 0, x: -400 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 1, ease: [0.6, 0.1, 0.05, 0.9] },
+      }}
+      exit={{
+        opacity: 0,
+        x: window.innerWidth,
+        transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
+      }}
+    >
       <div className={style.headingTitle}>
         <h1>
           Choose your plan. <br /> Get started.
@@ -102,7 +117,7 @@ function LearnMore() {
               <span>11999</span>
             </span>
             <span className={style.timeline}>
-              Delivery Time 5-8    Days <br /> 2 Revision{" "}
+              Delivery Time 5-8 Days <br /> 2 Revision{" "}
             </span>
           </div>
           <div className={style.features}>
@@ -227,7 +242,7 @@ function LearnMore() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
