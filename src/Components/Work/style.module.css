@@ -1,0 +1,149 @@
+.title {
+  display: block;
+  margin: 2%;
+}
+
+.title h1 {
+  display: inline-block;
+  padding: 1%;
+  color: #cecece;
+  font-size: 3rem;
+  border-left: 1px solid #fd2155;
+  border-bottom: 1px solid #fd2155;
+  transition-duration: 1s;
+}
+
+.title h1:hover {
+  scale: 1.05;
+  box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #cecece;
+}
+
+.searchBox {
+  display: flex;
+  padding: 2%;
+  color: #fff;
+  align-items: center;
+  /* align-content: center; */
+}
+.searchBox button,
+.inputField {
+  margin-left: 1%;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #cecece;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.searchBox button:hover {
+  border: none;
+  background-color: #fd2155;
+  color: #cecece;
+  scale: 1.1;
+}
+
+.inputField {
+  margin-left: 8%;
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+}
+
+.inputIcon {
+  position: relative;
+  color: #cecece;
+  left: 0px;
+  font-size: 12px;
+}
+
+.inputField input {
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.inputField input::placeholder {
+  color: #cecece;
+  margin-left: 50px;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5% 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  /* background-color: #222222; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  color: aliceblue;
+  border-radius: 10px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+
+.card div {
+  margin-bottom: 2%;
+}
+
+.card .image {
+  /* width: 100%; */
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  transition-duration: 0.3s;
+}
+
+.card img:hover {
+  scale: 1.2;
+}
+
+.searchItem {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.searchItem button {
+  /* margin-left: -1%; */
+  margin-right: 2%;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #cecece;
+  border-radius: 25px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.searchItem button:hover {
+  border: none;
+  background-color: #fd2155;
+  color: #cecece;
+  scale: 1.1;
+}
+
+.externalLinkIcon {
+  /* display: inline-block; */
+  margin-left: 15%;
+}
+
+.externalLinkIcon {
+  color: #fff;
+  font-size: 1.2rem;
+}

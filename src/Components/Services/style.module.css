@@ -1,10 +1,30 @@
+.title {
+  display: block;
+  margin: 2%;
+}
+
+.title h1 {
+  display: inline-block;
+  padding: 1%;
+  color: #cecece;
+  font-size: 3rem;
+  border-left: 1px solid #fd2155;
+  border-bottom: 1px solid #fd2155;
+  transition-duration: 1s;
+}
+
+.title h1:hover {
+    scale: 1.050;
+    box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #cecece ;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 8% 15%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
   gap: 50px;
 }
 
@@ -46,7 +66,7 @@
   margin-top: 30px;
   padding: 3%;
   grid-column: 1/3;
-  width: 100px;
+  /* width: 100px; */
   justify-self: center;
   border: 1px solid #fd2155;
   background-color: transparent;

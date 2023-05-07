@@ -9,6 +9,7 @@ function Services() {
 
   return (
     <section className={style.section}>
+      <div className={style.title}><h1> •• SERVICES</h1></div>
       <div className={style.wrapper}>
         <div className={style.card}>
           <h3>SINGLEPAGE SITE</h3>
