@@ -28,20 +28,20 @@ function Contact() {
           </div>
           <div>
             <label htmlFor="Email">Email</label>
-            <input type="text" name="Email" placeholder="Email Id" />
+            <input type="text" name="Email" placeholder="Your Email" />
           </div>
           <div>
-            <label htmlFor="Pname">Project Name</label>
-            <input type="text" name="Pname" placeholder="Project Name" />
+            <label htmlFor="Pname">Website</label>
+            <input type="text" name="Pname" placeholder="Your Website" />
           </div>
           <div>
-            <label htmlFor="Message">Describe</label>
+            <label htmlFor="Message">Details</label>
 
             <textarea
               name="Message"
               rows="4"
               cols="50"
-              placeholder=" Short description about your project"
+              placeholder="Give a few details about what you need"
             ></textarea>
           </div>
 

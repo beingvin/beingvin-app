@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import style from "./style.module.css";
 import vinpic from "./img/vin (2).png";
 import {
@@ -11,6 +11,12 @@ import {
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     targetRef: sectionRef,

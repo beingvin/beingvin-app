@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCheck,
   faCheckCircle,
-  faCheckDouble,
-  faCheckSquare,
-  faCross,
   faIndianRupeeSign,
-  faRupeeSign,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 function LearnMore() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
   return (
     <motion.div
@@ -32,7 +31,7 @@ function LearnMore() {
     >
       <div className={style.headingTitle}>
         <h1>
-          Choose your plan. <br /> Get started.
+          Choose your plan. <br /> Get started
         </h1>
       </div>
 
@@ -104,6 +103,7 @@ function LearnMore() {
               </li>
             </ul>
           </div>
+          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
 
         <div className={style.card}>
@@ -172,6 +172,7 @@ function LearnMore() {
               </li>
             </ul>
           </div>
+          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
 
         <div className={style.card}>
@@ -240,6 +241,7 @@ function LearnMore() {
               </li>
             </ul>
           </div>
+          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
       </div>
     </motion.div>
