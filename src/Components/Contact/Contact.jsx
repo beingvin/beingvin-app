@@ -13,6 +13,7 @@ function Contact() {
         </h1>
 
         <p>Let's Build Something Greate. </p>
+        <p>And take your online presence to the next level,</p>
 
         <div className={style.whatsApp}>
           <a href="https://wa.me/919011732439?text=Hi There! " target="_blank">

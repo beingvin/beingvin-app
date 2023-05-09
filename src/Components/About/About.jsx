@@ -1,21 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import style from "./style.module.css";
 import vinpic from "./img/vin (2).png";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  animate,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -47,16 +40,23 @@ function About() {
         </div>
         <div className={[style.aboutme, "section"].join(" ")}>
           <p>
-            Professionally connected with the IT industry from nearly 10 years,
-            Well-organised person, problem solver and independent coder and I
-            create successful responsive websites that are fast, easy to use,
-            and built with best practices. <br /> <br /> I have good skills in
-            HTML5, CSS3, BOOTSTRAP, JAVASCRIPT, Node JS, REACT JS, Flask
-            (Python) I build responsive website so that your website will look
-            perfect on all the small and wide screens. <br /> <br /> I use
-            advance CSS3 and vanilla javascript for animations on your website,
-            I can convert figma to html and i can convert psd to html. <br />{" "}
-            <br /> Connect me for more details .
+            I embarked on my journey as an IT professional More than a decade
+            ago, and for the past two years, I have focused on honing my coding
+            skills. Currently as full-stack web developer, bringing a wealth of
+            expertise and experience to every project.
+            <br /> <br /> I am a well-organized problem solver and an
+            independent coder, committed to creating successful responsive
+            websites that are both visually stunning and functional. I always
+            build with best practices in mind, so you can trust that your
+            website will be built to the highest standards.
+            <br /> <br />
+            Whether you're looking to create a brand new website or improve an
+            existing one, I have the expertise and skills to make it happen. 
+      
+            <br /> <br /> Feel free to reach out to me for more details on how I
+            can help you create a successful website that meets your specific
+            needs.
+            <br /> <br />
           </p>
         </div>
         {/* <TextShpere/> */}

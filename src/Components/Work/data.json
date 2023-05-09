@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1",
+        "name": "Project 1",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Web Design"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Project 2",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Static"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Project 3",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            },
+            {
+                "id": "3",
+                "type": "App"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Project 4",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Web Design"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Project 5",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Dynamic"
+            },
+            {
+                "id": "2",
+                "type": "Web Design"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Project 6",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Landing Page"
+            },
+            {
+                "id": "2",
+                "type": "Web Design"
+            }
+        ]
+    }
+]

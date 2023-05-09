@@ -10,7 +10,7 @@
   position: relative;
   background-color: #fff;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 5px solid #cecece;
   /* margin-top: 20%; */
   top: 20%;
   left: 50%;
@@ -22,13 +22,13 @@
 
 .mypic img {
   position: relative;
-  left: -20%;
+  left: -30%;
 }
 
 .aboutme {
   text-align: left;
-  padding: 5% 2%;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 700;
+  padding: 5% 20%;
+  font-size: 1rem;
+  /* font-style: italic; */
+  /* font-weight: 700; */
 }
