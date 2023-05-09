@@ -1,18 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/App.css";
-
-import { motion, useScroll, useSpring } from "framer-motion";
 import { BrowserRouter as Router } from "react-router-dom";
 import AnimatePage from "./Pages/AnimatePage";
+import Preloader from "./Components/Preloader/Preloader";
+import Cursor from "./Components/Cursor/Cursor";
+import ProgessBar from "./Components/ProgressBar/ProgessBar";
 
 function App() {
   const [preloader, setPreloader] = useState(false);
-
-  const divRef = useRef(null);
-
-  const { scrollYProgress } = useScroll();
-
-  const scaleX = useSpring(scrollYProgress);
 
   useEffect(() => {
     setPreloader(true);
@@ -23,24 +18,13 @@ function App() {
 
   return (
     <div className="app">
+      <ProgessBar />
+      <Cursor />
       {preloader ? (
-        <figure>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </figure>
+        <Preloader />
       ) : (
         <>
           <Router>
-            <motion.div
-              className="progress-bar"
-              ref={divRef}
-              style={{ scaleX }}
-            />
-
             <div className="container">
               <AnimatePage />
             </div>

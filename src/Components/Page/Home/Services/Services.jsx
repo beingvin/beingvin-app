@@ -18,7 +18,7 @@ function Services() {
           </span>
           <hr className={style.hrThin} />
           <p>Design and development of your own singlepage website. </p>
-          <button onClick={() => navigate("/Pricing")}>Learn More</button>
+          <button onClick={() => navigate("/Services/Pricing")}>Learn More</button>
         </div>
         <div className={style.card}>
           <h3>MULTIPAGE SITE</h3>
@@ -27,7 +27,7 @@ function Services() {
           </span>
           <hr className={style.hrThin} />
           <p>Design and development of your own multipage website. </p>
-          <button onClick={() => navigate("/Pricing")}>Learn More</button>
+          <button onClick={() => navigate("/Services/Pricing")}>Learn More</button>
         </div>
         <div className={style.card}>
           <h3>LANDING PAGE</h3>
@@ -36,7 +36,7 @@ function Services() {
           </span>
           <hr className={style.hrThin} />
           <p>Design and development of your own landing page website. </p>
-          <button onClick={() => navigate("/Pricing")}>Learn More</button>
+          <button onClick={() => navigate("/Services/Pricing")}>Learn More</button>
         </div>
         <div className={style.card}>
           <h3>SITE DESIGN ONLY</h3>
@@ -49,7 +49,7 @@ function Services() {
             developer. I will create a website design that will fully comply
             with your wishes, goals and objectives.
           </p>
-          <button onClick={() => navigate("/Pricing")}>Learn More</button>
+          <button onClick={() => navigate("/Services/Pricing")}>Learn More</button>
         </div>
       </div>
     </section>

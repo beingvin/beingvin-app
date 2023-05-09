@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "../Components/Hero/Hero";
-import Services from "../Components/Services/Services";
-import Contact from "../Components/Contact/Contact";
-import Work from "../Components/Work/Work";
+import Hero from "../Components/Page/Home/Hero/Hero";
+import Services from "../Components/Page/Home/Services/Services";
+import Contact from "../Components//Page/Home/Contact/Contact";
+import Work from "../Components/Page/Home/Work/Work";
 
 function Home() {
   return (
