@@ -1,0 +1,43 @@
+.logos ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5% 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 50px;
+}
+
+.logos ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.logos ul li img {
+  width: 50%;
+}
+
+.logos ul li svg {
+  /* color: #fd2155; */
+  width: 100%;
+  height: 100%;
+  transition-delay: 1s;
+  margin: 10% auto;
+
+}
+
+.logos ul li svg *:hover {
+  fill: #fd2155;
+}
+
+.react {
+  animation: rotate 20s ease-in-out infinite ;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(720deg);}
+}

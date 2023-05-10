@@ -5,6 +5,7 @@ import AnimatePage from "./Pages/AnimatePage";
 import Preloader from "./Components/Preloader/Preloader";
 import Cursor from "./Components/Cursor/Cursor";
 import ProgessBar from "./Components/ProgressBar/ProgessBar";
+import { motion } from "framer-motion";
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <motion.div className="app">
       <ProgessBar />
       <Cursor />
       {preloader ? (
@@ -31,7 +32,7 @@ function App() {
           </Router>
         </>
       )}
-    </div>
+    </motion.div>
   );
 }
 

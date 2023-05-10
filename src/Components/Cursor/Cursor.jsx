@@ -24,8 +24,8 @@ function Cursor() {
 
   const variants = {
     default: {
-      x: cursor.x - 13,
-      y: cursor.y - 13,
+      x: cursor.x - 8,
+      y: cursor.y - 8,
     },
     text: {
       height: 150,
@@ -41,11 +41,12 @@ function Cursor() {
   const textLeave = () => setCursorVariant("default");
 
   return (
-    <motion.div
-      className={style.cursor}
-      variants={variants}
-      animate={cursorVariant}
-    ></motion.div>
+    // <motion.div
+    //   className={style.cursor}
+    //   variants={variants}
+    //   animate={cursorVariant}
+    // ></motion.div>
+    <div className={style.cursor} style={{top:cursor.y, left:cursor.x}}></div>
   );
 }
 
