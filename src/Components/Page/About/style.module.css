@@ -37,6 +37,7 @@
 .tools {
   position: relative;
   text-align: center;
+  padding: 4%;
 }
 
 .tools h1 {
@@ -45,3 +46,117 @@
 }
 
 
+/* -------------------------contact---------- */
+
+.hrThin {
+  position: relative;
+  margin: 4% auto;
+  width: 80%;
+  border: none;
+  height: 0.2px;
+  background: #272727;
+}
+
+.contact,
+.contact a {
+  color: #cecece;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.quickLinks {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quickLinks a:hover{
+  color: #fd2155;
+}
+
+.chat {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
+  margin-top: 5%;
+}
+
+.chat .socialLinks {
+  align-self: center;
+  margin-right: 8%;
+}
+
+.chat .socialLinks a:hover{
+  color: #fd2155;
+}
+
+.chat h1 {
+  display: inline-block;
+  position: relative;
+  font-size: 8rem;
+  font-weight: 500;
+  font-style: italic;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.chat h1::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #fd2155;
+  transition: width 0.5s;
+}
+
+.chat h1:hover::after {
+  width: 100%;
+}
+
+.chat h1 a {
+  color: #cecece;
+}
+
+.chat h1 a span {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+
+  /* width: 90px; height: 90px; */
+  overflow: hidden;
+}
+
+.upRightArrow1,
+.upRightArrow2 {
+  display: inline-block;
+  font-size: 6rem;
+  transition: color 1s;
+}
+.upRightArrow2 {
+  position: relative;
+  right: 15rem;
+  bottom: -10rem;
+}
+
+.chat h1 a:hover span svg {
+  color: #fd2155;
+  position: relative;
+  animation: move 1s ease-in-out 0s;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(-45deg) translate(-0%, 0%);
+  }
+  100% {
+    transform: rotate(-45deg) translate(250%);
+  }
+}

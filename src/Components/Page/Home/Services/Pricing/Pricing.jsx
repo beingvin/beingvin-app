@@ -5,8 +5,10 @@ import {
   faCheckCircle,
   faIndianRupeeSign,
   faTimesCircle,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function LearnMore() {
   useEffect(() => {
@@ -242,6 +244,53 @@ function LearnMore() {
             </ul>
           </div>
           {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
+        </div>
+      </div>
+
+      {/* ------------------------- contact -------------------------- */}
+
+      <div className={style.contact}>
+
+        <hr className={style.hrThin} />
+
+        <div className={style.quickLinks}>
+          <h2>Contact &nbsp; &nbsp; &nbsp; | </h2>
+          <p>
+            <Link to={"/"}>Home</Link>
+          </p>
+
+          <p>
+            <Link to={"/About"}>About</Link>
+          </p>
+        </div>
+
+        <div className={style.chat}>
+          <div className={style.socialLinks}>
+            <p>
+              <a href="../#work" target="_blank">
+                LinkedIn
+              </a>{" "}
+            </p>
+            <p>support@beingvin.com</p>
+          </div>
+          <h1>
+            <a
+              href="https://wa.me/+919011732439?text=Hi there ! i need a website"
+              target="_blank"
+            >
+              Let's Chat
+              <span>
+                <FontAwesomeIcon
+                  className={style.upRightArrow1}
+                  icon={faArrowRight}
+                />
+                <FontAwesomeIcon
+                  className={style.upRightArrow2}
+                  icon={faArrowRight}
+                />
+              </span>
+            </a>
+          </h1>
         </div>
       </div>
     </motion.div>

@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Contact() {
   return (
-    <section className={style.section}>
+    <section className={style.section} id="contact">
       <div className={style.title}>
         <h1> •• CONTACT</h1>
       </div>
@@ -32,7 +32,7 @@ function Contact() {
           </div>
           <div className={style.chat}>
             <a
-              href="https://wa.me/919011732439?text=Hi There! "
+              href="https://wa.me/+919011732439?text=Hi there ! i need a website"
               target="_blank"
             >
               Say Hi &nbsp; <FontAwesomeIcon icon={faWhatsapp} />

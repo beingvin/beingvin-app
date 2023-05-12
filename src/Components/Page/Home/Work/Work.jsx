@@ -38,9 +38,9 @@ function Work() {
   };
 
   return (
-    <section className={style.section}>
+    <section className={style.section} id="work" >
       <div className={style.title}>
-        <h1> •• WORKS</h1>
+        <h1> •• WORKS</h1> 
       </div>
       <div className={style.wrapper}>
         <div className={style.searchBox}>
