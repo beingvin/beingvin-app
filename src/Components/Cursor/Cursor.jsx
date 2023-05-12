@@ -10,7 +10,7 @@ function Cursor() {
 
   const [cursorVariant, setCursorVariant] = useState("default");
 
-  console.log(cursor);
+  // console.log(cursor);
 
   useEffect(() => {
     const mouseMove = (e) => {

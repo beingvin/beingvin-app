@@ -7,38 +7,79 @@ import {
   faInstagram,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  console.log(currentYear);
+
   return (
     <section className={style.section}>
       <footer className={style.footer}>
         {/* <h2>Schedule a call and have us listen to your specific case</h2> */}
-        <h2>I'm available for small and short-term projects</h2>
+        <hr className={style.hr} />
+
+        <h3>I'm available for short and long-term projects</h3>
 
         <hr className={style.hrThin} />
 
         <div className={style.socialIcons}>
           <ul>
-            <li>
+            <motion.li
+              whileHover={{
+                y: -30,
+                transition: { duration: 1, type: "spring", stiffness: 2000 },
+              }}
+            >
               <FontAwesomeIcon icon={faFacebook} />
-            </li>
 
-            <li>
+              <a href="https://www.facebook.com/beingvin" target="_blank">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+            </motion.li>
+
+            <motion.li
+              whileHover={{
+                y: -30,
+                transition: { duration: 1, type: "spring", stiffness: 2000 },
+              }}
+            >
               <FontAwesomeIcon icon={faTwitter} />
-            </li>
+              <a href="https://twitter.com/beingvin" target="_blank">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+            </motion.li>
 
-            <li>
+            <motion.li
+              whileHover={{
+                y: -30,
+                transition: { duration: 1, type: "spring", stiffness: 2000 },
+              }}
+            >
               <FontAwesomeIcon icon={faInstagram} />
-            </li>
-            <li>
+              <a href="https://instagram.com/beingvin" target="_blank">
+                {" "}
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                y: -30,
+                transition: { duration: 1, type: "spring", stiffness: 2000 },
+              }}
+            >
               <FontAwesomeIcon icon={faGithub} />
-            </li>
+              <a href="https://github.com/beingvin" target="_blank">
+                {" "}
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </motion.li>
           </ul>
         </div>
 
-        <p>&copy;2023 Beingvin. All rights reserved </p>
+        <p>&copy; {currentYear} Beingvin. All rights reserved </p>
 
-        <hr className={style.hr} />
       </footer>
     </section>
   );
