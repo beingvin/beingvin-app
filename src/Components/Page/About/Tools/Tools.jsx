@@ -3,7 +3,7 @@ import style from "./style.module.css";
 
 function Tools() {
   return (
-    <div className={style.logos}>
+    <div className={style.tool}>
       <ul>
         <li>
           HTML

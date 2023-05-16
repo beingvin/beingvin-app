@@ -7,8 +7,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 function Contact() {
   return (
     <section className={style.section} id="contact">
-      <div className={style.title}>
-        <h1> •• CONTACT</h1>
+      <div  className="sectionTitle">
+        <h1 style={{color: "#3d3d3d"}}> •• CONTACT</h1>
       </div>
       <div className={style.wrapper}>
         <div className={style.talkToMe}>

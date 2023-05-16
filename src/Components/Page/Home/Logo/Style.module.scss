@@ -1,8 +1,12 @@
+
+.logo{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
 .banner {
   display: flex;
-  position: absolute;
-  top: 5%;
-  left: 5%;
   width: 200px;
   z-index: 1000;
 }

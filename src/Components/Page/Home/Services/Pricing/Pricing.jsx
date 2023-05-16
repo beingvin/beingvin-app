@@ -5,10 +5,12 @@ import {
   faCheckCircle,
   faIndianRupeeSign,
   faTimesCircle,
-  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Logo from "../../Logo/Logo";
+import ContactMe from "./ContactMe/ContactMe";
+import "react-multi-carousel/lib/styles.css";
 
 function LearnMore() {
   useEffect(() => {
@@ -18,7 +20,7 @@ function LearnMore() {
   const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
   return (
     <motion.div
-      className={style.container}
+      className={style.wrapper}
       initial={{ opacity: 0, x: -400 }}
       animate={{
         opacity: 1,
@@ -31,12 +33,14 @@ function LearnMore() {
         transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
       }}
     >
+      <Link to={"/"}>
+        <Logo />
+      </Link>
       <div className={style.headingTitle}>
         <h1>
           Choose your plan. <br /> Get started
         </h1>
       </div>
-
       <div className={style.cards}>
         <div className={style.card}>
           <div className={style.cardHeader}>
@@ -246,53 +250,8 @@ function LearnMore() {
           {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
       </div>
-
-      {/* ------------------------- contact -------------------------- */}
-
-      <div className={style.contact}>
-
-        <hr className={style.hrThin} />
-
-        <div className={style.quickLinks}>
-          <h2>Contact &nbsp; &nbsp; &nbsp; | </h2>
-          <p>
-            <Link to={"/"}>Home</Link>
-          </p>
-
-          <p>
-            <Link to={"/About"}>About</Link>
-          </p>
-        </div>
-
-        <div className={style.chat}>
-          <div className={style.socialLinks}>
-            <p>
-              <a href="../#work" target="_blank">
-                LinkedIn
-              </a>{" "}
-            </p>
-            <p>support@beingvin.com</p>
-          </div>
-          <h1>
-            <a
-              href="https://wa.me/+919011732439?text=Hi there ! i need a website"
-              target="_blank"
-            >
-              Let's Chat
-              <span>
-                <FontAwesomeIcon
-                  className={style.upRightArrow1}
-                  icon={faArrowRight}
-                />
-                <FontAwesomeIcon
-                  className={style.upRightArrow2}
-                  icon={faArrowRight}
-                />
-              </span>
-            </a>
-          </h1>
-        </div>
-      </div>
+      ;{/* ------------------------- contact -------------------------- */}
+      <ContactMe />
     </motion.div>
   );
 }

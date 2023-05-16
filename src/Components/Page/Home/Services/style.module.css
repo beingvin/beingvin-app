@@ -1,34 +1,16 @@
-.title {
-  display: block;
-  margin: 2%;
-}
-
-.title h1 {
-  display: inline-block;
-  padding: 1%;
-  color: #cecece;
-  font-size: 3rem;
-  border-left: 1px solid #fd2155;
-  border-bottom: 1px solid #fd2155;
-  transition-duration: 1s;
-}
-
-.title h1:hover {
-    scale: 1.050;
-    box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #cecece ;
-}
-
 .wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 8% 15%;
+  padding: 4% 4%;
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-auto-rows: 320px;
+  gap: 60px;
 }
 
 .card {
+  position: relative;
   background-color: #222222;
   color: aliceblue;
   padding: 5% 8%;
@@ -61,23 +43,49 @@
   color: #cecece;
 }
 
-
-.card button { 
+.card button {
+  position: absolute;
   margin-top: 30px;
-  padding: 3%;
-  grid-column: 1/3;
-  /* width: 100px; */
-  justify-self: center;
+  bottom: 30px;
+  padding: 15px;
   border: 1px solid #fd2155;
   background-color: transparent;
   color: #cecece;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 20px;
   transition-duration: 0.5s;
-  cursor: pointer;
 }
 
-.card button:hover{
+.card button:hover {
   background-color: #fd2155;
   color: #cecece;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .wrapper {
+    padding: 15% 2%;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+  }
+  .card h3 {
+    font-size: 1.6rem;
+  }
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .wrapper {
+    padding: 10% 4%;
+    gap: 50px;
+  }
+  .card h3 {
+    font-size: 1.8rem;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .wrapper {
+    padding: 8% 4%;
+  }
 }

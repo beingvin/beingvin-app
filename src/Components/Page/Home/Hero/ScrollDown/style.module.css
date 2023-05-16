@@ -1,22 +1,33 @@
 .scroll {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  /* transform: translateX(50%); */
-  
-
   text-align: center;
   animation: scroll 1s linear 1s infinite alternate;
-
 }
 
 .scroll a {
- text-decoration: none;
- color: #cecece;
+  color: #cecece;
+}
+
+.scroll svg {
+  width: 1.5rem;
+  fill: #fe005d;
+  transition-duration: 0.3s;
+}
+
+.scroll svg:hover {
+  width: 1.6rem;
+  fill: #cecece;
+
 }
 
 @keyframes scroll {
   100% {
-    transform: translateY(30px);
+    transform: translateY(40px);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .scroll {
+    display: block;
+    position: static;
   }
 }

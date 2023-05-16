@@ -38,13 +38,13 @@ function Work() {
   };
 
   return (
-    <section className={style.section} id="work" >
-      <div className={style.title}>
-        <h1> •• WORKS</h1> 
+    <section className={style.section} id="work">
+      <div className="sectionTitle">
+        <h1> •• WORKS</h1>
       </div>
       <div className={style.wrapper}>
         <div className={style.searchBox}>
-          Select your interest
+          <p> Select your interest</p>
           {filterBtn.map((btn, index) => (
             <button
               key={index}

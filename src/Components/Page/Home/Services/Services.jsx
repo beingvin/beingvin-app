@@ -9,7 +9,7 @@ function Services() {
 
   return (
     <section className={style.section}>
-      <div className={style.title}><h1> •• SERVICES</h1></div>
+      <div className="sectionTitle"><h1> •• SERVICES</h1></div>
       <div className={style.wrapper}>
         <div className={style.card}>
           <h3>SINGLEPAGE SITE</h3>
@@ -36,6 +36,7 @@ function Services() {
           </span>
           <hr className={style.hrThin} />
           <p>Design and development of your own landing page website. </p>
+          
           <button onClick={() => navigate("/Services/Pricing")}>Learn More</button>
         </div>
         <div className={style.card}>

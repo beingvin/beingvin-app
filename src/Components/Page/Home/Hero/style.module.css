@@ -1,58 +1,52 @@
 .wrapper {
   position: relative;
   width: 100%;
-  padding-top: 8%;
-  text-align: center;
+  padding: 2% 0%;
+}
+main {
+  padding: 8% 0% 0;
 }
 
 .title {
-  width: 100%;
-  /* text-align:1.5nter
-  text-align: right;; */
+  display: block;
+  text-align: center;
 }
 
 .title h1 {
+  position: relative;
   color: #fe005d;
   font-size: 6rem;
   font-weight: 600;
-  position: relative;
   z-index: 10;
 }
 
 .subTitle {
   color: #3d3d3d;
   font-size: 2rem;
-  font-weight: 800;
-  opacity: 0.5;
-  margin-bottom: 6%;
-  text-align: center  ; 
-  /* padding-top: 60px; */
-  /* z-index: 10; */
+  font-weight: 400;
+  text-align: center;
 }
 
-  /* .header {
+/* .header {
     display: flex;
     position: absolute;
     width: 100%;
     top: 15px;
   } */
 
-
-
 .aboutBtn {
   position: absolute;
-  top: 2%;
+  top: 0;
   right: 0;
-  height: 100%;
-  width: 200px;
+  height: fit-content;
+  width: fit-content;
   background-color: transparent;
-  ;
 }
 .aboutBtn button {
   border: none;
   background-color: transparent;
   color: #3d3d3d;
-  border: 2px solid #3d3d3d;;
+  border: 2px solid #3d3d3d;
   border-radius: 20px;
   font-size: 15px;
   /* font-weight: 500; */
@@ -66,5 +60,187 @@
   color: #fe005d;
   background-color: #3d3d3d;
   border: 2px solid #3d3d3d;
+}
 
+.scrollIcon {
+  height: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 360px) {
+  section {
+    min-height: auto;
+  }
+
+  main {
+    padding: 50% 0% 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  .subTitle {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .aboutBtn button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 400px) {
+  section {
+    min-height: auto;
+  }
+
+  main {
+    padding: 45% 0% 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .title h1 {
+    font-size: 1.9rem;
+  }
+
+  .subTitle {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .aboutBtn button {
+    font-size: 15px;
+    padding: 8px;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 480px) {
+  section {
+    min-height: auto;
+  }
+
+  main {
+    padding: 40% 0% 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .subTitle {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .aboutBtn button {
+    font-size: 15px;
+    padding: 8px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 580px) {
+  section {
+    min-height: auto;
+  }
+
+  main {
+    padding: 35% 0% 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .title h1 {
+    font-size: 2.5rem;
+  }
+
+  .subTitle {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+ 
+  .aboutBtn button {
+    font-size: 16px;
+    padding: 9px;
+  }
+}
+
+@media only screen and (min-width: 581px) and (max-width: 770px) {
+  section {
+    min-height: auto;
+  }
+
+  main {
+    padding: 25% 0% 0;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+  }
+
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
+  .aboutBtn button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+ 
+  
+  main {
+    padding: 15% 0% 0;
+  }
+
+  .title h1 {
+    font-size: 4rem;
+  }
+
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
+  .aboutBtn button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+
+
+  main {
+    padding: 10% 0% 0;
+  }
+  .title h1 {
+    font-size: 5.3rem;
+  }
+
+  .subTitle {
+    font-size: 1.8rem;
+  }
+
+  .aboutBtn button {
+    font-size: 15px;
+    padding: 12px;
+  }
 }

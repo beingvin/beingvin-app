@@ -27,6 +27,7 @@ function ProjectList(props) {
                 <a
                   href="http://www.beingvin.com"
                   target="_blank"
+                  rel="noopener"
                   className={style.externalLinkIcon}
                 >
                   <FontAwesomeIcon icon={faExternalLinkSquare} />

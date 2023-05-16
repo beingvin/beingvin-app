@@ -1,25 +1,13 @@
-.title {
-  display: block;
-  margin: 2%;
-}
 
-.title h1 {
-  display: inline-block;
-  padding: 1%;
-  color: #cecece;
-  font-size: 3rem;
-  border-left: 1px solid #fd2155;
-  border-bottom: 1px solid #fd2155;
-  transition-duration: 1s;
-}
+.wrapper {
+  position: relative;
+  padding: 4% 4%;
 
-.title h1:hover {
-  scale: 1.05;
-  box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #cecece;
 }
-
 .searchBox {
   display: flex;
+  flex-wrap: wrap;
+  gap:10px;
   padding: 2%;
   color: #fff;
   align-items: center;
@@ -27,7 +15,7 @@
 }
 .searchBox button,
 .inputField {
-  margin-left: 1%;
+  /* margin-left: 1%; */
   background-color: transparent;
   color: #fff;
   border: 1px solid #cecece;
@@ -45,10 +33,9 @@
 }
 
 .inputField {
-  margin-left: 8%;
   display: flex;
   padding: 5px 20px;
-  align-items: center;
+  align-items: center; 
 }
 
 .inputIcon {

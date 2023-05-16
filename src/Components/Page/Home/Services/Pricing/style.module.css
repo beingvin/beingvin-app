@@ -1,21 +1,24 @@
-.container {
+.wrapper {
   position: relative;
   /* background-color: #fff; */
   height: 100%;
   width: 100%;
-  padding: 8% 4% 2%;
+  padding: 4% 4%;
 }
 
 .headingTitle {
   font-size: 2rem;
   text-align: center;
   color: #fd2155;
+  padding: 2% 2%;
   /* text-shadow: 1px 5px 0px #474747; */
 }
 
 .cards {
   display: flex;
-  padding: 5% 0%;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5% 2%;
   justify-content: space-around;
   align-items: center;
   align-content: center;
@@ -23,16 +26,16 @@
 
 .card {
   background-color: #fff;
-  min-width: 350px;
-  padding: 0% 3%;
+  min-width: 250px;
+  width: 30%;
+  padding: 0% 2%;
   border: 2px solid #e3e3e3;
   text-align: center;
   position: relative;
   padding-bottom: 40px;
   transform: translateZ(0px);
   transition: 0.5s;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 25px;
 }
 
 .card:before,
@@ -45,37 +48,38 @@
   right: -2px;
   z-index: -1;
   transition: all 0.5s ease 0s;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .card:before {
-  border-right: 2px solid #474747;
-  border-left: 2px solid #474747;
+  border-right: 2px solid #fd2155;
+  border-left: 2px solid #fd2155;
   transform: scaleY(0);
   transform-origin: 100% 0 0;
+  border-radius: 25px;
 }
 
 .card:after {
-  border-bottom: 2px solid #474747;
-  border-top: 2px solid #474747;
-  transform: scaleX(0);
+  border-bottom: 2px solid #fd2155;
+  border-top: 2px solid #fd2155;
   transform-origin: 0 100% 0;
+  border-radius: 25px;
 }
 
 .card:hover:before {
   transform: scaleY(1);
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .card:hover:after {
   transform: scaleX(1);
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .card:hover {
   margin-top: -30px;
-  box-shadow: -10px 5px 20px #4d4d4d;
-  border-radius: 10px;
+  box-shadow: -10px 5px 20px #fd2155;
+  border-radius: 25px;
 }
 
 .cardHeader {
@@ -173,117 +177,110 @@
   /* border:1px solid #08c6aa; */
 }
 
-/* -------------------------contact---------- */
-
-.hrThin {
-  position: relative;
-  margin: 4% auto;
-  width: 80%;
-  border: none;
-  height: 0.2px;
-  background: #272727;
-}
-
-.contact,
-.contact a {
-  color: #cecece;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-.quickLinks {
-  display: flex;
-  width: 30%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.quickLinks a:hover{
-  color: #fd2155;
-}
-
-.chat {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  position: relative;
-  margin-top: 5%;
-}
-
-.chat .socialLinks {
-  align-self: center;
-  margin-right: 8%;
-}
-
-.chat .socialLinks a:hover{
-  color: #fd2155;
-}
-
-.chat h1 {
-  display: inline-block;
-  position: relative;
-  font-size: 8rem;
-  font-weight: 500;
-  font-style: italic;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-}
-
-.chat h1::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-  width: 0%;
-  height: 3px;
-  background-color: #fd2155;
-  transition: width 0.5s;
-}
-
-.chat h1:hover::after {
-  width: 100%;
-}
-
-.chat h1 a {
-  color: #cecece;
-}
-
-.chat h1 a span {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-
-  /* width: 90px; height: 90px; */
-  overflow: hidden;
-}
-
-.upRightArrow1,
-.upRightArrow2 {
-  display: inline-block;
-  font-size: 6rem;
-  transition: color 1s;
-}
-.upRightArrow2 {
-  position: relative;
-  right: 15rem;
-  bottom: -10rem;
-}
-
-.chat h1 a:hover span svg {
-  color: #fd2155;
-  position: relative;
-  animation: move 1s ease-in-out 0s;
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(-45deg) translate(-0%, 0%);
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .headingTitle {
+    font-size: 1.5rem;
+    padding: 15% 2%;
   }
-  100% {
-    transform: rotate(-45deg) translate(250%);
+  .cards {
+    flex-direction: column;
+    padding: 5% 2%;
+    justify-content: center;
+    gap: 50px;
+    /* align-items: center;
+    align-content: center; */
+  }
+  .card {
+    min-width: 250px;
+    width: 100%;
+    padding: 15% 6%;
+  }
+
+  .cardHeader {
+    padding: 15px 10px;
+  }
+
+  .package {
+    padding: 3%;
+    font-size: 15px;
+  }
+
+  .price {
+    padding-bottom: 15px;
+  }
+  .price .priceValue span {
+    font-size: 40px;
+  }
+
+  .price .timeline {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+  .features ul li {
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .headingTitle {
+    font-size: 1.8rem;
+    padding: 10% 2%;
+  }
+
+  .cards {
+    gap: 50px;
+  }
+
+  .card {
+    min-width: 250px;
+    width: 70%;
+    padding: 6%;
+  }
+
+  .cardHeader {
+    padding: 18px 10px;
+  }
+
+  .package {
+    padding: 3%;
+    font-size: 15px;
+  }
+
+  .features ul li {
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .headingTitle {
+    /* font-size: 1.5rem; */
+    padding: 8% 2%;
+  }
+
+  .cards {
+    gap: 50px;
+  }
+
+  .card {
+    min-width: 250px;
+    width: 45%;
+    padding: 6%;
+  }
+
+  .cardHeader {
+    padding: 20px 10px;
+  }
+
+  .package {
+    padding: 3%;
+    font-size: 15px;
+  }
+
+  .features ul li {
+    padding: 8px 0;
+    font-size: 0.9rem;
   }
 }

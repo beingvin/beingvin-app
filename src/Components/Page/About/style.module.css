@@ -2,10 +2,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 10% 10% 2%;
+  padding: 6% 4% 2%;
   /* background-color: aliceblue; */
   color: #fff;
 }
+
 .mypic {
   position: relative;
   background-color: #fff;
@@ -15,148 +16,99 @@
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
 }
 
 .mypic img {
   position: relative;
-  left: -30%;
+  left: -10%;
 }
 
 .aboutme {
-  text-align: left;
-  padding: 5% 12%;
+  padding: 2% 10%;
+  text-align: justify;
   font-size: 1rem;
   margin: 2% 0;
-  /* font-style: italic; */
-  /* font-weight: 700; */
+  font-style: italic;
 }
 
 .tools {
   position: relative;
-  text-align: center;
-  padding: 4%;
 }
 
-.tools h1 {
+/* .tools h1 {
   font-size: 4rem;
   margin-bottom: 5%;
-}
+} */
 
-
-/* -------------------------contact---------- */
-
-.hrThin {
-  position: relative;
-  margin: 4% auto;
-  width: 80%;
-  border: none;
-  height: 0.2px;
-  background: #272727;
-}
-
-.contact,
-.contact a {
-  color: #cecece;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-.quickLinks {
-  display: flex;
-  width: 30%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.quickLinks a:hover{
-  color: #fd2155;
-}
-
-.chat {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  position: relative;
-  margin-top: 5%;
-}
-
-.chat .socialLinks {
-  align-self: center;
-  margin-right: 8%;
-}
-
-.chat .socialLinks a:hover{
-  color: #fd2155;
-}
-
-.chat h1 {
-  display: inline-block;
-  position: relative;
-  font-size: 8rem;
-  font-weight: 500;
-  font-style: italic;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-}
-
-.chat h1::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-  width: 0%;
-  height: 3px;
-  background-color: #fd2155;
-  transition: width 0.5s;
-}
-
-.chat h1:hover::after {
-  width: 100%;
-}
-
-.chat h1 a {
-  color: #cecece;
-}
-
-.chat h1 a span {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-
-  /* width: 90px; height: 90px; */
-  overflow: hidden;
-}
-
-.upRightArrow1,
-.upRightArrow2 {
-  display: inline-block;
-  font-size: 6rem;
-  transition: color 1s;
-}
-.upRightArrow2 {
-  position: relative;
-  right: 15rem;
-  bottom: -10rem;
-}
-
-.chat h1 a:hover span svg {
-  color: #fd2155;
-  position: relative;
-  animation: move 1s ease-in-out 0s;
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(-45deg) translate(-0%, 0%);
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .wrapper {
+    padding: 25% 4% 2%;
   }
-  100% {
-    transform: rotate(-45deg) translate(250%);
+  .aboutme {
+    padding: 12% 2%;
+    /* text-align: left; */
+    font-size: 0.8rem;
+  }
+  .mypic {
+    top: 20%;
+    left: 50%;
+    height: 150px;
+    width: 150px;
+  }
+
+  .mypic img {
+    position: relative;
+    left: -25%;
+    width: 150%;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .wrapper {
+    padding: 15% 4% 2%;
+  }
+  .aboutme {
+    padding: 6% 2%;
+    /* text-align: left; */
+    font-size: 0.8rem;
+  }
+  .mypic {
+    top: 20%;
+    left: 50%;
+    height: 150px;
+    width: 150px;
+  }
+
+  .mypic img {
+    position: relative;
+    left: -25%;
+    width: 150%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    padding: 10% 4% 2%;
+  }
+  .aboutme {
+    padding: 6% 2%;
+    /* text-align: left; */
+    font-size: 0.9rem;
+  }
+  .mypic {
+    top: 20%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+  }
+
+  .mypic img {
+    position: relative;
+    left: -25%;
+    width: 150%;
   }
 }

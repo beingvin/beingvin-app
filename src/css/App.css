@@ -1,7 +1,3 @@
-*{
-  cursor: none;
-}
-
 /* body {
   background-color: #121214;
   background-image: -webkit-linear-gradient(#121214, #343437);
@@ -11,20 +7,32 @@
 .container {
   width: 100%;
   height: 100%;
-  padding: 2% 2%;
+  position: relative;
+  padding: 3% 6%;
   scroll-snap-type: y mandatory;
   /* overflow-y:overlay; */
   overflow: overlay;
   scroll-behavior: smooth;
 }
 
-section {
+.sectionTitle {
+  display: block;
+  margin: 2%;
+}
+
+.sectionTitle h1 {
   display: inline-block;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  scroll-snap-align: start;
+  padding: 0.5% 1%;
+  color: #cecece;
+  font-size: 2.5rem;
+  border-left: 1px solid #fd2155;
+  border-bottom: 1px solid #fd2155;
+  transition-duration: 1s;
+}
+
+.sectionTitle h1:hover {
+  scale: 1.05;
+  box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #cecece;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +41,7 @@ section {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: #0f0f0f;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -42,4 +50,40 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #fe005d;
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    padding: 8% 6%;
+  }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 400px) {
+  .container {
+    padding: 8% 6%;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 480px) {
+  .container {
+    padding: 6% 6%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 580px) {
+  .container {
+    padding: 6% 6%;
+  }
+}
+
+@media only screen and (min-width: 581px) and (max-width: 770px) {
+  .container {
+    padding: 5% 6%;
+  }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+  .container {
+    padding: 4% 6%;
+  }
 }

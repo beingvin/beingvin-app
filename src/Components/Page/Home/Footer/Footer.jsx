@@ -18,11 +18,13 @@ function Footer() {
     <section className={style.section}>
       <footer className={style.footer}>
         {/* <h2>Schedule a call and have us listen to your specific case</h2> */}
-        <hr className={style.hr} />
 
-        <h3>I'm available for short and long-term projects</h3>
-
-        <hr className={style.hrThin} />
+        <h3>
+          {" "}
+          <hr className={style.hr} /> I'm available for short and long-term
+          projects
+          <hr className={style.hrThin} />
+        </h3>
 
         <div className={style.socialIcons}>
           <ul>
@@ -34,7 +36,7 @@ function Footer() {
             >
               <FontAwesomeIcon icon={faFacebook} />
 
-              <a href="https://www.facebook.com/beingvin" target="_blank">
+              <a href="https://www.facebook.com/beingvin" target="_blank" rel="noreferrer" >
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
             </motion.li>
@@ -46,7 +48,7 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faTwitter} />
-              <a href="https://twitter.com/beingvin" target="_blank">
+              <a href="https://twitter.com/beingvin" target="_blank" rel="noreferrer" >
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </motion.li>
@@ -58,7 +60,7 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faInstagram} />
-              <a href="https://instagram.com/beingvin" target="_blank">
+              <a href="https://instagram.com/beingvin" target="_blank" rel="noreferrer" >
                 {" "}
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
@@ -70,7 +72,7 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faGithub} />
-              <a href="https://github.com/beingvin" target="_blank">
+              <a href="https://github.com/beingvin" target="_blank" rel="noreferrer" >
                 {" "}
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -79,7 +81,6 @@ function Footer() {
         </div>
 
         <p>&copy; {currentYear} Beingvin. All rights reserved </p>
-
       </footer>
     </section>
   );

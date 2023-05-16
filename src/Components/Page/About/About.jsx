@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import style from "./style.module.css";
+import Logo from "../Home/Logo/Logo";
 import vinpic from "./img/vin (2).png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import Tools from "./Tools/Tools";
+import ContactMe from "./ContactMe/ContactMe";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
@@ -38,6 +39,9 @@ function About() {
       }}
     >
       <div ref={sectionRef} style={{ opacity }} className={style.wrapper}>
+        <Link to={"/"}>
+          <Logo />
+        </Link>
         <section>
           <div className={style.mypic}>
             <img src={vinpic} alt="My pic" />
@@ -64,62 +68,12 @@ function About() {
           </div>
         </section>
         <section className={style.tools}>
-          <h1>My Tools </h1>
+        <div className="sectionTitle"><h1> •• MY TOOLS</h1></div>
           <Tools />
         </section>
 
-           {/* ------------------------- contact -------------------------- */}
-
-      <div className={style.contact}>
-
-      <hr className={style.hrThin} />
-
-        {/* <div className={style.tagLines}>
-          <p>Let's Build Something Greate ! </p>
-          <p>And take your online presence to the next level.</p>
-        </div> */}
-
-        {/* <p><Link to={"./"}>Home</Link></p> */}
-        <div className={style.quickLinks}>
-          <h2>Contact &nbsp; &nbsp; &nbsp; | </h2>
-          <p>
-            <Link to={"/"}>Home</Link>
-          </p>
-
-          <p>
-            <Link to={"/services/pricing"}>Pricing</Link>
-          </p>
-        </div>
-
-        <div className={style.chat}>
-          <div className={style.socialLinks}>
-            <p>
-              <a href="../#work" target="_blank">
-                LinkedIn
-              </a>{" "}
-            </p>
-            <p>support@beingvin.com</p>
-          </div>
-          <h1>
-            <a
-              href="https://wa.me/+919011732439?text=Hi there ! i need a website"
-              target="_blank"
-            >
-              Let's Chat
-              <span>
-                <FontAwesomeIcon
-                  className={style.upRightArrow1}
-                  icon={faArrowRight}
-                />
-                <FontAwesomeIcon
-                  className={style.upRightArrow2}
-                  icon={faArrowRight}
-                />
-              </span>
-            </a>
-          </h1>
-        </div>
-      </div>
+        {/* ------------------------- contact -------------------------- */}
+        <ContactMe />
 
         {/* <TextShpere/> */}
       </div>

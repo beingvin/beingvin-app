@@ -2,38 +2,17 @@
   background-color: aliceblue;
   min-height: 0 !important;
 }
-.title {
-  display: block;
-  margin: 2%;
-  padding: 0;
-}
 
-.title h1 {
-  display: inline-block;
-  padding: 1%;
-  color: #3d3d3d;
-  font-size: 3rem;
-  border-left: 1px solid #fd2155;
-  border-bottom: 1px solid #fd2155;
-  transition-duration: 1s;
-}
-
-.title h1:hover {
-  scale: 1.05;
-  box-shadow: -4px 6px 0px 1px #fd2155, -10px 12px 2px 0px #3d3d3d;
-}
 .wrapper {
   display: flex;
   justify-content: space-around;
-  /* position: relative; */
+  position: relative;
   scroll-snap-align: start;
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background-color: #fff; */
-  padding: 6% 5%;
+  padding: 2% 4%;
 }
 
 .talkToMe {
+  padding: 8% 0;
   align-self: center;
 }
 
@@ -42,7 +21,7 @@
   position: absolute;
   background-color: #3d3d3d;
   padding: 8px 20px;
-  top: 50%;
+  top: 40%;
   right: -60px;
   transform: rotate(-90deg) translateY(-50%);
   z-index: 10;
@@ -59,14 +38,12 @@
 .talk h1 {
   display: inline-block;
   position: relative;
-
   font-size: 8rem;
   font-weight: 500;
   font-style: italic;
   width: 100%;
   overflow: hidden;
   margin: 0;
-
 }
 
 .talk h1::after {
@@ -130,6 +107,8 @@
 
 .writeMe {
   width: 35%;
+  align-self: center;
+
 }
 
 .writeMe form {
@@ -167,7 +146,6 @@ textarea::placeholder {
   /* font-weight: 5  00; */
   padding: 12px;
   transition: 0.5s ease-in-out;
-  cursor: pointer;
 }
 
 .writeMe form button:hover {
@@ -175,4 +153,112 @@ textarea::placeholder {
   color: #fff;
   background-color: #fe005d;
   border: 2px solid #fe005d;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 10% 4%;
+
+  }
+
+  .talk h1 {
+    font-size: 4rem;
+  }
+  .tagLines p {
+    font-size: 1rem;
+  }
+
+  .upRightArrow1,
+  .upRightArrow2 {
+    font-size: 4rem;
+  }
+
+  .writeMe {
+    align-self: center;
+    width: 100%;
+  }
+
+  .chat {
+    padding: 5px 15px;
+    top: 25%;
+    right: -55px;
+  }
+
+  .writeMe form button {
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 8% 4%;
+  }
+  .talk h1 {
+    font-size: 5rem;
+  }
+  .tagLines p {
+    font-size: 1rem;
+  }
+
+  .upRightArrow1,
+  .upRightArrow2 {
+    font-size: 5rem;
+  }
+
+  .writeMe {
+    align-self: center;
+    width: 90%;
+  }
+
+  .chat {
+    padding: 5px 15px;
+    top: 35%;
+    right: -55px;
+  }
+
+  .writeMe form button {
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 6% 4%;
+  }
+  .talk h1 {
+    font-size: 6rem;
+  }
+  .tagLines p {
+    font-size: 1.2rem;
+  }
+
+  .upRightArrow1,
+  .upRightArrow2 {
+    font-size: 6rem;
+  }
+
+  .writeMe {
+    align-self: center;
+    width: 90%;
+  }
+
+  .chat {
+    padding: 5px 15px;
+    top: 35%;
+    right: -55px;
+  }
+
+  .writeMe form button {
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 8px;
+  }
 }
