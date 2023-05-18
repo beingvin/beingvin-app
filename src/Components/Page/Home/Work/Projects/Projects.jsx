@@ -3,9 +3,10 @@ import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 
-function ProjectList(props) {
+function Projects(props) {
   const data = props.data;
   const dataLength = Object.keys(data).length;
+  
 
   return (
     <div className={style.cards}>
@@ -14,7 +15,7 @@ function ProjectList(props) {
           return (
             <div key={data.id} className={style.card}>
               <div className={style.image}>
-                <img src={data.link} alt="image" />
+                <img src={data.link} alt="Project" />
               </div>
               <div className={style.cardTitle}>
                 <h2>{data.name}</h2>
@@ -27,7 +28,7 @@ function ProjectList(props) {
                 <a
                   href="http://www.beingvin.com"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                   className={style.externalLinkIcon}
                 >
                   <FontAwesomeIcon icon={faExternalLinkSquare} />
@@ -43,4 +44,4 @@ function ProjectList(props) {
   );
 }
 
-export default ProjectList;
+export default Projects;

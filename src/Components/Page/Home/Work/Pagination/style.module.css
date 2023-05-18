@@ -1,0 +1,50 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination li {
+  margin: 1% 2%;
+  text-align: center;
+  font-size: small;
+  /* align-self: center; */
+  padding: 0.5%;
+  transition-duration: .3s;
+
+}
+
+.previous,
+.next {
+  border: 1px solid #fd2155;
+  color: aliceblue;
+  border-radius: 25px;
+  padding: 5px 15px !important;
+}
+
+.previous:hover,
+.next:hover {
+  background-color: #fd2155;
+  color: aliceblue;
+  scale: 1.1;
+
+}
+
+.numbers {
+  color: #fd2155;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.numbers:hover {
+  background-color: #fd2155;
+  color: aliceblue;
+  scale: 1.1;
+}
+
+.active {
+  background-color: #fd2155;
+  color: aliceblue;
+}

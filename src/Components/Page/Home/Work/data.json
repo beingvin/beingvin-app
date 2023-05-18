@@ -98,5 +98,172 @@
                 "type": "Web Design"
             }
         ]
+    },
+    {
+        "id": "7",
+        "name": "Project 7",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "React"
+            },
+            {
+                "id": "2",
+                "type": "Portfolio"
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Project 8",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "React"
+            },
+            {
+                "id": "2",
+                "type": "App"
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Project 9",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "App"
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Project 10",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "11",
+        "name": "Project 11",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Static"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "name": "Project 12",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Web Design"
+            },
+            {
+                "id": "2",
+                "type": "App"
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "name": "Project 13",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "React"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "name": "Project 14",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            }
+        ]
+    },
+    {
+        "id": "15",
+        "name": "Project 15",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            },
+            {
+                "id": "3",
+                "type": "react"
+            }
+        ]
+    }, {
+        "id": "16",
+        "name": "Project 16",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "App"
+            },
+            {
+                "id": "2",
+                "type": "Landing Page"
+            },
+            {
+                "id": "3",
+                "type": "Web Design"
+            }
+        ]
     }
 ]
