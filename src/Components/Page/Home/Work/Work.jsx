@@ -36,7 +36,7 @@ function Work() {
   // const [projects, setProjects] = useState([]);
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(4);
+  const [projectsPerPage] = useState(8);
 
   // Get current projects
   const indexOfLastPage = currentPage * projectsPerPage;

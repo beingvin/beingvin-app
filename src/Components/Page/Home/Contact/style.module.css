@@ -1,6 +1,8 @@
 .section {
   background-color: aliceblue;
   min-height: 0 !important;
+  border-radius: 50px;
+
 }
 
 .wrapper {
@@ -21,7 +23,7 @@
   position: absolute;
   background-color: #3d3d3d;
   padding: 8px 20px;
-  top: 40%;
+  top: 35%;
   right: -60px;
   transform: rotate(-90deg) translateY(-50%);
   z-index: 10;

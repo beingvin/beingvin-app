@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,6 +13,8 @@ import ContactMe from "./ContactMe/ContactMe";
 import "react-multi-carousel/lib/styles.css";
 
 function LearnMore() {
+  const [priceTerms, setPriceTerms] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -108,8 +110,8 @@ function LearnMore() {
                 <FontAwesomeIcon icon={faTimesCircle} /> &nbsp;{" "}
               </li>
             </ul>
+            <button className={style.getStartedBtn}>Get started</button>
           </div>
-          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
 
         <div className={style.card}>
@@ -177,8 +179,8 @@ function LearnMore() {
                 <FontAwesomeIcon icon={faTimesCircle} /> &nbsp;{" "}
               </li>
             </ul>
+            <button className={style.getStartedBtn}>Get started</button>
           </div>
-          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
         </div>
 
         <div className={style.card}>
@@ -246,8 +248,57 @@ function LearnMore() {
                 <b>Wordpress</b>
               </li>
             </ul>
+            <button className={style.getStartedBtn}>Get started</button>
           </div>
-          {/* <div className={style.getStarted}> <button>Get started</button> </div> */}
+        </div>
+      </div>
+      <div>
+        <p
+          className={style.priceTermsBtn}
+          onClick={() => setPriceTerms(!priceTerms)}
+        >
+          <span className={`${priceTerms ? style.rotate : " "}`}>
+            {priceTerms ? "-" : "+"}
+          </span>
+          What is included in the price?
+        </p>
+        <div
+          className={` ${style.priceTerms} ${priceTerms ? style.show : " "}`}
+        >
+          <div>
+            {" "}
+            <ul>
+              <li>Analysis of competitors and target audience</li>
+              <li>Working out the structure of the site</li>
+              <li>Reference Analysis</li>
+              <li>Text prototype</li>
+              <li>Design layout of the whole site</li>
+              <li>adaptation for basic resolutions</li>
+              <li>Modern and appropriate animation</li>
+              <li>Basic SEO optimization, favicon</li>
+              <li>
+                {" "}
+                Technical settings: domain connection, SSL-certificate, feedback
+                forms, etc.
+              </li>
+              <li>Technical pages (success page, 404 error, privacy policy)</li>
+              <li>One language version of the site</li>
+              <li>
+                Providing training for independent use of the site (screen
+                recording with instructions)
+              </li>
+            </ul>
+            <ul>
+              <h5>The price does not include:</h5>
+              <li>
+                Development of corporate identity, logo, text translation, photo
+                processing, calculator development, widgets and any other
+                non-standard functional elements of the site
+              </li>
+              <li>Domain cost</li>
+              <li>Hosting cost</li>
+            </ul>
+          </div>
         </div>
       </div>
       ;{/* ------------------------- contact -------------------------- */}
