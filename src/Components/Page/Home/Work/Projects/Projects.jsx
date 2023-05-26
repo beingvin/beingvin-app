@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Projects(props) {
   const data = props.data;
   const dataLength = Object.keys(data).length;
-  
+  const wrapperRef = useRef(null);
+
+  // // GSAP Animation
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+
+  //   const element = wrapperRef.current.querySelectorAll(`.${style.card}`);
+  //   console.log("projects");
+
+  //   gsap.fromTo(
+  //     element,
+  //     { y: -40, opacity: 0, scale: 0 },
+  //     {
+  //       duration: 1,
+  //       y: 0,
+  //       opacity: 1,
+  //       scale: 1,
+  //       ease: Power3.easeInOut,
+  //       scrollTrigger: {
+  //         trigger: element,
+  //         scroller: "body",
+  //         markers: true,
+  //         start: 1400,
+  //         end: 1800,
+  //         // scrub:2
+  //       },
+  //       stagger: 0.3,
+  //     }
+  //   );
+
+  //   ScrollTrigger.refresh();
+  // }, []);
 
   return (
-    <div className={style.cards}>
+    <div className={style.cards} ref={wrapperRef}>
       {dataLength > 0 ? (
         data.map((data) => {
           return (

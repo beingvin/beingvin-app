@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
-
 import Projects from "./Projects/Projects";
 import data from "./data.json";
 import Pagination from "./Pagination/Pagination";
 import Filter from "./Filter/Filter";
 
 function Work() {
-
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(false);
 

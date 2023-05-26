@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,15 +11,56 @@ import { Link } from "react-router-dom";
 import Logo from "../../Logo/Logo";
 import ContactMe from "./ContactMe/ContactMe";
 import "react-multi-carousel/lib/styles.css";
+import { useIntersection } from "react-use";
+import { gsap, Power3 } from "gsap";
 
 function LearnMore() {
   const [priceTerms, setPriceTerms] = useState(false);
+  // const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const sectionRef = useRef(null);
+  const cardWrapper = useRef(null);
 
-  const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
+  const interSection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  const FadeIn = (elements) => {
+    console.log("in");
+    gsap.to(elements, {
+      duration: 1,
+      opacity: 1,
+      y: -0,
+      ease: "power4.out",
+      yoyo: true,
+      each: 0.1,
+    });
+  };
+
+  const FadeOut = (elements) => {
+    console.log("out");
+
+    gsap.to(elements, {
+      duration: 1,
+      opacity: 0,
+      y: -60,
+      ease: "power4.out",
+      yoyo: true,
+      each: 0.1,
+    });
+  };
+
+  // interSection && interSection.intersectionRatio < 0.5
+  //   ? FadeOut(cardWrapper)
+  //   : FadeIn(cardWrapper);
+
+  interSection && interSection.intersectionRatio < 0.5
+    ? console.log("In")
+    : console.log("Out");
+
   return (
     <motion.div
       className={style.wrapper}
@@ -34,6 +75,7 @@ function LearnMore() {
         x: window.innerWidth,
         transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
       }}
+      ref={sectionRef}
     >
       <Link to={"/"}>
         <Logo />

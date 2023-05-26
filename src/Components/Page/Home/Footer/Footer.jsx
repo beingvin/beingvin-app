@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,14 +8,46 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   console.log(currentYear);
 
+  // GSAP Animation
+  const wrapperRef = useRef(null);
+
+  // gsap.registerPlugin(ScrollTrigger);
+
+  // useEffect(() => {
+  //   const element = wrapperRef.current;
+
+  //   gsap.fromTo(
+  //     element,
+  //     { y: 20, opacity: 0 },
+  //     {
+  //       duration: 1,
+  //       y: 0,
+  //       opacity: 1,
+  //       ease: Power3.easeInOut,
+  //       scrollTrigger: {
+  //         trigger: element,
+  //         scroller: "body",
+  //         // markers: true,
+  //         start: "top 80%",
+  //         // end: "top top",
+  //         // scrub:2
+  //       },
+  //       // stagger: 0.3,
+  //     }
+  //   );
+  //    ScrollTrigger.refresh();
+  // }, []);
+
   return (
-    <section className={style.section}>
+    <section className={style.section} ref={wrapperRef}>
       <footer className={style.footer}>
         {/* <h2>Schedule a call and have us listen to your specific case</h2> */}
 
@@ -36,7 +68,11 @@ function Footer() {
             >
               <FontAwesomeIcon icon={faFacebook} />
 
-              <a href="https://www.facebook.com/beingvin" target="_blank" rel="noreferrer" >
+              <a
+                href="https://www.facebook.com/beingvin"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
             </motion.li>
@@ -48,7 +84,11 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faTwitter} />
-              <a href="https://twitter.com/beingvin" target="_blank" rel="noreferrer" >
+              <a
+                href="https://twitter.com/beingvin"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </motion.li>
@@ -60,7 +100,11 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faInstagram} />
-              <a href="https://instagram.com/beingvin" target="_blank" rel="noreferrer" >
+              <a
+                href="https://instagram.com/beingvin"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {" "}
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
@@ -72,7 +116,11 @@ function Footer() {
               }}
             >
               <FontAwesomeIcon icon={faGithub} />
-              <a href="https://github.com/beingvin" target="_blank" rel="noreferrer" >
+              <a
+                href="https://github.com/beingvin"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {" "}
                 <FontAwesomeIcon icon={faGithub} />
               </a>

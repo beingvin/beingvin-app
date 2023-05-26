@@ -10,23 +10,23 @@ import ContactMe from "./ContactMe/ContactMe";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    targetRef: sectionRef,
-    offset: ["start start", "end start"],
-  });
+  // const sectionRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   targetRef: sectionRef,
+  //   offset: ["start start", "end start"],
+  // });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <motion.section
       className={style.section}
       id="About"
-      initial={{ opacity: 0, x: -400 }}
+      // initial={{ opacity: 0, x: -400 }}
       animate={{
         opacity: 1,
         x: 0,
@@ -38,7 +38,7 @@ function About() {
         transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
       }}
     >
-      <div ref={sectionRef} style={{ opacity }} className={style.wrapper}>
+      <div className={style.wrapper}>
         <Link to={"/"}>
           <Logo />
         </Link>
@@ -68,7 +68,9 @@ function About() {
           </div>
         </section>
         <section className={style.tools}>
-        <div className="sectionTitle"><h1> •• MY TOOLS</h1></div>
+          <div className="sectionTitle">
+            <h1> •• MY TOOLS</h1>
+          </div>
           <Tools />
         </section>
 

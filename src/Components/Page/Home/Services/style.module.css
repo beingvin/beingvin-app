@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  /* opacity: 0; */
   width: 100%;
   height: 100%;
   padding: 4% 4%;
@@ -15,7 +16,8 @@
   color: aliceblue;
   padding: 5% 8%;
   border-radius: 10px;
-  transition-duration: 0.8s;
+  /* transition-duration: 0.8s; */
+  transition: .8s cubic-bezier(.25,.46,.45,.94);
 }
 
 .card:hover {
