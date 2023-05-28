@@ -22,10 +22,6 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-
-
-
-
 export default function BugTracker() {
   const [data, setData] = useState([]);
   const [updateBtn, setUpdateBtn] = useState(false);
@@ -148,7 +144,6 @@ export default function BugTracker() {
           <p>
             <Link to={"/"}>Home</Link>
           </p>
-
         </div>
       </div>
       <div className={style.wrapper}>
@@ -160,6 +155,7 @@ export default function BugTracker() {
               placeholder="feature.."
               ref={featureRef}
               onChange={(e) => setBug({ ...bug, feature: e.target.value })}
+              className={style.input}
             />
             <input
               type="text"
@@ -167,6 +163,7 @@ export default function BugTracker() {
               ref={titleRef}
               placeholder="add title.."
               onChange={(e) => setBug({ ...bug, title: e.target.value })}
+              className={style.input}
             />
             <input
               type="text"
@@ -174,6 +171,7 @@ export default function BugTracker() {
               ref={descriptionRef}
               placeholder="add description"
               onChange={(e) => setBug({ ...bug, description: e.target.value })}
+              className={style.input}
             />
             <input
               type="text"
@@ -181,12 +179,14 @@ export default function BugTracker() {
               ref={addedByRef}
               placeholder="added by.."
               onChange={(e) => setBug({ ...bug, addedBy: e.target.value })}
+              className={style.input}
             />
             <select
               name="status"
               ref={statusRef}
               defaultValue={"DEFAULT"}
               onChange={(e) => setBug({ ...bug, status: e.target.value })}
+              className={style.select}
             >
               <option value="DEFAULT" disabled>
                 status
@@ -195,6 +195,7 @@ export default function BugTracker() {
               <option value={false}>pending</option>
             </select>
             <button
+              className={style.button}
               type="submit"
               onClick={updateBtn ? handleUpdate : handleAdd}
             >
@@ -203,7 +204,7 @@ export default function BugTracker() {
           </form>
         </div>
         <div className={style.bugsTable}>
-          <table>
+          <table className={style.table} >
             <thead>
               <tr>
                 <th>Feature </th>

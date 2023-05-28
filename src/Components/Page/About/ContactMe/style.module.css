@@ -124,8 +124,9 @@
     padding: 10% 2% 0%;
   }
 
-  .socialLinks {
+  .chat .socialLinks {
     margin-bottom: 10%;
+    align-self: self-start ;
   }
 
   .chat h1 {
@@ -157,8 +158,9 @@
     padding: 10% 2% 0%;
   }
 
-  .socialLinks {
+  .chat .socialLinks {
     margin-bottom: 10%;
+    align-self: self-start;
   }
 
   .chat h1 {
@@ -185,8 +187,9 @@
     padding: 10% 2% 1%;
   }
 
-  .socialLinks {
+  .chat .socialLinks {
     margin-bottom: 10%;
+    align-self: self-start;
   }
 
   .chat h1 {
