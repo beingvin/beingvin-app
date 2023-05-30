@@ -1,0 +1,130 @@
+.backGroundDiv {
+  background-color: rgba(0, 0, 0, 0.9);
+  /* position: fixed; */
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  padding: 4% 10%;
+}
+
+.formContainer {
+  position: relative;
+  background-color: aliceblue;
+  border-radius: 80px;
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer > div {
+  /* margin: 0.5%; */
+  width: 70%;
+  text-align: center;
+}
+
+.formContainer .header > div {
+  margin: 2% 0;
+}
+
+.formContainer .header .title {
+  font-size: 2.2rem;
+}
+
+.backBtn {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 2.5rem;
+}
+
+.closeBtn {
+  /* color: aliceblue; */
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 2.5rem;
+}
+
+.form {
+  margin: auto;
+  width: 100%;
+}
+
+
+
+.form .input,
+.textarea {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  resize: none;
+  padding: 1.8% 4%;
+  background-color: #c2c2c2;
+  color: #fd2155;
+  margin: 1%;
+}
+
+.form .input::placeholder,
+.textarea::placeholder {
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+.form .proDetails,
+.clientDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .proDetails > div {
+  margin: 1% 0;
+}
+
+.form .clientDetails > div {
+  display: flex;
+}
+.form .clientDetails > div .input {
+  width: 50%;
+}
+
+.form .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.form .submitBtn,
+.button {
+  border: none;
+  min-width: 100px;
+  background-color: transparent;
+  color: #3d3d3d;
+  border: 2px solid #3d3d3d;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 12px;
+  transition: 0.2s ease-in-out;
+  margin: 1%;
+}
+
+.form .submitBtn {
+  font-weight: 900;
+  margin: 2%;
+}
+
+.form .submitBtn:hover,
+.button:hover {
+  background-color: transparent;
+  color: #fff;
+  background-color: #fe005d;
+  border: 2px solid #fe005d;
+}

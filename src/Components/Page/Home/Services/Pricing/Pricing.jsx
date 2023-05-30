@@ -13,53 +13,55 @@ import ContactMe from "./ContactMe/ContactMe";
 import "react-multi-carousel/lib/styles.css";
 import { useIntersection } from "react-use";
 import { gsap, Power3 } from "gsap";
+import GetStarted from "./GetStarted/GetStarted";
 
 function LearnMore() {
   const [priceTerms, setPriceTerms] = useState(false);
+  const [getStarted, setGetStarted] = useState(false);
   // const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
   // const navigate = useNavigate();
 
   const sectionRef = useRef(null);
   const cardWrapper = useRef(null);
 
-  const interSection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
+  // const interSection = useIntersection(sectionRef, {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.5,
+  // });
 
-  const FadeIn = (elements) => {
-    console.log("in");
-    gsap.to(elements, {
-      duration: 1,
-      opacity: 1,
-      y: -0,
-      ease: "power4.out",
-      yoyo: true,
-      each: 0.1,
-    });
-  };
+  // const FadeIn = (elements) => {
+  //   console.log("in");
+  //   gsap.to(elements, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     y: -0,
+  //     ease: "power4.out",
+  //     yoyo: true,
+  //     each: 0.1,
+  //   });
+  // };
 
-  const FadeOut = (elements) => {
-    console.log("out");
+  // const FadeOut = (elements) => {
+  //   console.log("out");
 
-    gsap.to(elements, {
-      duration: 1,
-      opacity: 0,
-      y: -60,
-      ease: "power4.out",
-      yoyo: true,
-      each: 0.1,
-    });
-  };
+  //   gsap.to(elements, {
+  //     duration: 1,
+  //     opacity: 0,
+  //     y: -60,
+  //     ease: "power4.out",
+  //     yoyo: true,
+  //     each: 0.1,
+  //   });
+  // };
 
   // interSection && interSection.intersectionRatio < 0.5
   //   ? FadeOut(cardWrapper)
   //   : FadeIn(cardWrapper);
 
-  interSection && interSection.intersectionRatio < 0.5
-    ? console.log("In")
-    : console.log("Out");
+  // interSection && interSection.intersectionRatio < 0.5
+  //   ? console.log("In")
+  //   : console.log("Out");
 
   return (
     <motion.div
@@ -152,7 +154,15 @@ function LearnMore() {
                 <FontAwesomeIcon icon={faTimesCircle} /> &nbsp;{" "}
               </li>
             </ul>
-            <button className={style.getStartedBtn}>Get started</button>
+            <button
+              className={style.getStartedBtn}
+              onClick={() => {
+                console.log("get started clicked");
+                setGetStarted(true);
+              }}
+            >
+              Get started
+            </button>
           </div>
         </div>
 
@@ -221,7 +231,12 @@ function LearnMore() {
                 <FontAwesomeIcon icon={faTimesCircle} /> &nbsp;{" "}
               </li>
             </ul>
-            <button className={style.getStartedBtn}>Get started</button>
+            <button
+              className={style.getStartedBtn}
+              onClick={() => setGetStarted(true)}
+            >
+              Get started
+            </button>
           </div>
         </div>
 
@@ -290,10 +305,17 @@ function LearnMore() {
                 <b>Wordpress</b>
               </li>
             </ul>
-            <button className={style.getStartedBtn}>Get started</button>
+            <button
+              className={style.getStartedBtn}
+              onClick={() => setGetStarted(true)}
+            >
+              Get started
+            </button>
           </div>
         </div>
       </div>
+      {getStarted ? <GetStarted setGetStarted={setGetStarted} /> : ""}
+      {/* <GetStarted /> */}
       <div>
         <p
           className={style.priceTermsBtn}
