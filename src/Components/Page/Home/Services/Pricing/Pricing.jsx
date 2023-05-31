@@ -18,7 +18,7 @@ import GetStarted from "./GetStarted/GetStarted";
 function LearnMore() {
   const [priceTerms, setPriceTerms] = useState(false);
   const [getStarted, setGetStarted] = useState(false);
-  // const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
+  const transition = { duration: 1.4, ease: [0.6, 0.1, 0.05, 0.9] };
   // const navigate = useNavigate();
 
   const sectionRef = useRef(null);
@@ -66,7 +66,7 @@ function LearnMore() {
   return (
     <motion.div
       className={style.wrapper}
-      initial={{ opacity: 0, x: -400 }}
+      initial={{ opacity: 0, x: 400 }}
       animate={{
         opacity: 1,
         x: 0,
@@ -74,7 +74,7 @@ function LearnMore() {
       }}
       exit={{
         opacity: 0,
-        x: window.innerWidth,
+        x: - window.innerWidth,
         transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
       }}
       ref={sectionRef}

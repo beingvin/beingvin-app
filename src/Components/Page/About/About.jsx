@@ -10,23 +10,23 @@ import ContactMe from "./ContactMe/ContactMe";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  // const sectionRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   targetRef: sectionRef,
-  //   offset: ["start start", "end start"],
-  // });
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    targetRef: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
-  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <motion.section
       className={style.section}
       id="About"
-      // initial={{ opacity: 0, x: -400 }}
+      initial={{ opacity: 0, x: -400 }}
       animate={{
         opacity: 1,
         x: 0,

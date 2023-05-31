@@ -1,8 +1,7 @@
 import React from "react";
-import style from "./style.module.css";
-import { color } from "framer-motion";
+import style from "../style.module.css";
 
-function chooseType({ setPage, formData, setFormData }) {
+function chooseTimeframe({ setPage, formData, setFormData }) {
   const btnStyle = {
     backgroundColor: "#fe005d",
     border: "2px solid #fe005d",
@@ -13,63 +12,63 @@ function chooseType({ setPage, formData, setFormData }) {
       <div className={style.buttons}>
         <button
           className={style.button}
-          value="Single"
-          style={formData.type === "Single" ? btnStyle : {}}
+          value="Standard"
+          style={formData.timeframe === "Standard" ? btnStyle : {}}
           onClick={(e) => {
             setFormData({
               ...formData,
-              type: e.target.value,
+              timeframe: e.target.value,
             });
             setPage((currentPage) => currentPage + 1);
           }}
         >
-          Single
+          Standard
         </button>
         <button
           className={style.button}
-          value="Multipage"
-          style={formData.type === "Multipage" ? btnStyle : {}}
+          value="WITHIN 2 MONTH"
+          style={formData.timeframe === "WITHIN 2 MONTH" ? btnStyle : {}}
           onClick={(e) => {
             setFormData({
               ...formData,
-              type: e.target.value,
+              timeframe: e.target.value,
             });
             setPage((currentPage) => currentPage + 1);
           }}
         >
-          Multipage
+          WITHIN 2 MONTH
         </button>
         <button
           className={style.button}
-          value="Landing Page"
-          style={formData.type === "Landing Page" ? btnStyle : {}}
+          value="WITHIN 3 MONTH"
+          style={formData.timeframe === "WITHIN 3 MONTH" ? btnStyle : {}}
           onClick={(e) => {
             setFormData({
               ...formData,
-              type: e.target.value,
+              timeframe: e.target.value,
             });
             setPage((currentPage) => currentPage + 1);
           }}
         >
-          Landing Page
+          WITHIN 3 MONTH
         </button>
         <button
           className={style.button}
-          value="Website Design"
-          style={formData.type === "Website Design" ? btnStyle : {}}
+          value="WITHIN 6 MONTH"
+          style={formData.timeframe === "WITHIN 6 MONTH" ? btnStyle : {}}
           onClick={(e) => {
             setFormData({
               ...formData,
-              type: e.target.value,
+              timeframe: e.target.value,
             });
             setPage((currentPage) => currentPage + 1);
           }}
         >
-          Website Design
+          WITHIN 6 MONTH
         </button>
       </div>
     </>
   );
 }
 
-export default chooseType;
+export default chooseTimeframe;

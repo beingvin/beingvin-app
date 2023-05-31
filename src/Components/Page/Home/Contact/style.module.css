@@ -138,6 +138,16 @@ textarea::placeholder {
   font-family: "Courier New", Courier, monospace;
 }
 
+.writeMe form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.writeMe form > div input {
+ width: 49%;
+}
+
+
 .writeMe form button {
   border: none;
   background-color: transparent;

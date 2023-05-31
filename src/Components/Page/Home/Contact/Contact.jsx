@@ -5,12 +5,40 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Email } from "./SMTP/smtp";
 
 function Contact() {
   // GSAP Animation
   const wrapperRef = useRef(null);
 
   // gsap.registerPlugin(ScrollTrigger);
+
+  const sendMail = (e) => {
+    e.preventDefault();
+
+    const name = e.target.Name.value;
+    const email = e.target.Email.value;
+    const mobile = e.target.Mobile.value;
+    const website = e.target.Website.value;
+    const message = e.target.Message.value;
+
+    console.log(e.target.Name.value);
+
+    Email.send({
+      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
+      To: "pythont2021@gmail.com",
+      From: "notification@beingvin.com",
+      Subject: "Recieved New Client Details | Beingvin.com",
+      Body: `Name : ${name} <br/>
+      Email Id : ${email}  <br/>
+      Mobile No : ${mobile}  <br/>
+      Website link : ${website}  <br/>
+      Message : ${message} <br>`,
+    }).then((message) =>
+      alert(`Thank You ${name} ! \n I'll Get In Touch With You Soon.`)
+    );
+    e.target.reset();
+  };
 
   // useEffect(() => {
   //   const element = wrapperRef.current;
@@ -74,16 +102,32 @@ function Contact() {
           </div>
         </div>
         <div className={style.writeMe}>
-          <form action="#" method="post">
+          <form action="#" method="post" onSubmit={sendMail} id="getInTouch">
             <legend>GET IN TOUCH</legend>
-            <input type="text" name="Name" placeholder="Your Name " />
-            <input type="text" name="Email" placeholder="Your Email" />
-            <input type="text" name="Pname" placeholder="Your Website" />
+            <input type="text" name="Name" placeholder="Your Name " required />
+            <div>
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <input
+                type="tel"
+                maxLength="12"
+                name="Mobile"
+                title="You can only enter numbers, Format: +91 123-456-7890"
+                placeholder="Your Mobile"
+                required
+              />
+            </div>
+            <input type="url" name="Website" placeholder="Your Website" />
             <textarea
               name="Message"
               rows="4"
               cols="30"
               placeholder="Give a few details about what you need"
+              required
             ></textarea>
             <button type="submit">Submit</button>
           </form>

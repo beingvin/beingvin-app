@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faClose } from "@fortawesome/free-solid-svg-icons";
-import ChoosePlan from "./ChoosePlan";
-import ChooseType from "./ChooseType";
-import ProjectDetails from "./ProjectDetails";
-import ChooseBudget from "./ChooseBudget";
-import ChooseTimeframe from "./ChooseTimeframe";
-import ClientDetails from "./ClientDetails";
+import ChoosePlan from "./Steps/ChoosePlan";
+import ChooseType from "./Steps/ChooseType";
+import ProjectDetails from "./Steps/ProjectDetails";
+import ChooseBudget from "./Steps/ChooseBudget";
+import ChooseTimeframe from "./Steps/ChooseTimeframe";
+import ClientDetails from "./Steps/ClientDetails";
+import { Email } from "./SMTP/smtp";
 
 function GetStarted({ setGetStarted }) {
   const [page, setPage] = useState(1);
@@ -33,6 +34,33 @@ function GetStarted({ setGetStarted }) {
       adDetails: "",
     },
   });
+
+  const sendMail = (e) => {
+    e.preventDefault();
+    console.log("Sending...");
+    Email.send({
+      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
+      To: "pythont2021@gmail.com",
+      From: "notification@beingvin.com",
+      Subject: "Recived New Project | Beingvin.com",
+      Body: `Name : ${formData.clientDetails.name} <br/> 
+      Email Id : ${formData.clientDetails.email}  <br/> 
+      Mobile No : ${formData.clientDetails.mobile}  <br/>  
+      Additional details : ${formData.clientDetails.adDetails} <br>  
+      Project Type : ${formData.type} <br/> 
+      Project Plan : ${formData.plan}  <br/>  
+      Project Details : ${formData.proDetails}  <br/>  
+      Budget : ${formData.budget}  <br/>  
+      Timeframe : ${formData.timeframe}  <br/>`,
+   
+    }).then((message) =>
+      alert(
+        `Thank You ${formData.clientDetails.name} ! \n I'll contact you soon.`
+      )
+    );
+
+    e.target.reset();
+  };
 
   const displayBody = (page, setPage) => {
     switch (page) {
@@ -125,7 +153,9 @@ function GetStarted({ setGetStarted }) {
           </div>
         </div>
         <div className={style.body}>
-          <form className={style.form}>{displayBody(page, setPage)}</form>
+          <form className={style.form} onSubmit={sendMail}>
+            {displayBody(page, setPage)}
+          </form>
         </div>
       </div>
     </div>

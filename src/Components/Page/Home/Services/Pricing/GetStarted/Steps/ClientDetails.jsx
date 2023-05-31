@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./style.module.css";
+import style from "../style.module.css";
 
 function clientDetailsjsx({ formData, setFormData }) {
   return (
@@ -57,8 +57,9 @@ function clientDetailsjsx({ formData, setFormData }) {
           />
           <input
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            title="You can only enter numbers, Format: 123-456-7890"
+            pattern="[+]{1}[0-9]{2} [0-9]{3}-[0-9]{3}-[0-9]{4}"
+            maxLength="16" 
+            title="You can only enter numbers, Format: +91 123-456-7890"
             placeholder="Your Mobile"
             className={style.input}
             value={formData.clientDetails.mobile}
@@ -96,10 +97,10 @@ function clientDetailsjsx({ formData, setFormData }) {
           <button
             type="submit"
             className={style.submitBtn}
-            onClick={(e) => {
-              e.preventDefault();
-              console.log(formData);
-            }}
+            // onClick={(e) => {
+            //   e.preventDefault();
+            //   console.log(formData);
+            // }}
           >
             SUBMIT
           </button>
