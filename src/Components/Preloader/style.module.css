@@ -1,3 +1,46 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color:#000;
+  width: 100%;
+  height: 100vh;
+}
+
+.countDown {
+  display: flex;
+  margin-top: 50vh;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.countDown h1 {
+  text-align: end;
+  padding: 0 4%;
+  font-size: 6rem;
+  color: #fff;
+}
+
+.logo {
+  width: 500px;
+  height: 500px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  position: absolute;
+  left: 35%;
+  top: 18%;
+}
+
+.logo .img {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  /* left: -15px;
+  top: -15px; */
+}
+
 .figure {
   position: absolute;
   width: 0;
@@ -140,7 +183,6 @@
   -moz-animation: split 2s 0.6666666667s ease infinite;
   animation: split 2s 0.6666666667s ease infinite;
 }
-
 
 @-webkit-keyframes split {
   0% {

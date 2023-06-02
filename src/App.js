@@ -14,7 +14,7 @@ function App() {
     setPreloader(true);
     setTimeout(() => {
       setPreloader(false);
-    }, 3000);
+    }, 7000);
   }, []);
 
   return (
