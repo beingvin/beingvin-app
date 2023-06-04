@@ -8,7 +8,7 @@ import ProjectDetails from "./Steps/ProjectDetails";
 import ChooseBudget from "./Steps/ChooseBudget";
 import ChooseTimeframe from "./Steps/ChooseTimeframe";
 import ClientDetails from "./Steps/ClientDetails";
-import { Email } from "./SMTP/smtp";
+// import { Email } from "./SMTP/smtp";
 
 function GetStarted({ setGetStarted }) {
   const [page, setPage] = useState(1);
@@ -38,7 +38,7 @@ function GetStarted({ setGetStarted }) {
   const sendMail = (e) => {
     e.preventDefault();
     console.log("Sending...");
-    Email.send({
+    window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
       To: "pythont2021@gmail.com",
       From: "notification@beingvin.com",

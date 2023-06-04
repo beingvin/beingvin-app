@@ -5,7 +5,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Email } from "./SMTP/smtp";
+// import { Email } from "./SMTP/smtp";
 
 function Contact() {
   // GSAP Animation
@@ -24,7 +24,7 @@ function Contact() {
 
     console.log(e.target.Name.value);
 
-    Email.send({
+    window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
       To: "pythont2021@gmail.com",
       From: "notification@beingvin.com",

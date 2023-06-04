@@ -35,7 +35,7 @@
   position: relative;
   /* padding-bottom: 40px; */
   transform: translateZ(0px);
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   border-radius: 20px;
 }
 
@@ -67,19 +67,19 @@
   /* border-radius: 25px; */
 }
 
-.card:hover:before {
+/* .card:hover:before {
   transform: scaleY(1);
   border-radius: 20px;
-}
+} */
 
-.card:hover:after {
+/* .card:hover:after {
   transform: scaleX(1);
   border-radius: 20px;
-}
+} */
 
 .card:hover {
   margin-top: -30px;
-  box-shadow: -8px 5px 15px #fd2155;
+  box-shadow: 0px 15px 0px #fd2155;
   border-radius: 20px;
 }
 
