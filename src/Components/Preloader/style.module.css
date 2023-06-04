@@ -2,35 +2,49 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color:#000;
-  width: 100%;
+  background-color: #000000;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0%;
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background-color: #fd2155;
+  transition: width 4s;
+  height: 3px;
 }
 
 .countDown {
   display: flex;
-  margin-top: 50vh;
+  margin-top: 90vh;
   position: relative;
   justify-content: center;
-  overflow: hidden;
-
 }
 
-.countDown h1 {
+.countDown > div {
+  padding: 1% 2%;
+  overflow: hidden;
+}
+
+.countDown p {
   text-align: end;
-  padding: 0 4%;
-  font-size: 6rem;
-  color: #fff;
+  font-size: 1rem;
+  color: #fd2155;
 }
 
 .logo {
   width: 500px;
   height: 500px;
-  /* border-radius: 50%; */
   overflow: hidden;
   position: absolute;
-  left: 35%;
-  top: 18%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .logo .img {
@@ -41,7 +55,7 @@
   top: -15px; */
 }
 
-.figure {
+/* .figure {
   position: absolute;
   width: 0;
   height: 0;
@@ -283,5 +297,73 @@
     -ms-transform: rotate3d(0.5, 1, 0, 180deg);
     -o-transform: rotate3d(0.5, 1, 0, 180deg);
     transform: rotate3d(0.5, 1, 0, 180deg);
+  }
+} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .progressBar {
+    bottom: 0vh;
+  }
+  .countDown {
+    display: none;
+  }
+
+  .logo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo .img {
+    width: 400px;
+    height: 400px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .progressBar {
+    bottom: 0vh;
+  }
+  .countDown {
+    margin-top: 90vh;
+  }
+
+  .countDown > div {
+    padding: 1.6%;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo .img {
+    width: 400px;
+    height: 400px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .progressBar {
+    bottom: 0vh;
+  }
+  .countDown {
+    margin-top: 90vh;
+  }
+
+  .countDown > div {
+    padding: 1% 2%;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo .img {
+    width: 400px;
+    height: 400px;
   }
 }
