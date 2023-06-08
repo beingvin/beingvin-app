@@ -96,8 +96,9 @@ function Contact() {
             <a
               href="https://wa.me/+919011732439?text=Hi there ! i need a website"
               target="_blank"
+              rel="noreferrer"
             >
-              Say Hi &nbsp; <FontAwesomeIcon icon={faWhatsapp} />
+              Say Hi &nbsp; <span><FontAwesomeIcon icon={faWhatsapp} /></span>
             </a>
           </div>
         </div>

@@ -14,7 +14,7 @@ main {
 
 .title h1 {
   position: relative;
-  color: #fe005d;
+  color: var(--brand-color-dark-first);
   font-size: 6rem;
   font-weight: 600;
   z-index: 10;
@@ -22,6 +22,7 @@ main {
 
 .subTitle {
   color: #3d3d3d;
+  color: var(--brand-color-dark-third);
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -45,8 +46,8 @@ main {
 .aboutBtn button {
   border: none;
   background-color: transparent;
-  color: #3d3d3d;
-  border: 2px solid #3d3d3d;
+  color: var(--brand-color-dark-third);
+  border: 2px solid var(--brand-color-dark-third);
   border-radius: 20px;
   font-size: 15px;
   /* font-weight: 500; */
@@ -57,9 +58,9 @@ main {
 
 .aboutBtn button:hover {
   background-color: transparent;
-  color: #fe005d;
-  background-color: #3d3d3d;
-  border: 2px solid #3d3d3d;
+  color: var(--brand-color-dark-first);
+  background-color: var(--brand-color-dark-third);
+  border: 2px solid var(--brand-color-dark-third);
 }
 
 .scrollIcon {
@@ -174,7 +175,7 @@ main {
     font-size: 1.3rem;
     text-align: left;
   }
- 
+
   .aboutBtn button {
     font-size: 16px;
     padding: 9px;
@@ -205,8 +206,6 @@ main {
 }
 
 @media only screen and (min-width: 770px) and (max-width: 1024px) {
- 
-  
   main {
     padding: 15% 0% 0;
   }
@@ -226,8 +225,6 @@ main {
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1199px) {
-
-
   main {
     padding: 10% 0% 0;
   }

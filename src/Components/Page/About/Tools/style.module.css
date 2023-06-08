@@ -19,6 +19,9 @@
   justify-content: center;
   align-content: center;
   font-size: medium;
+  /* color: var(--brand-color-light-fourth); */
+  color: var(--brand-color-light-first);
+
 }
 
 .tool ul li svg {
@@ -30,7 +33,7 @@
 }
 
 .tool ul li svg *:hover {
-  fill: #fd2155;
+  fill: var(--brand-color-dark-first);
 }
 
 .react {

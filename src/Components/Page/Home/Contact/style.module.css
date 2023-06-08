@@ -1,8 +1,7 @@
 .section {
-  background-color: aliceblue;
+  background-color: var(--solid-color-fourth);
   min-height: 0 !important;
   border-radius: 50px;
-
 }
 
 .wrapper {
@@ -21,20 +20,22 @@
 .chat {
   display: inline-block;
   position: absolute;
-  background-color: #3d3d3d;
+  background-color: var(--brand-color-dark-first);
   padding: 8px 20px;
   top: 35%;
   right: -60px;
   transform: rotate(-90deg) translateY(-50%);
+  transition: 0.3s;
   z-index: 10;
+  border-radius: 10px 10px 0 0;
 }
 
 .chat a {
-  color: #fff;
+  color: var(--solid-color-second);
 }
 
 .chat:hover {
-  background-color: green;
+  background-color: var(--solid-color-third);
 }
 
 .talk h1 {
@@ -55,7 +56,7 @@
   right: 0;
   width: 0%;
   height: 3px;
-  background-color: #fd2155;
+  background-color: var(--brand-color-light-first);
   transition: width 0.5s;
 }
 
@@ -64,7 +65,7 @@
 }
 
 .talk h1 a {
-  color: #3d3d3d;
+  color: var(--brand-color-dark-third);
 }
 
 .talk h1 a span {
@@ -86,7 +87,7 @@
 }
 
 .talk h1 a:hover span svg {
-  color: #fd2155;
+  color: var(--brand-color-dark-first);
   position: relative;
   animation: move 1s ease-in-out 0s;
 }
@@ -102,15 +103,13 @@
 
 .tagLines p {
   text-align: center;
-  color: #3d3d3d;
-  /* color: #fe005d; */
+  color: var(--brand-color-light-third-third);
   font-size: 1.3rem;
 }
 
 .writeMe {
   width: 35%;
   align-self: center;
-
 }
 
 .writeMe form {
@@ -121,6 +120,11 @@
   padding: 1% 0%;
 }
 
+.writeMe form legend {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--brand-color-dark-third);
+}
+
 .writeMe form input,
 textarea {
   border: none;
@@ -128,13 +132,14 @@ textarea {
   border-radius: 10px;
   resize: none;
   padding: 3% 4%;
-  background-color: #c2c2c2;
-  color: #fd2155;
+  /* background-color: var(--light-color-fourth); */
+  background-color: var(--brand-color-light-third);
+  color: var(--solid-color-second);
 }
 
 .writeMe form input::placeholder,
 textarea::placeholder {
-  color: #fff;
+  color: var(--brand-color-dark-fourth);
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -144,15 +149,14 @@ textarea::placeholder {
 }
 
 .writeMe form > div input {
- width: 49%;
+  width: 49%;
 }
-
 
 .writeMe form button {
   border: none;
   background-color: transparent;
-  color: #3d3d3d;
-  border: 2px solid #3d3d3d;
+  color: var(--brand-color-dark-third);
+  border: 2px solid var(--brand-color-dark-third);
   border-radius: 20px;
   font-size: 20px;
   /* font-weight: 5  00; */
@@ -162,9 +166,9 @@ textarea::placeholder {
 
 .writeMe form button:hover {
   background-color: transparent;
-  color: #fff;
-  background-color: #fe005d;
-  border: 2px solid #fe005d;
+  color: var(--solid-color-second);
+  background-color: var(--brand-color-dark-first);
+  border: 2px solid var(--brand-color-dark-first);
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -172,7 +176,6 @@ textarea::placeholder {
   .wrapper {
     flex-direction: column;
     padding: 10% 4%;
-
   }
 
   .talk h1 {

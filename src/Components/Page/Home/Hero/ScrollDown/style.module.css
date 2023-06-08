@@ -9,14 +9,13 @@
 
 .scroll svg {
   width: 1.5rem;
-  fill: #fe005d;
+  fill: var(--brand-color-dark-first);
   transition-duration: 0.3s;
 }
 
 .scroll svg:hover {
   width: 1.6rem;
   fill: #cecece;
-
 }
 
 @keyframes scroll {

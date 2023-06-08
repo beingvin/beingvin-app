@@ -12,8 +12,7 @@
 
 .card {
   position: relative;
-  background-color: #222222;
-  color: aliceblue;
+  background-color: var(--dark-color-second);
   padding: 5% 8%;
   border-radius: 10px;
   /* transition-duration: 0.8s; */
@@ -21,15 +20,17 @@
 }
 
 .card:hover {
-  background-color: #333333;
+  background-color:var(--dark-color-fifth);
 }
 
 .card h3 {
   font-size: 2rem;
+  color: var(--brand-color-light-fourth);
+
 }
 
-.cardspan {
-  color: #626262;
+.card span {
+  color: var(--brand-color-light-first);
 }
 
 .hrThin {
@@ -38,11 +39,11 @@
   width: 90%;
   border: none;
   height: 0.2px;
-  background: #272727;
+  background-color: var(--light-color-first);
 }
 
 .card p {
-  color: #cecece;
+  color: var(--light-color-second);
 }
 
 .card button {
@@ -50,17 +51,17 @@
   margin-top: 30px;
   bottom: 30px;
   padding: 15px;
-  border: 1px solid #fd2155;
+  border: 1px solid var(--brand-color-light-first);
   background-color: transparent;
-  color: #cecece;
+  color: var(--brand-color-dark-fourth);
   font-weight: 500;
   border-radius: 20px;
   transition-duration: 0.5s;
 }
 
 .card button:hover {
-  background-color: #fd2155;
-  color: #cecece;
+  background-color:var(--brand-color-dark-first);
+  color: var(--brand-color-dark-fourth);
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color:var(--solid-color-first);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -13,7 +13,7 @@
   bottom: 0%;
   /* left: 50%; */
   /* transform: translate(-50%, -50%); */
-  background-color: #fd2155;
+  background-color: var(--brand-color-dark-first);
   transition: width 4s;
   height: 3px;
 }
@@ -33,7 +33,7 @@
 .countDown p {
   text-align: end;
   font-size: 1rem;
-  color: #fd2155;
+  color: var(--brand-color-dark-fourth); 
 }
 
 .logo {

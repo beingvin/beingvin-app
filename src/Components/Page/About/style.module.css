@@ -4,14 +4,13 @@
   height: 100%;
   padding: 6% 4% 2%;
   /* background-color: aliceblue; */
-  color: #fff;
 }
 
 .mypic {
   position: relative;
-  background-color: #fff;
+  background-color: var(--brand-color-light-fourth);
   border-radius: 50%;
-  border: 5px solid #cecece;
+  border: 5px solid var(--brand-color-light-fourth);
   /* margin-top: 20%; */
   top: 20%;
   left: 50%;
@@ -37,6 +36,8 @@
   font-size: 1rem;
   margin: 2% 0;
   font-style: italic;
+  /* color: var(--solid-color-second); */
+  color: var(--brand-color-dark-fourth);
 }
 
 .tools {

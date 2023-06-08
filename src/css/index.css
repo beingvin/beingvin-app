@@ -1,5 +1,253 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Space+Grotesk:wght@500&display=swap");
 
+.variables {
+  /* ---------------------------- color variables  ------------------------------- */
+
+  /* body */
+  --body-bg-color: #0f0f0f;
+
+  /* heading */
+  /* --section-headngs-text: #cecece;
+  --section-headngs-border: #fd2155;
+  --section-headngs-border-hover: #cecece; */
+
+  /* hero  */
+  /* --hero-title: #fd2155;
+  --hero-subTitle: #3d3d3d;
+  --hero-btn-text: #3d3d3d;
+  --hero-btn-text-hover: #fd2155;
+  --hero-btn-bg-hover: #3d3d3d;
+  --hero-btn-border: #3d3d3d; */
+
+  /* services */
+  /* --service-card-bg: #222222;
+  --service-card-bg-hover: #333333;
+  --service-card-title: aliceblue;
+  --service-card-subtitle: #626262;
+  --service-card-description: #cecece;
+  --service-card-hrThin: #272727;
+  --service-card-btn-text: #cecece;
+  --service-card-btn-bg-hover: #fd2155;
+  --service-card-btn-border: #fd2155; */
+
+  /* works  */
+  /* --works-filter-title: #fff;
+  --works-card-title: aliceblue;
+  --works-filter-btn-text-hover: #cecece;
+  --works-filter-btn-border: #cecece;
+  --works-filter-btn-bg-hover: #fd2155;
+  --works-card-btn-text: #fff;
+  --works-card-externalLink-btn: #fff; */
+
+  /* contact  */
+  /* --contact-section-bg: aliceblue;
+  --contact-talk-text: #3d3d3d;
+  --contact-talk-text-border-hover: #fd2155;
+  --contact-tagline-text: #3d3d3d;
+  --contact-input-bg: #cecece;
+  --contact-input-placeholder: #cecece;
+  --contact-input-text: #fd2155;
+  --contact-submit-btn-text: #3d3d3d;
+  --contact-submit-btn-text-hover: #fff;
+  --contact-submit-btn-bg-hover: #fd2155;
+  --contact-submit-btn-border: #3d3d3d;
+  --contact-chat-btn-text: #fff;
+  --contact-chat-btn-bg-hover: green; */
+
+  /* footer  */
+  /* --footer-text: #cecece;
+  --footer-subText: #878787;
+  --footer-hr: #878787;
+  --footer-htThin: #272727;
+  --footer-icon: #878787;
+  --footer-icon-hover: #fd2155; */
+
+  /* about  */
+  /* --about-section-bg: aliceblue;
+  --aboutMe-text: #fff;
+  --aboutMe-pic-bg: #fff;
+  --aboutMe-myTools-svg: #fff;
+  --aboutMe-myTools-svg-hover: #fd2155;
+  --aboutMe-contact-text: #cecece;
+  --aboutMe-contact-text-hover: #fd2155; */
+
+  /* pricing  */
+  /* --pricing-title: aliceblue;
+  --pricing-text: #fff;
+  --pricing-card-bg: #fff;
+  --pricing-card-border: #e3e3e3;
+  --pricing-card-border-after: #fd2155;
+  --pricing-card-border-before: #fd2155;
+  --pricing-card-price-text: #000;
+  --pricing-card-priceValue-text: #474747;
+  --pricing-card-priceStarting-text: #82919f;
+  --pricing-card-priceTimline-text: #82919f;
+  --pricing-card-border-bottom: #d0d0d0;
+  --pricing-card-lastChild-border-bottom: #dbdbdb;
+  --pricing-card-btn-text: #fff;
+  --pricing-card-btn-bg: #474747;
+  --pricing-card-btn-bg-hover: #fd2155;
+
+  --pricing-terms-btn: #82919f;
+  --pricing-terms-btn-hover: #cecece;
+  --pricing-card-title: #fd2155;
+  --pricing-terms-text: #cecece;
+
+  --pricing-contact-text: #cecece;
+  --pricing-contact-text-hover: #fd2155; */
+}
+
+:root {
+  /* ---------------------------- brand colors------------------------------- */
+  /* dark */
+  /* --brand-color-dark-first: #fe005d; */
+  --brand-color-dark-first: #FF005D;
+  /* --brand-color-dark-first: #fd2155; */
+
+  --brand-color-dark-second: #0f0f0f;
+  --brand-color-dark-third: #3d3d3d;
+  --brand-color-dark-fourth: #cecece;
+  /* light */
+  --brand-color-light-first: #f4557a;
+  --brand-color-light-second: #242424;
+  --brand-color-light-third: #626262;
+  --brand-color-light-fourth: #e3e3e3;
+
+  /* ---------------------------- dark colors------------------------------- */
+  --dark-color-first: #121214;
+  --dark-color-second: #222222;
+  --dark-color-third: #272727;
+  --dark-color-fourth: #343437;
+  --dark-color-fifth: #333333;
+
+  /* ---------------------------- light colors------------------------------- */
+  --light-color-first: #474747;
+  --light-color-second: #878787;
+  --light-color-third: #d0d0d0;
+  --light-color-fourth: #dbdbdb;
+
+  /* ---------------------------- highlight colors------------------------------- */
+  --text-highlight-light: #82979f;
+
+
+  /* ---------------------------- solid colors------------------------------- */
+  --solid-color-first: black;
+  --solid-color-second: white;
+  --solid-color-third: green;
+  --solid-color-fourth: aliceblue;
+
+  /* body */
+  --body-bg-color: #0f0f0f;
+  --preloader-bg-color: #000;
+
+  --primary-color: #fd2155;
+  --secondary-color: #cecece;
+  --tertiary-color: #fff;
+  --quaternary-color: #3d3d3d;
+  --quinary-color: aliceblue;
+  --senary-color: #878787;
+  --septenary-color: #82919f;
+  --octonary-color: #474747;
+  --nonary-color: #272727;
+  --denary-color: #222222;
+  --eleven-color: #333333;
+  --twelve-color: #626262;
+  --thirteen-color: #dbdbdb;
+  --forteen-color: #d0d0d0;
+  --fifteen-color: #e3e3e3;
+  --sixteen-color: green;
+
+  /* heading */
+  --section-headngs-text: #cecece;
+  --section-headngs-border: #fd2155;
+  --section-headngs-border-hover: #cecece;
+
+  /* hero  */
+  --hero-title: #fd2155;
+  --hero-subTitle: #3d3d3d;
+  --hero-btn-text: #3d3d3d;
+  --hero-btn-text-hover: #fd2155;
+  --hero-btn-bg-hover: #3d3d3d;
+  --hero-btn-border: #3d3d3d;
+
+  /* services */
+  --service-card-bg: #222222;
+  --service-card-bg-hover: #333333;
+  --service-card-title: aliceblue;
+  --service-card-subtitle: #626262;
+  --service-card-description: #cecece;
+  --service-card-hrThin: #272727;
+  --service-card-btn-text: #cecece;
+  --service-card-btn-bg-hover: #fd2155;
+  --service-card-btn-border: #fd2155;
+
+  /* works  */
+  --works-filter-title: #fff;
+  --works-card-title: aliceblue;
+  --works-filter-btn-text-hover: #cecece;
+  --works-filter-btn-border: #cecece;
+  --works-filter-btn-bg-hover: #fd2155;
+  --works-card-btn-text: #fff;
+  --works-card-externalLink-btn: #fff;
+
+  /* contact  */
+  --contact-section-bg: aliceblue;
+  --contact-talk-text: #3d3d3d;
+  --contact-talk-text-border-hover: #fd2155;
+  --contact-tagline-text: #3d3d3d;
+  --contact-input-bg: #cecece;
+  --contact-input-placeholder: #cecece;
+  --contact-input-text: #fd2155;
+  --contact-submit-btn-text: #3d3d3d;
+  --contact-submit-btn-text-hover: #fff;
+  --contact-submit-btn-bg-hover: #fd2155;
+  --contact-submit-btn-border: #3d3d3d;
+  --contact-chat-btn-text: #fff;
+  --contact-chat-btn-bg-hover: green;
+
+  /* footer  */
+  --footer-text: #cecece;
+  --footer-subText: #878787;
+  --footer-hr: #878787;
+  --footer-htThin: #272727;
+  --footer-icon: #878787;
+  --footer-icon-hover: #fd2155;
+
+  /* about  */
+  --about-section-bg: aliceblue;
+  --aboutMe-text: #fff;
+  --aboutMe-pic-bg: #fff;
+  --aboutMe-myTools-svg: #fff;
+  --aboutMe-myTools-svg-hover: #fd2155;
+  --aboutMe-contact-text: #cecece;
+  --aboutMe-contact-text-hover: #fd2155;
+
+  /* pricing  */
+  --pricing-title: aliceblue;
+  --pricing-text: #fff;
+  --pricing-card-bg: #fff;
+  --pricing-card-border: #e3e3e3;
+  --pricing-card-border-after: #fd2155;
+  --pricing-card-border-before: #fd2155;
+  --pricing-card-price-text: #000;
+  --pricing-card-priceValue-text: #474747;
+  --pricing-card-priceStarting-text: #82919f;
+  --pricing-card-priceTimline-text: #82919f;
+  --pricing-card-border-bottom: #d0d0d0;
+  --pricing-card-lastChild-border-bottom: #dbdbdb;
+  --pricing-card-btn-text: #fff;
+  --pricing-card-btn-bg: #474747;
+  --pricing-card-btn-bg-hover: #fd2155;
+
+  --pricing-terms-btn: #82919f;
+  --pricing-terms-btn-hover: #cecece;
+  --pricing-card-title: #fd2155;
+  --pricing-terms-text: #cecece;
+
+  --pricing-contact-text: #cecece;
+  --pricing-contact-text-hover: #fd2155;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +259,9 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f0f0f;
-  /* background-color: #242424; */
-  /* background-color: #121214; */
-  /* background-image: -webkit-linear-gradient(#121214, #343437); */
-  /* background-image: linear-gradient(#121214, #343437); */
+ background-color: var(--brand-color-dark-second); 
+  /* background-image: -webkit-linear-gradient(#121214, #343437);
+  background-image: linear-gradient(#121214, #343437); */
 }
 
 section {

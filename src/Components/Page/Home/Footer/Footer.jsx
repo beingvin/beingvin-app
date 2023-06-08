@@ -55,7 +55,8 @@ function Footer() {
           {" "}
           <hr className={style.hr} /> I'm available for short and long-term
           projects
-          <hr className={style.hrThin} />
+        <hr className={style.hrThin} />
+
         </h3>
 
         <div className={style.socialIcons}>

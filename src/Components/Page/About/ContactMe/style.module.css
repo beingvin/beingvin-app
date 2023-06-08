@@ -4,12 +4,12 @@
   width: 100%;
   border: none;
   height: 0.2px;
-  background: #272727;
+  background-color: var(--dark-color-third);
 }
 
 .contact,
 .contact a {
-  color: #cecece;
+  color: var(--brand-color-dark-fourth);
 }
 
 .contact h2 {
@@ -25,7 +25,7 @@
 }
 
 .quickLinks a:hover {
-  color: #fd2155;
+  color: var(--brand-color-dark-first);
 }
 
 .chat {
@@ -42,7 +42,7 @@
 }
 
 .chat .socialLinks a:hover {
-  color: #fd2155;
+  color: var(--brand-color-dark-first);
 }
 
 .chat h1 {
@@ -63,7 +63,7 @@
   right: 0;
   width: 0%;
   height: 3px;
-  background-color: #fd2155;
+  background-color: var(--brand-color-light-first);
   transition: width 0.5s;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .chat h1 a {
-  color: #cecece;
+  color: var(--brand-color-dark-fourth);
 }
 
 .chat h1 a span {
@@ -96,7 +96,7 @@
 }
 
 .chat h1 a:hover span svg {
-  color: #fd2155;
+  color: var(--brand-color-dark-first);
   position: relative;
   animation: move 1s ease-in-out 0s;
 }
@@ -126,7 +126,7 @@
 
   .chat .socialLinks {
     margin-bottom: 10%;
-    align-self: self-start ;
+    align-self: self-start;
   }
 
   .chat h1 {
