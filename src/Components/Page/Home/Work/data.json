@@ -1,77 +1,9 @@
 [
     {
         "id": "1",
-        "name": "Project 1",
+        "name": "CAfe And Wifi Hub",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
-        "category": [
-            {
-                "id": "1",
-                "type": "Premium"
-            },
-            {
-                "id": "2",
-                "type": "Web Design"
-            }
-        ]
-    },
-    {
-        "id": "2",
-        "name": "Project 2",
-        "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
-        "category": [
-            {
-                "id": "1",
-                "type": "Static"
-            },
-            {
-                "id": "2",
-                "type": "Landing Page"
-            }
-        ]
-    },
-    {
-        "id": "3",
-        "name": "Project 3",
-        "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
-        "category": [
-            {
-                "id": "1",
-                "type": "Premium"
-            },
-            {
-                "id": "2",
-                "type": "Landing Page"
-            },
-            {
-                "id": "3",
-                "type": "App"
-            }
-        ]
-    },
-    {
-        "id": "4",
-        "name": "Project 4",
-        "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
-        "category": [
-            {
-                "id": "1",
-                "type": "Web Design"
-            },
-            {
-                "id": "2",
-                "type": "Landing Page"
-            }
-        ]
-    },
-    {
-        "id": "5",
-        "name": "Project 5",
-        "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_1.jpg",
         "category": [
             {
                 "id": "1",
@@ -79,87 +11,191 @@
             },
             {
                 "id": "2",
-                "type": "Web Design"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Flask"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Gym",
+        "description": "Proeject Details",
+        "link": "images/projects/Project_2.jpg",
+        "category": [
+            {
+                "id": "1",
+                "type": "Dynamic"
+            },
+            {
+                "id": "2",
+                "type": "Single Page"
+            },
+            {
+                "id": "3",
+                "type": "React"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Restaurant",
+        "description": "Proeject Details",
+        "link": "https://source.unsplash.com/random/600*400/?code",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "PHP"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Boutique E-commerce",
+        "description": "Proeject Details",
+        "link": "images/projects/Project_4.jpg",
+        "category": [
+            {
+                "id": "1",
+                "type": "Premium"
+            },
+            {
+                "id": "2",
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Flask"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Careplus Clinic",
+        "description": "Proeject Details",
+        "link": "images/projects/Project_5.jpg",
+        "category": [
+            {
+                "id": "1",
+                "type": "Dynamic"
+            },
+            {
+                "id": "2",
+                "type": "Single Page"
+            },
+            {
+                "id": "3",
+                "type": "Javascript"
             }
         ]
     },
     {
         "id": "6",
-        "name": "Project 6",
+        "name": "Blogging",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_6.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "Landing Page"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "Web Design"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Flask"
             }
         ]
     },
     {
         "id": "7",
-        "name": "Project 7",
+        "name": "Sachin Travels",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_7.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "React"
+                "type": "Dynamic"
             },
             {
                 "id": "2",
-                "type": "Portfolio"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Javascript"
             }
         ]
     },
     {
         "id": "8",
-        "name": "Project 8",
+        "name": "Online Store",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_8.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "React"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "App"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Node"
             }
         ]
     },
     {
         "id": "9",
-        "name": "Project 9",
+        "name": "Todo-List App",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_9.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "Premium"
+                "type": "Dynamic"
             },
             {
                 "id": "2",
-                "type": "App"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Node"
             }
         ]
     },
     {
         "id": "10",
-        "name": "Project 10",
+        "name": "Weather App",
         "description": "Proeject Details",
-        "link": "https://source.unsplash.com/random/600*400/?code",
+        "link": "images/projects/Project_10.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "Premium"
+                "type": "Dynamic"
             },
             {
                 "id": "2",
-                "type": "Landing Page"
+                "type": "Single Page"
+            },
+            {
+                "id": "3",
+                "type": "Javascript"
             }
         ]
     },
@@ -246,7 +282,8 @@
                 "type": "react"
             }
         ]
-    }, {
+    },
+    {
         "id": "16",
         "name": "Project 16",
         "description": "Proeject Details",

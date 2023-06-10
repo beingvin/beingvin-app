@@ -1,5 +1,5 @@
 .backGroundDiv {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   /* position: fixed; */
   display: block;
   position: fixed;
@@ -8,12 +8,12 @@
   width: 100vw;
   height: 100vh;
   z-index: 100;
-  padding: 4% 10%;
+  padding: 4% 15%;
 }
 
 .formContainer {
   position: relative;
-  background-color: aliceblue;
+  background-color: var(--solid-color-fourth);
   border-radius: 80px;
   margin: auto;
   overflow: hidden;
@@ -27,7 +27,7 @@
 
 .formContainer > div {
   /* margin: 0.5%; */
-  width: 70%;
+  width: 80%;
   text-align: center;
 }
 
@@ -56,10 +56,8 @@
 
 .form {
   margin: auto;
-  width: 100%;
+  width: 90%;
 }
-
-
 
 .form .input,
 .textarea {
@@ -67,18 +65,20 @@
   outline: none;
   border-radius: 10px;
   resize: none;
-  padding: 1.8% 4%;
-  background-color: #c2c2c2;
-  color: #fd2155;
-  margin: 1%;
+  padding: 2% 4%;
+  background-color: var(--brand-color-dark-third);
+  color: var(--solid-color-second);
+  margin: 0.8%;
+}
+.form .textarea {
+  height: 150px;
 }
 
 .form .input::placeholder,
 .textarea::placeholder {
-  color: #fff;
+  color: var(--brand-color-dark-fourth);
   font-family: "Courier New", Courier, monospace;
 }
-
 
 .form .proDetails,
 .clientDetails {
@@ -107,8 +107,8 @@
   border: none;
   min-width: 100px;
   background-color: transparent;
-  color: #3d3d3d;
-  border: 2px solid #3d3d3d;
+  color: var(--brand-color-dark-third);
+  border: 2px solid var(--brand-color-dark-third);
   border-radius: 20px;
   font-size: 15px;
   padding: 12px;
@@ -124,7 +124,149 @@
 .form .submitBtn:hover,
 .button:hover {
   background-color: transparent;
-  color: #fff;
-  background-color: #fe005d;
-  border: 2px solid #fe005d;
+  color: var(--solid-color-second);
+  background-color: var(--brand-color-dark-first);
+  border: 2px solid var(--brand-color-dark-first);
+}
+
+.thankYou {
+  padding: 0 4%;
+  color: var(--light-color-first);
+}
+.icon {
+  font-size: 5rem;
+  color: var(--brand-color-dark-first);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .backGroundDiv {
+    padding: 8% 5%;
+  }
+
+  .formContainer {
+    border-radius: 50px;
+  }
+
+  .formContainer > div {
+    /* margin: 0.5%; */
+    width: 90%;
+    text-align: center;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .formContainer .header .title {
+    font-size: 1.6rem;
+  }
+  .formContainer .form .input,
+  .textarea {
+    font-size: small;
+    padding: 4%;
+    margin: 2% 1%;
+  }
+  .formContainer .form .textarea {
+    width: 98%;
+    height: 150px;
+  }
+  .form .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .form .buttons .button {
+    margin: 2%;
+  }
+
+  .thankYou {
+    font-size: small;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .backGroundDiv {
+    padding: 15% 5%;
+  }
+
+  .formContainer {
+    border-radius: 60px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .formContainer > div {
+    /* margin: 0.5%; */
+    width: 90%;
+    text-align: center;
+  }
+
+  .backBtn {
+    top: 5%;
+    left: 5%;
+  }
+  .closeBtn {
+    top: 5%;
+    right: 5%;
+  }
+
+  .formContainer .header .title {
+    font-size: 2rem;
+  }
+  .formContainer .form .input,
+  .textarea {
+    font-size: small;
+    padding: 4%;
+    margin: 1.5% 1%;
+  }
+  .formContainer .form .textarea {
+    width: 98%;
+    height: 150px;
+  }
+  .form .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .form .buttons .button {
+    margin: 2%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .formContainer > div {
+    /* margin: 0.5%; */
+    width: 80%;
+    text-align: center;
+  }
+
+  .backBtn {
+    top: 5%;
+    left: 5%;
+  }
+  .closeBtn {
+    top: 5%;
+    right: 5%;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .formContainer .form .input,
+  .textarea {
+    padding: 3%;
+    margin: 1%;
+  }
+  .formContainer .form .textarea {
+    width: 98%;
+    height: 150px;
+  }
 }

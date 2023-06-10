@@ -46,10 +46,10 @@ function Services() {
         <div className={style.card}>
           <h3>SINGLEPAGE SITE</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 2999
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 3999
           </span>
           <hr className={style.hrThin} />
-          <p>Design and development of your own singlepage website. </p>
+          <p>Design and development of your own customized singlepage website. </p>
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More
           </button>
@@ -60,7 +60,7 @@ function Services() {
             From <FontAwesomeIcon icon={faIndianRupeeSign} /> 5999
           </span>
           <hr className={style.hrThin} />
-          <p>Design and development of your own multipage website. </p>
+          <p>Design and development of your own customized multipage website. </p>
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More
           </button>
@@ -71,7 +71,7 @@ function Services() {
             From <FontAwesomeIcon icon={faIndianRupeeSign} /> 4499
           </span>
           <hr className={style.hrThin} />
-          <p>Design and development of your own landing page website. </p>
+          <p> Design and development of your own landing page website. site that is designed to convert visitors into leads. It is different from other pages on your website </p>
 
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More
@@ -80,7 +80,7 @@ function Services() {
         <div className={style.card}>
           <h3>SITE DESIGN ONLY</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 3999
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 2499
           </span>
           <hr className={style.hrThin} />
           <p>

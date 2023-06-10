@@ -41,7 +41,7 @@
 .talk h1 {
   display: inline-block;
   position: relative;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 500;
   font-style: italic;
   width: 100%;
@@ -112,7 +112,7 @@
   align-self: center;
 }
 
-.writeMe form {
+.writeMe .form {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -120,13 +120,13 @@
   padding: 1% 0%;
 }
 
-.writeMe form legend {
+.writeMe .form legend {
   font-size: 1.2rem;
   border-bottom: 1px solid var(--brand-color-dark-third);
 }
 
-.writeMe form input,
-textarea {
+.writeMe .form .input,
+.textarea {
   border: none;
   outline: none;
   border-radius: 10px;
@@ -137,22 +137,22 @@ textarea {
   color: var(--solid-color-second);
 }
 
-.writeMe form input::placeholder,
-textarea::placeholder {
+.writeMe .form .input::placeholder,
+.textarea::placeholder {
   color: var(--brand-color-dark-fourth);
   font-family: "Courier New", Courier, monospace;
 }
 
-.writeMe form > div {
+.writeMe .form > div {
   display: flex;
   justify-content: space-between;
 }
 
-.writeMe form > div input {
+.writeMe .form > div .input {
   width: 49%;
 }
 
-.writeMe form button {
+.writeMe .form .submitBtn {
   border: none;
   background-color: transparent;
   color: var(--brand-color-dark-third);
@@ -164,7 +164,7 @@ textarea::placeholder {
   transition: 0.5s ease-in-out;
 }
 
-.writeMe form button:hover {
+.writeMe .form .submitBtn:hover {
   background-color: transparent;
   color: var(--solid-color-second);
   background-color: var(--brand-color-dark-first);
@@ -201,7 +201,7 @@ textarea::placeholder {
     right: -55px;
   }
 
-  .writeMe form button {
+  .writeMe .form .submitBtn {
     border-radius: 15px;
     font-size: 20px;
     padding: 8px;
@@ -236,7 +236,7 @@ textarea::placeholder {
     right: -55px;
   }
 
-  .writeMe form button {
+  .writeMe .form .submitBtn {
     border-radius: 15px;
     font-size: 20px;
     padding: 8px;
@@ -271,7 +271,7 @@ textarea::placeholder {
     right: -55px;
   }
 
-  .writeMe form button {
+  .writeMe .form .submitBtn {
     border-radius: 15px;
     font-size: 20px;
     padding: 8px;

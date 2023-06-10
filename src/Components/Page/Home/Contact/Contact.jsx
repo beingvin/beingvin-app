@@ -66,7 +66,7 @@ function Contact() {
   // }, []);
   return (
     <section className={style.section} id="contact" ref={wrapperRef}>
-      <div className="sectionTitle">
+      <div className="sectionTitle" style={{ margin: "5% 2% 2%" }}>
         <h1 style={{ color: "#3d3d3d" }}> •• CONTACT</h1>
       </div>
       <div className={style.wrapper}>
@@ -98,22 +98,39 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              Say Hi &nbsp; <span><FontAwesomeIcon icon={faWhatsapp} /></span>
+              Say Hi &nbsp;{" "}
+              <span>
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </span>
             </a>
           </div>
         </div>
         <div className={style.writeMe}>
-          <form action="#" method="post" onSubmit={sendMail} id="getInTouch">
+          <form
+            className={style.form}  
+            action="#"
+            method="post"
+            onSubmit={sendMail}
+            id="getInTouch"
+          >
             <legend>GET IN TOUCH</legend>
-            <input type="text" name="Name" placeholder="Your Name " required />
+            <input
+              className={style.input}
+              type="text"
+              name="Name"
+              placeholder="Your Name "
+              required
+            />
             <div>
               <input
+                className={style.input}
                 type="email"
                 name="Email"
                 placeholder="Your Email"
                 required
               />
               <input
+                className={style.input}
                 type="tel"
                 maxLength="12"
                 name="Mobile"
@@ -122,15 +139,21 @@ function Contact() {
                 required
               />
             </div>
-            <input type="url" name="Website" placeholder="Your Website" />
+            <input
+              className={style.input}
+              type="url"
+              name="Website"
+              placeholder="Your Website"
+            />
             <textarea
+              className={style.textarea}
               name="Message"
               rows="4"
               cols="30"
               placeholder="Give a few details about what you need"
               required
             ></textarea>
-            <button type="submit">Submit</button>
+            <button className={style.submitBtn} type="submit">Submit</button>
           </form>
         </div>
       </div>

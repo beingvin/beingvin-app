@@ -10,7 +10,7 @@ function projectDetails({ setPage, formData, setFormData }) {
           <textarea
             name="details"
             placeholder="Please share some project details"
-            id=""
+            className={style.textarea}
             cols="60"
             rows="5"
             value={formData.proDetails}

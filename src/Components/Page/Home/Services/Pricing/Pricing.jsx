@@ -6,7 +6,7 @@ import {
   faIndianRupeeSign,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Logo from "../../Logo/Logo";
 import ContactMe from "./ContactMe/ContactMe";
@@ -74,7 +74,7 @@ function LearnMore() {
       }}
       exit={{
         opacity: 0,
-        x: - window.innerWidth,
+        x: -window.innerWidth,
         transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
       }}
       ref={sectionRef}
@@ -127,7 +127,7 @@ function LearnMore() {
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
-                <b>Contact</b> Form
+                <b>Contact</b> Section
               </li>
               <li>
                 {" "}
@@ -212,7 +212,7 @@ function LearnMore() {
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
-                <b>Live</b> Chat Integration
+                <b>Chat Button</b> Integration
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
@@ -224,7 +224,8 @@ function LearnMore() {
               </li>
               <li>
                 {" "}
-                <FontAwesomeIcon icon={faTimesCircle} /> &nbsp;{" "}
+                <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Built{" "}
+                <b>Custom / Wordpress</b>
               </li>
               <li>
                 {" "}
@@ -286,7 +287,7 @@ function LearnMore() {
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
-                <b>Live</b> Chat Integration
+                <b>Live Chat</b> Integration
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
@@ -297,12 +298,12 @@ function LearnMore() {
                 <b>Images & Videos</b>
               </li>
               <li>
-                <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Build with{" "}
-                <b>Bootstrap</b>
+                <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Fully{" "}
+                <b>Custom Built</b>
               </li>
               <li>
-                <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Build with{" "}
-                <b>Wordpress</b>
+                <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
+                <b>Admin</b> Panal
               </li>
             </ul>
             <button
@@ -313,8 +314,10 @@ function LearnMore() {
             </button>
           </div>
         </div>
+        <AnimatePresence>
+          {getStarted ? <GetStarted setGetStarted={setGetStarted} /> : ""}
+        </AnimatePresence>
       </div>
-      {getStarted ? <GetStarted setGetStarted={setGetStarted} /> : ""}
       {/* <GetStarted /> */}
       <div>
         <p

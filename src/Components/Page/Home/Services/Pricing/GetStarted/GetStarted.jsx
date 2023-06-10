@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faClose } from "@fortawesome/free-solid-svg-icons";
 import ChoosePlan from "./Steps/ChoosePlan";
@@ -8,18 +9,11 @@ import ProjectDetails from "./Steps/ProjectDetails";
 import ChooseBudget from "./Steps/ChooseBudget";
 import ChooseTimeframe from "./Steps/ChooseTimeframe";
 import ClientDetails from "./Steps/ClientDetails";
+import ThankYou from "./Steps/ThankYou";
 // import { Email } from "./SMTP/smtp";
 
 function GetStarted({ setGetStarted }) {
   const [page, setPage] = useState(1);
-  const title = [
-    "Lets start building ? select your website type...",
-    "Choose a plan you wanna go with",
-    "Great! give a few details about what you need?",
-    "What type of budget are you looking to invest in this project?",
-    "And what's your timeframe?",
-    "Lastly, could you please share a few more details?",
-  ];
   const [formData, setFormData] = useState({
     type: "",
     plan: "",
@@ -35,6 +29,17 @@ function GetStarted({ setGetStarted }) {
     },
   });
 
+  const title = [
+    "Lets start building ? Select your website type...",
+    "Choose a plan you wanna go with",
+    "Great! Give a few details about what you need?",
+    "What type of budget are you looking to invest in this project?",
+    "And what's your timeframe?",
+    "Lastly, Could you please share a few more details?",
+    // `Awesome! Thank you ${formData.clientDetails.name} for sharing your detailed requirements.  `,
+    `Awesome! Thank you ${formData.clientDetails.name} ,`,
+  ];
+
   const sendMail = (e) => {
     e.preventDefault();
     console.log("Sending...");
@@ -42,7 +47,7 @@ function GetStarted({ setGetStarted }) {
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
       To: "pythont2021@gmail.com",
       From: "notification@beingvin.com",
-      Subject: "Recived New Project | Beingvin.com",
+      Subject: "Received New Project | Beingvin.com",
       Body: `Name : ${formData.clientDetails.name} <br/> 
       Email Id : ${formData.clientDetails.email}  <br/> 
       Mobile No : ${formData.clientDetails.mobile}  <br/>  
@@ -52,12 +57,12 @@ function GetStarted({ setGetStarted }) {
       Project Details : ${formData.proDetails}  <br/>  
       Budget : ${formData.budget}  <br/>  
       Timeframe : ${formData.timeframe}  <br/>`,
-   
-    }).then((message) =>
-      alert(
-        `Thank You ${formData.clientDetails.name} ! \n I'll contact you soon.`
-      )
-    );
+    })
+      .then(() => setPage((currentPage) => currentPage + 1))
+      .catch((err) => {
+        console.error(err);
+        alert("Sorry, Something went wrong !! \n Try again.. ");
+      });
 
     e.target.reset();
   };
@@ -112,6 +117,8 @@ function GetStarted({ setGetStarted }) {
             setPage={setPage}
           />
         );
+      case 7:
+        return <ThankYou />;
 
       default:
         return <ChooseType setPage={setPage} />;
@@ -120,44 +127,88 @@ function GetStarted({ setGetStarted }) {
 
   return (
     <div className={style.backGroundDiv}>
-      <div className={style.formContainer}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        exit={{
+          opacity: 0,
+          y: -50,
+          transition: { duration: 0.8, ease: [0.6, 0.1, 0.05, 0.9] },
+        }}
+        className={style.formContainer}
+      >
         <div className={style.header}>
           <div className={style.navBtns}>
             <div className={style.backBtn}>
-              {page !== 1 ? (
-                <FontAwesomeIcon
-                  icon={faArrowLeft}
-                  onClick={() => setPage((currentPage) => currentPage - 1)}
-                />
+              {page !== 1 && page !== 7 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1.5 }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    onClick={() => setPage((currentPage) => currentPage - 1)}
+                  />
+                </motion.div>
               ) : (
                 ""
               )}
             </div>
 
-            <div className={style.closeBtn}>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className={style.closeBtn}
+            >
               {" "}
               <FontAwesomeIcon
                 icon={faClose}
                 onClick={() => setGetStarted(false)}
               />{" "}
-            </div>
+            </motion.div>
           </div>
           <div className={style.pageNumbers}>
-            <p>
-              {" "}
-              <span>0{page}</span>/06
-            </p>
+            {page !== 7 ? (
+              <motion.p
+                key={page}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ y: -0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                {" "}
+                <span>0{page}</span> / 06{" "}
+              </motion.p>
+            ) : (
+              ""
+            )}
           </div>
           <div>
-            <h1 className={style.title}>{title[page - 1]}</h1>
+            <motion.h1
+              key={page}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ y: -0, opacity: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className={style.title}
+            >
+              {title[page - 1]}
+            </motion.h1>
           </div>
         </div>
-        <div className={style.body}>
+        <motion.div
+          key={page}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ y: -0, opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className={style.body}
+        >
           <form className={style.form} onSubmit={sendMail}>
             {displayBody(page, setPage)}
           </form>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

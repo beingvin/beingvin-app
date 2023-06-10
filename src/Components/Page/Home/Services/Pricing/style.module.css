@@ -240,7 +240,7 @@
   }
   .cards {
     flex-direction: column;
-    padding: 5% 2%;
+    padding: 5% 0%;
     justify-content: center;
     gap: 50px;
     /* align-items: center;
