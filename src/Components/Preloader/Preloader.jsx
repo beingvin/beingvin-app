@@ -78,8 +78,8 @@ function Preloader() {
       <div style={{ width: `${loading}%` }} className={style.progressBar}></div>
       <div className={style.countDown} ref={countRef}>
         {count.map((i) => (
-          <div>
-            <p key={i}>{i}%</p>
+          <div key={i}>
+            <p>{i}%</p>
           </div>
         ))}
       </div>

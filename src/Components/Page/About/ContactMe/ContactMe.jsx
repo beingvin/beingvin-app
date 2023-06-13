@@ -5,8 +5,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 function ContactMe() {
-
-  
   return (
     <div className={style.contact}>
       <hr className={style.hrThin} />

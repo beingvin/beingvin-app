@@ -14,8 +14,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 function Footer() {
   const currentYear = new Date().getFullYear();
 
-  console.log(currentYear);
-
   // GSAP Animation
   const wrapperRef = useRef(null);
 

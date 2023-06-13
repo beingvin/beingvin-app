@@ -77,7 +77,7 @@ function Contact() {
           </div>
           <div className={style.talk}>
             <h1>
-              <a href="tel:+9011732439">
+              <a href="tel:+9011732439" rel="noreferrer">
                 Let's Talk{" "}
                 <span>
                   <FontAwesomeIcon
@@ -107,7 +107,7 @@ function Contact() {
         </div>
         <div className={style.writeMe}>
           <form
-            className={style.form}  
+            className={style.form}
             action="#"
             method="post"
             onSubmit={sendMail}
@@ -153,7 +153,9 @@ function Contact() {
               placeholder="Give a few details about what you need"
               required
             ></textarea>
-            <button className={style.submitBtn} type="submit">Submit</button>
+            <button className={style.submitBtn} type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>

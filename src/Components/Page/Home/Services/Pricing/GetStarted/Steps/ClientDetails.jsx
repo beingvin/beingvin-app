@@ -42,7 +42,9 @@ function clientDetailsjsx({ formData, setFormData }) {
         <div>
           <input
             type="url"
-            placeholder="Your Website"
+            placeholder="Your Website link"
+            title="You can only enter website link, Format: https://www.example.com"
+
             className={style.input}
             value={formData.clientDetails.website}
             onChange={(e) =>
@@ -60,7 +62,7 @@ function clientDetailsjsx({ formData, setFormData }) {
             pattern="[+]{1}[0-9]{2} [0-9]{3}-[0-9]{3}-[0-9]{4}"
             maxLength="16" 
             title="You can only enter numbers, Format: +91 123-456-7890"
-            placeholder="Your Mobile"
+            placeholder="Your Phone"
             className={style.input}
             value={formData.clientDetails.mobile}
             onChange={(e) =>
@@ -102,7 +104,7 @@ function clientDetailsjsx({ formData, setFormData }) {
             //   console.log(formData);
             // }}
           >
-            SUBMIT
+            Place Order
           </button>
         </div>
       </div>

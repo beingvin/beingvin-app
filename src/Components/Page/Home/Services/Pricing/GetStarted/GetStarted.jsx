@@ -11,9 +11,21 @@ import ChooseTimeframe from "./Steps/ChooseTimeframe";
 import ClientDetails from "./Steps/ClientDetails";
 import ThankYou from "./Steps/ThankYou";
 // import { Email } from "./SMTP/smtp";
+import db from "./Firebase/FirebaseConfig";
+import {
+  // getDocs,
+  query,
+  orderBy,
+  collection,
+  addDoc,
+  updateDoc,
+  serverTimestamp,
+
+} from "@firebase/firestore";
 
 function GetStarted({ setGetStarted }) {
-  const [page, setPage] = useState(1);
+
+
   const [formData, setFormData] = useState({
     type: "",
     plan: "",
@@ -29,6 +41,57 @@ function GetStarted({ setGetStarted }) {
     },
   });
 
+  const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME);
+
+  const sendMail = (e) => {
+    e.preventDefault();
+    console.log("Sending... ");
+    window.Email.send({
+      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
+      To: "pythont2021@gmail.com",
+      From: "notification@beingvin.com",
+      Subject: "New Project Order Received | Beingvin.com",
+      Body: `Name : ${formData.clientDetails.name} <br/> 
+      Email Id : ${formData.clientDetails.email}  <br/> 
+      Mobile No : ${formData.clientDetails.mobile}  <br/>
+      Webiste : ${formData.clientDetails.website}  <br/>  
+      Additional details : ${formData.clientDetails.adDetails} <br>  
+      Project Type : ${formData.type} <br/> 
+      Project Plan : ${formData.plan}  <br/>  
+      Project Details : ${formData.proDetails}  <br/>  
+      Budget : ${formData.budget}  <br/>  
+      Timeframe : ${formData.timeframe}  <br/>`,
+    })
+      .then(() => {
+        const addToFirabase = async () => {
+          await addDoc(collectionRef, {
+            Name: formData.clientDetails.name,
+            Email: formData.clientDetails.email,
+            Website: formData.clientDetails.website,
+            Phone: formData.clientDetails.mobile,
+            ProjectType: formData.type,
+            ProjectPlan: formData.plan,
+            ProjectBudget: formData.budget,
+            ProjectDetails: formData.proDetails,
+            ProjectTimeframe: formData.timeframe,
+            AdditionalDetails: formData.clientDetails.adDetails,
+            Remark: "To be start",
+            Time: serverTimestamp(),
+          });
+        };
+        addToFirabase();
+        setPage((currentPage) => currentPage + 1);
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Sorry, Something went wrong !! \n Try again.. ");
+      });
+
+    e.target.reset();
+  };
+
+  const [page, setPage] = useState(1);
+
   const title = [
     "Lets start building ? Select your website type...",
     "Choose a plan you wanna go with",
@@ -39,33 +102,6 @@ function GetStarted({ setGetStarted }) {
     // `Awesome! Thank you ${formData.clientDetails.name} for sharing your detailed requirements.  `,
     `Awesome! Thank you ${formData.clientDetails.name} ,`,
   ];
-
-  const sendMail = (e) => {
-    e.preventDefault();
-    console.log("Sending...");
-    window.Email.send({
-      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
-      To: "pythont2021@gmail.com",
-      From: "notification@beingvin.com",
-      Subject: "Received New Project | Beingvin.com",
-      Body: `Name : ${formData.clientDetails.name} <br/> 
-      Email Id : ${formData.clientDetails.email}  <br/> 
-      Mobile No : ${formData.clientDetails.mobile}  <br/>  
-      Additional details : ${formData.clientDetails.adDetails} <br>  
-      Project Type : ${formData.type} <br/> 
-      Project Plan : ${formData.plan}  <br/>  
-      Project Details : ${formData.proDetails}  <br/>  
-      Budget : ${formData.budget}  <br/>  
-      Timeframe : ${formData.timeframe}  <br/>`,
-    })
-      .then(() => setPage((currentPage) => currentPage + 1))
-      .catch((err) => {
-        console.error(err);
-        alert("Sorry, Something went wrong !! \n Try again.. ");
-      });
-
-    e.target.reset();
-  };
 
   const displayBody = (page, setPage) => {
     switch (page) {
@@ -204,7 +240,7 @@ function GetStarted({ setGetStarted }) {
           transition={{ delay: 1.5, duration: 0.8 }}
           className={style.body}
         >
-          <form className={style.form} onSubmit={sendMail}>
+          <form className={style.form} onSubmit={sendMail} autoComplete="off">
             {displayBody(page, setPage)}
           </form>
         </motion.div>
