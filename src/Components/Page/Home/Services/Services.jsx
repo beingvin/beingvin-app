@@ -14,6 +14,7 @@ function Services() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+
     const element = wrapperRef.current;
     gsap.fromTo(
       element.querySelectorAll("." + style.card),
@@ -49,7 +50,9 @@ function Services() {
             From <FontAwesomeIcon icon={faIndianRupeeSign} /> 3999
           </span>
           <hr className={style.hrThin} />
-          <p>Design and development of your own customized singlepage website. </p>
+          <p>
+            Design and development of your own customized singlepage website.{" "}
+          </p>
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More
           </button>
@@ -60,7 +63,9 @@ function Services() {
             From <FontAwesomeIcon icon={faIndianRupeeSign} /> 5999
           </span>
           <hr className={style.hrThin} />
-          <p>Design and development of your own customized multipage website. </p>
+          <p>
+            Design and development of your own customized multipage website.{" "}
+          </p>
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More
           </button>
@@ -71,7 +76,12 @@ function Services() {
             From <FontAwesomeIcon icon={faIndianRupeeSign} /> 4499
           </span>
           <hr className={style.hrThin} />
-          <p> Design and development of your own landing page website. site that is designed to convert visitors into leads. It is different from other pages on your website </p>
+          <p>
+            {" "}
+            Design and development of your own landing page website. site that
+            is designed to convert visitors into leads. It is different from
+            other pages on your website{" "}
+          </p>
 
           <button onClick={() => navigate("/Services/Pricing")}>
             Learn More

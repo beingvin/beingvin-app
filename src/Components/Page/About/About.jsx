@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import style from "./style.module.css";
 import Logo from "../Home/Logo/Logo";
 import vinpic from "./img/vin (2).png";
@@ -7,11 +7,16 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import Tools from "./Tools/Tools";
 import ContactMe from "./ContactMe/ContactMe";
+import PageTransition from "../PageTransition/PageTransition";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
+  const [pageTrans, setPageTrans] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // setTimeout(() => setPageTrans(false), 2800);
   }, []);
 
   const sectionRef = useRef(null);
@@ -23,22 +28,22 @@ function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <motion.section
-      className={style.section}
-      id="About"
-      initial={{ opacity: 0, x: -400 }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        transition: { duration: 1, ease: [0.6, 0.1, 0.05, 0.9] },
-      }}
-      exit={{
-        opacity: 0,
-        x: window.innerWidth,
-        transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
-      }}
-    >
-      <div className={style.wrapper}>
+    <section className={style.section} id="About">
+      <PageTransition />
+      <motion.div
+        initial={{ opacity: 0, x: -400 }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          transition: { delay: 1.5, duration: 1, ease: [0.6, 0.1, 0.05, 0.9] },
+        }}
+        exit={{
+          opacity: 0,
+          x: -window.innerWidth,
+          transition: { duration: 0.5, ease: [0.6, 0.1, 0.05, 0.9] },
+        }}
+        className={style.wrapper}
+      >
         <Link to={"/"}>
           <Logo />
         </Link>
@@ -78,8 +83,8 @@ function About() {
         <ContactMe />
 
         {/* <TextShpere/> */}
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
 
