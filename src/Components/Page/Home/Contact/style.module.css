@@ -22,7 +22,7 @@
   position: absolute;
   background-color: var(--brand-color-dark-first);
   padding: 8px 20px;
-  top: 35%;
+  top: 30%;
   left: -60px;
   transform: rotate(90deg) translateY(-50%);
   transition: 0.3s;
@@ -196,9 +196,8 @@
   }
 
   .chat {
-    padding: 5px 15px;
-    top: 25%;
-    right: -55px;
+    display:none;
+
   }
 
   .writeMe .form .submitBtn {
@@ -233,7 +232,7 @@
   .chat {
     padding: 5px 15px;
     top: 35%;
-    right: -55px;
+    left: -55px;
   }
 
   .writeMe .form .submitBtn {
@@ -268,7 +267,7 @@
   .chat {
     padding: 5px 15px;
     top: 35%;
-    right: -55px;
+    left: -55px;
   }
 
   .writeMe .form .submitBtn {

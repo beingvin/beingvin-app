@@ -35,7 +35,7 @@ function Services() {
       }
     );
     // ScrollTrigger.refresh();
-    console.log(gsap.plugins);
+    // console.log(gsap.plugins);
   }, []);
 
   return (

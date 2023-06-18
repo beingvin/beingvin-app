@@ -12,20 +12,9 @@ import ClientDetails from "./Steps/ClientDetails";
 import ThankYou from "./Steps/ThankYou";
 // import { Email } from "./SMTP/smtp";
 import db from "./Firebase/FirebaseConfig";
-import {
-  // getDocs,
-  query,
-  orderBy,
-  collection,
-  addDoc,
-  updateDoc,
-  serverTimestamp,
-
-} from "@firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
 
 function GetStarted({ setGetStarted }) {
-
-
   const [formData, setFormData] = useState({
     type: "",
     plan: "",
@@ -43,10 +32,10 @@ function GetStarted({ setGetStarted }) {
 
   const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME);
 
-  const sendMail = (e) => {
+  const sendMail = async (e) => {
     e.preventDefault();
     console.log("Sending... ");
-    window.Email.send({
+    await window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
       To: "pythont2021@gmail.com",
       From: "notification@beingvin.com",
@@ -75,7 +64,7 @@ function GetStarted({ setGetStarted }) {
             ProjectDetails: formData.proDetails,
             ProjectTimeframe: formData.timeframe,
             AdditionalDetails: formData.clientDetails.adDetails,
-            Remark: "To be start",
+            Remark: "To be started",
             Time: serverTimestamp(),
           });
         };
@@ -86,8 +75,9 @@ function GetStarted({ setGetStarted }) {
         console.error(err);
         alert("Sorry, Something went wrong !! \n Try again.. ");
       });
-
     e.target.reset();
+
+    setTimeout(() => setPage(8), 5000);
   };
 
   const [page, setPage] = useState(1);
@@ -99,6 +89,7 @@ function GetStarted({ setGetStarted }) {
     "What type of budget are you looking to invest in this project?",
     "And what's your timeframe?",
     "Lastly, Could you please share a few more details?",
+    " ",
     // `Awesome! Thank you ${formData.clientDetails.name} for sharing your detailed requirements.  `,
     `Awesome! Thank you ${formData.clientDetails.name} ,`,
   ];
@@ -154,6 +145,8 @@ function GetStarted({ setGetStarted }) {
           />
         );
       case 7:
+        return <h1>Placing your Order wait... </h1>;
+      case 8:
         return <ThankYou />;
 
       default:
@@ -177,7 +170,7 @@ function GetStarted({ setGetStarted }) {
         <div className={style.header}>
           <div className={style.navBtns}>
             <div className={style.backBtn}>
-              {page !== 1 && page !== 7 ? (
+              {page !== 1 && page !== 7 && page !== 8 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ x: 0, opacity: 1 }}

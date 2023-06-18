@@ -3,11 +3,15 @@ import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import db from "./Firebase/FirebaseConfig";
+import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { Email } from "./SMTP/smtp";
 
 function Contact() {
+  const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME_2);
+
   // GSAP Animation
   const wrapperRef = useRef(null);
 
@@ -18,11 +22,11 @@ function Contact() {
 
     const name = e.target.Name.value;
     const email = e.target.Email.value;
-    const mobile = e.target.Mobile.value;
+    const phone = e.target.Phone.value;
     const website = e.target.Website.value;
     const message = e.target.Message.value;
 
-    console.log(e.target.Name.value);
+    console.log(name);
 
     window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
@@ -31,12 +35,24 @@ function Contact() {
       Subject: "Recieved New Client Details | Beingvin.com",
       Body: `Name : ${name} <br/>
       Email Id : ${email}  <br/>
-      Mobile No : ${mobile}  <br/>
+      Mobile No : ${phone}  <br/>
       Website link : ${website}  <br/>
       Message : ${message} <br>`,
-    }).then((message) =>
-      alert(`Thank You ${name} ! \n I'll Get In Touch With You Soon.`)
-    );
+    }).then(() => {
+      const addToFirabase = async () => {
+        await addDoc(collectionRef, {
+          Name: name,
+          Email: email,
+          Website: website,
+          Phone: phone,
+          Message: message,
+          Remark: "inquiry",
+          Time: serverTimestamp(),
+        });
+      };
+      addToFirabase();
+      alert("Thank you !  You'll be contacted soon.");
+    });
     e.target.reset();
   };
 
@@ -64,6 +80,8 @@ function Contact() {
   //   );
   //   ScrollTrigger.refresh();
   // }, []);
+  
+  
   return (
     <section className={style.section} id="contact" ref={wrapperRef}>
       <div className="sectionTitle" style={{ margin: "5% 2% 2%" }}>
@@ -119,7 +137,7 @@ function Contact() {
               type="text"
               name="Name"
               placeholder="Your Name "
-              required
+              // required
             />
             <div>
               <input
@@ -127,16 +145,16 @@ function Contact() {
                 type="email"
                 name="Email"
                 placeholder="Your Email"
-                required
+                // required
               />
               <input
                 className={style.input}
                 type="tel"
                 maxLength="12"
-                name="Mobile"
-                title="You can only enter numbers, Format: +91 123-456-7890"
-                placeholder="Your Mobile"
-                required
+                name="Phone"
+                title="You can only enter numbers, Format: 911234567890"
+                placeholder="Your Phone"
+                // required
               />
             </div>
             <input
@@ -151,7 +169,7 @@ function Contact() {
               rows="4"
               cols="30"
               placeholder="Give a few details about what you need"
-              required
+              // required
             ></textarea>
             <button className={style.submitBtn} type="submit">
               Submit
