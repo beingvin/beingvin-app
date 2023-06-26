@@ -104,7 +104,7 @@ function clientDetailsjsx({ formData, setFormData }) {
             //   console.log(formData);
             // }}
           >
-            Place Order
+            Submit
           </button>
         </div>
       </div>

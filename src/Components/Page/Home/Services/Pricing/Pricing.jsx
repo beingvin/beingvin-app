@@ -164,7 +164,6 @@ function LearnMore() {
               <button
                 className={style.getStartedBtn}
                 onClick={() => {
-                  console.log("get started clicked");
                   setGetStarted(true);
                 }}
               >

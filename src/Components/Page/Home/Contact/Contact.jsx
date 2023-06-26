@@ -1,23 +1,27 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import db from "./Firebase/FirebaseConfig";
+import db, {
+  firebaseSignIn,
+  firebaseSignOut,
+} from "../../../config/Firebase/FirebaseConfig";
+// import { Email } from "../../../config//SMTP/smtp";
 import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Email } from "./SMTP/smtp";
 
 function Contact() {
   const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME_2);
+  const [submit, setSubmit] = useState(false);
 
   // GSAP Animation
   const wrapperRef = useRef(null);
 
   // gsap.registerPlugin(ScrollTrigger);
 
-  const sendMail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const name = e.target.Name.value;
@@ -26,7 +30,6 @@ function Contact() {
     const website = e.target.Website.value;
     const message = e.target.Message.value;
 
-    console.log(name);
 
     window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
@@ -40,6 +43,7 @@ function Contact() {
       Message : ${message} <br>`,
     }).then(() => {
       const addToFirabase = async () => {
+        await firebaseSignIn();
         await addDoc(collectionRef, {
           Name: name,
           Email: email,
@@ -49,11 +53,14 @@ function Contact() {
           Remark: "inquiry",
           Time: serverTimestamp(),
         });
+        await firebaseSignOut();
+        setSubmit(true);
       };
       addToFirabase();
-      alert("Thank you !  You'll be contacted soon.");
     });
     e.target.reset();
+
+    setInterval(() => setSubmit(false), 40000);
   };
 
   // useEffect(() => {
@@ -80,8 +87,7 @@ function Contact() {
   //   );
   //   ScrollTrigger.refresh();
   // }, []);
-  
-  
+
   return (
     <section className={style.section} id="contact" ref={wrapperRef}>
       <div className="sectionTitle" style={{ margin: "5% 2% 2%" }}>
@@ -128,9 +134,15 @@ function Contact() {
             className={style.form}
             action="#"
             method="post"
-            onSubmit={sendMail}
+            onSubmit={handleSubmit}
             id="getInTouch"
           >
+            {submit ? (
+              <p className={style.thankYouMsg}>Sent , Thank you !</p>
+            ) : (
+              ""
+            )}
+
             <legend>GET IN TOUCH</legend>
             <input
               className={style.input}

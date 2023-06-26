@@ -8,10 +8,11 @@ function ThankYou() {
     <>
       <div className={style.thankYou}>
         <p className={style.thankYouMsg}>
-          I appreciate the time and effort you put into providing us with the
+          I appreciate the time and effort you put into providing me with the
           necessary information. Your input is invaluable in helping me create a
           website that perfectly aligns with your vision. I look forward to
-          working closely with you to bring your ideas to life.
+          working closely with you to bring your ideas to life. <br />
+          <span>I will contact you soon</span>
         </p>
         <br />
         <FontAwesomeIcon icon={faThumbsUp} className={style.icon} />
