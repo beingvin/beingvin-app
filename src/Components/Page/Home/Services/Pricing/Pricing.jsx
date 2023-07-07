@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import style from "./style.module.css";
+import { Helmet } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
@@ -70,6 +71,14 @@ function LearnMore() {
 
   return (
     <>
+      <Helmet>
+        <title> Pricing | Beingvin | Full Stack Web Developer & Designer</title>
+        <meta
+          name="description"
+          content="Get to know me better. Explore the about page for more information. Let's connect and bring your vision to life!"
+        />
+        <link rel="canonical" href="/Services/Pricing" />
+      </Helmet>
       <PageTransition />
       <motion.div
         className={style.wrapper}

@@ -13,8 +13,8 @@ function AnimatePage() {
     <AnimatePresence mode="wait" >
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="About" element={<About />} />
+          <Route index  element={<Home />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Services/Pricing" element={<Pricing />} />
           <Route path="*" element={<NoPage />} />
         </Route>

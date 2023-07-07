@@ -22,7 +22,7 @@ function ContactMe() {
         </p>
 
         <p>
-          <Link to={"/services/pricing"}>Pricing</Link>
+          <Link to={"/Services/Pricing"}>Pricing</Link>
         </p>
       </div>
 
@@ -33,7 +33,9 @@ function ContactMe() {
               LinkedIn
             </a>{" "}
           </p>
-          <p><a href="mailto:contact@beingvin.com">contact@beingvin.com</a></p>
+          <p>
+            <a href="mailto:contact@beingvin.com">contact@beingvin.com</a>
+          </p>
         </div>
         <h1>
           <a
