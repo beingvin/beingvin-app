@@ -17,19 +17,20 @@
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  /* flex-wrap: wrap; */
+  gap: 40px;
   /* padding: 5% 2%; */
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
+  /* overflow: scroll; */
 }
 
 .card {
   background-color: var(--solid-color-second);
   min-width: 250px;
-  width: 30%;
-  padding: 4% 3%;
+  width: 325px;
+  padding: 3% 2%;
   border: 2px solid var(--brand-color-dark-fourth);
   text-align: center;
   position: relative;
@@ -95,7 +96,6 @@
 
 .price {
   padding-bottom: 25px;
-  border-bottom: 1px solid var(--light-color-third);
   color: var(--solid-color-first);
   font-weight: 900;
 }
@@ -130,20 +130,20 @@
   list-style: none;
   margin-bottom: 0;
   text-align: start;
+  padding: 4%;
+  border-top: 1px solid var(--light-color-third);
+  border-bottom: 1px solid var(--light-color-third);
 }
 
 .features ul li {
   padding: 10px 0;
+  font-size: 14px;
   color: var(--dark-color-fourth);
 }
 
 /* .features ul li:nth-child(odd) {
   background-color: #fff;
 } */
-
-.features ul li:last-child {
-  border-bottom: 1px solid var(--light-color-third);
-}
 
 .getStartedBtn {
   width: 70%;
@@ -248,8 +248,8 @@
   }
   .card {
     min-width: 250px;
-    width: 90%;
-    padding: 10%;
+    width: 320px;
+    padding: 8% 6%;
   }
 
   .price {
@@ -265,7 +265,7 @@
   }
   .features ul li {
     padding: 8px 0;
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .priceTerms {
@@ -290,17 +290,18 @@
 
   .cards {
     gap: 50px;
+    flex-wrap: wrap;
   }
 
   .card {
     min-width: 250px;
-    width: 70%;
-    padding: 6%;
+    width: 350px;
+    padding: 6% 4%;
   }
 
   .features ul li {
-    padding: 8px 0;
-    font-size: 1rem;
+    padding: 10px 0;
+    font-size: 16px;
   }
 
   .priceTerms {
@@ -324,18 +325,23 @@
   }
 
   .cards {
-    gap: 50px;
+    gap: 30px;
+
+  }
+
+  .price .priceValue span {
+    font-size: 40px;
   }
 
   .card {
     min-width: 250px;
     width: 45%;
-    padding: 6%;
+    padding: 4% 2%;
   }
 
   .features ul li {
-    padding: 8px 0;
-    font-size: 0.9rem;
+    padding: 7px 0;
+    font-size: 12px;
   }
 
   .priceTerms {

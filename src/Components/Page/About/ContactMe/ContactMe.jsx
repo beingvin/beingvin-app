@@ -29,15 +29,15 @@ function ContactMe() {
       <div className={style.chat}>
         <div className={style.socialLinks}>
           <p>
-            <a href="../#work" target="_blank">
+            <a href="https://www.linkedin.com/in/beingvin" target="_blank">
               LinkedIn
             </a>{" "}
           </p>
-          <p>support@beingvin.com</p>
+          <p><a href="mailto:contact@beingvin.com">contact@beingvin.com</a></p>
         </div>
         <h1>
           <a
-            href="https://wa.me/+919011732439?text=Hi there ! i need a website"
+            href="https://wa.me/+919916742022?text=Hi, i need a website"
             target="_blank"
             rel="noreferrer"
           >

@@ -172,10 +172,10 @@
 }
 
 .writeMe .form .thankYouMsg {
- text-align: center;
- color: var(--solid-color-second);
- background-color: var(--brand-color-dark-first);
- border-radius: 20px;
+  text-align: center;
+  color: var(--solid-color-second);
+  background-color: var(--brand-color-dark-first);
+  border-radius: 20px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -185,6 +185,13 @@
     padding: 10% 4%;
   }
 
+  .section {
+    border-radius: 40px;
+  }
+
+  .sectionTitle {
+    margin: 8% 0 0 8% !important;
+  }
   .talk h1 {
     font-size: 4rem;
   }
@@ -202,9 +209,18 @@
     width: 100%;
   }
 
+  /* .chat {
+    position: absolute !important;
+    top: 0;
+    transform: rotate(-90deg) translateY(-50%) !important;
+    left: 89% !important;
+    width: 120px;
+  } */
   .chat {
-    display:none;
-
+    transform: rotate(-90deg) translateY(100%);
+    top: 35%;
+    right: 0;
+    left: auto;
   }
 
   .writeMe .form .submitBtn {
@@ -219,6 +235,7 @@
     flex-direction: column;
     padding: 8% 4%;
   }
+
   .talk h1 {
     font-size: 5rem;
   }

@@ -48,7 +48,7 @@ function Projects(props) {
           return (
             <div key={data.id} className={style.card}>
               <div className={style.image}>
-                <img src={data.link} alt="Project" />
+                <img src={data.src} alt="Project" />
               </div>
               <div className={style.cardTitle}>
                 <h2>{data.name}</h2>
@@ -59,7 +59,7 @@ function Projects(props) {
                 })}
 
                 <a
-                  href="http://www.beingvin.com"
+                  href={data.link}
                   target="_blank"
                   rel="noreferrer"
                   className={style.externalLinkIcon}

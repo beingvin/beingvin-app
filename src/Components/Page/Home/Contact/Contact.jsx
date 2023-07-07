@@ -30,7 +30,6 @@ function Contact() {
     const website = e.target.Website.value;
     const message = e.target.Message.value;
 
-
     window.Email.send({
       SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
       To: "pythont2021@gmail.com",
@@ -90,7 +89,10 @@ function Contact() {
 
   return (
     <section className={style.section} id="contact" ref={wrapperRef}>
-      <div className="sectionTitle" style={{ margin: "5% 2% 2%" }}>
+      <div
+        className={"sectionTitle " + style.sectionTitle}
+        style={{ margin: "5% 2% 2%" }}
+      >
         <h1 style={{ color: "#3d3d3d" }}> •• CONTACT</h1>
       </div>
       <div className={style.wrapper}>
@@ -101,7 +103,7 @@ function Contact() {
           </div>
           <div className={style.talk}>
             <h1>
-              <a href="tel:+9011732439" rel="noreferrer">
+              <a href="tel:+91 9916742022" rel="noreferrer">
                 Let's Talk{" "}
                 <span>
                   <FontAwesomeIcon
@@ -118,7 +120,7 @@ function Contact() {
           </div>
           <div className={style.chat}>
             <a
-              href="https://wa.me/+919011732439?text=Hi there ! i need a website"
+              href="https://wa.me/+919916742022?text=Hi, i need a website"
               target="_blank"
               rel="noreferrer"
             >
@@ -149,7 +151,7 @@ function Contact() {
               type="text"
               name="Name"
               placeholder="Your Name "
-              // required
+              required
             />
             <div>
               <input
@@ -157,16 +159,17 @@ function Contact() {
                 type="email"
                 name="Email"
                 placeholder="Your Email"
-                // required
+                required
               />
               <input
                 className={style.input}
-                type="tel"
-                maxLength="12"
                 name="Phone"
-                title="You can only enter numbers, Format: 911234567890"
+                type="tel"
+                pattern="[+]{1}[0-9]{2} [0-9]{10}"
+                maxLength="14"
+                title="Type country code followed by the local number, Example: +91 1234567890"
                 placeholder="Your Phone"
-                // required
+                required
               />
             </div>
             <input
@@ -181,7 +184,7 @@ function Contact() {
               rows="4"
               cols="30"
               placeholder="Give a few details about what you need"
-              // required
+              required
             ></textarea>
             <button className={style.submitBtn} type="submit">
               Submit

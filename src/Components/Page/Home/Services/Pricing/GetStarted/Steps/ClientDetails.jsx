@@ -44,7 +44,6 @@ function clientDetailsjsx({ formData, setFormData }) {
             type="url"
             placeholder="Your Website link"
             title="You can only enter website link, Format: https://www.example.com"
-
             className={style.input}
             value={formData.clientDetails.website}
             onChange={(e) =>
@@ -59,9 +58,9 @@ function clientDetailsjsx({ formData, setFormData }) {
           />
           <input
             type="tel"
-            pattern="[+]{1}[0-9]{2} [0-9]{3}-[0-9]{3}-[0-9]{4}"
-            maxLength="16" 
-            title="You can only enter numbers, Format: +91 123-456-7890"
+            pattern="[+]{1}[0-9]{2} [0-9]{10}"
+            maxLength="14"
+            title="Enter country code followed by local number, Example: +91 1234567890"
             placeholder="Your Phone"
             className={style.input}
             value={formData.clientDetails.mobile}

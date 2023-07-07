@@ -114,7 +114,7 @@ function LearnMore() {
               <ul>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Up to{" "}
-                  <b>5 PAGE</b>
+                  <b>5 PAGE / SECTION</b>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
@@ -190,7 +190,7 @@ function LearnMore() {
               <ul>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Up to{" "}
-                  <b>10 PAGE</b>
+                  <b>10 PAGE / SECTION</b>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
@@ -265,7 +265,7 @@ function LearnMore() {
               <ul>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp; Up to{" "}
-                  <b>15 PAGE</b>
+                  <b>15 PAGE / SECTION</b>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;
