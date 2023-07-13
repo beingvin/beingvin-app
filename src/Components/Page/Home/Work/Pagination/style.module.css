@@ -10,14 +10,13 @@
   text-align: center;
   vertical-align: middle !important;
   font-size: small;
-  padding: 5px 5px ;
-  transition-duration: .3s;
-
+  padding: 5px 5px;
+  transition-duration: 0.3s;
 }
 
 .previous,
 .next {
-  border: 1px solid var(--brand-color-light-first);
+  border: 1px solid var(--brand-color-dark-fourth);
   color: var(--brand-color-dark-fourth);
   border-radius: 25px;
   padding: 5px 15px !important;
@@ -27,6 +26,8 @@
 .next:hover {
   background-color: var(--brand-color-dark-first);
   color: var(--brand-color-light-fourth);
+  border: 1px solid var(--brand-color-dark-first);
+
   scale: 1.1;
 }
 

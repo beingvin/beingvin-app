@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import style from "./style.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -45,29 +44,27 @@ function Projects(props) {
     <div className={style.cards} ref={wrapperRef}>
       {dataLength > 0 ? (
         data.map((data) => {
+          const projectName = data.name.replace(/\s+/g, "-");
           return (
-            <div key={data.id} className={style.card}>
-              <div className={style.image}>
-                <img src={data.src} alt="Project" />
-              </div>
-              <div className={style.cardTitle}>
-                <h2>{data.name}</h2>
-              </div>
-              <div className={style.searchItem}>
-                {data.category.map((item) => {
-                  return <button key={item.id}>{item.type}</button>;
-                })}
+            <>
+              {" "}
+              <div key={data.id} className={style.card}>
+                <Link to={"/Projects/" + data.id + "/" + projectName}>
+                  <div className={style.image}>
+                    <img src={data.src} alt="Project" />
+                  </div>
+                </Link>
+                <div className={style.cardTitle}>
+                  <h2>{data.name}</h2>
+                </div>
+                <div className={style.searchItem}>
+                  {data.category.map((item) => {
+                    return <button key={item.id}>{item.type}</button>;
+                  })}
 
-                <a
-                  href={data.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={style.externalLinkIcon}
-                >
-                  <FontAwesomeIcon icon={faExternalLinkSquare} />
-                </a>
+                </div>
               </div>
-            </div>
+            </>
           );
         })
       ) : (

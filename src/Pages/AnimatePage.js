@@ -6,6 +6,7 @@ import Pricing from "../Components/Page/Home/Services/Pricing/Pricing";
 import NoPage from "../Pages/NoPage";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Project from "../Components/Page/Home/Work/Projects/Project";
 
 function AnimatePage() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function AnimatePage() {
           <Route index  element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Services/Pricing" element={<Pricing />} />
+          <Route path="/Projects/:id/:projectName" element={<Project />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
