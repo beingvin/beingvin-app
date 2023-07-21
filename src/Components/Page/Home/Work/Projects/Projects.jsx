@@ -61,7 +61,6 @@ function Projects(props) {
                   {data.category.map((item) => {
                     return <button key={item.id}>{item.type}</button>;
                   })}
-
                 </div>
               </div>
             </>

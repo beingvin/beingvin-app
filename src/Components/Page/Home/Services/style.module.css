@@ -6,14 +6,14 @@
   padding: 4% 4%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  grid-auto-rows: 340px;
-  gap: 60px;
+  grid-auto-rows: 320px;
+  gap: 30px;
 }
 
 .card {
   position: relative;
   background-color: var(--dark-color-second);
-  padding: 5% 8%;
+  padding: 4% 6%;
   border-radius: 10px;
   /* transition-duration: 0.8s; */
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -21,6 +21,7 @@
 
 .card:hover {
   background-color: var(--dark-color-fifth);
+  transform: rotateX(180deg);
 }
 
 .card h3 {
@@ -63,6 +64,54 @@
   color: var(--brand-color-dark-fourth);
 }
 
+.hostingBoxOuter {
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.534);
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.hostingBoxInner {
+  display: inline-block;
+  position: absolute;
+  height: 500px;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--brand-color-dark-fourth);
+  background-color: var(--dark-color-second);
+  padding: 4% 6%;
+  border-radius: 30px;
+  /* transition-duration: 0.8s; */
+  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hostingBoxInner h1 {
+  margin-top: 5%;
+}
+
+.hostingBoxInner p {
+  color: var(--light-color-second);
+}
+
+.closeBtn {
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 2.5rem;
+  color: var(--brand-color-dark-first);
+}
+
+.reachMe {
+  color: var(--brand-color-light-first) !important;
+  font-size: small;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 300px) and (max-width: 600px) {
   .wrapper {
@@ -70,7 +119,7 @@
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-auto-rows: 300px;
 
-    gap: 40px;
+    gap: 30px;
   }
   .card h3 {
     font-size: 1.6rem;
@@ -78,20 +127,55 @@
   .card p {
     font-size: smaller;
   }
+
+  .hostingBoxInner {
+    height: 600px;
+    width: 90%;
+  }
+
+  .hostingBoxInner h1 {
+    margin-top: 25%;
+  }
+
+  .closeBtn {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--brand-color-dark-first);
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   .wrapper {
-    padding: 10% 4%;
-    gap: 50px;
+    padding: 6% 4%;
+    gap: 30px;
     grid-auto-rows: 310px;
-
   }
   .card h3 {
     font-size: 1.8rem;
   }
   .card p {
     font-size: 0.9rem;
+  }
+
+  .hostingBoxInner {
+    height: 550px;
+    width: 90%;
+  }
+
+  .hostingBoxInner h1 {
+    margin-top: 15%;
+  }
+
+  .closeBtn {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--brand-color-dark-first);
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
