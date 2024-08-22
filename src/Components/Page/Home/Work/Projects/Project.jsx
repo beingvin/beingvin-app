@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../../Logo/Logo";
 import { useParams } from "react-router-dom";
 import data from "../data.json";
@@ -13,26 +13,39 @@ function Projects() {
   const projectId = useParams().id;
 
   const projectData = data.filter((project) => project.id == projectId)[0];
-
   console.log(projectData);
+
+  useEffect(() => {
+    const iframe = document.getElementById("iframe");
+    // Adjusting the iframe height onload event
+
+    // iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    // console.log(iframe.contentWindow.document.body.scrollHeight);
+    iframe.style.height = "100vh";
+  });
+
   return (
     <motion.div className={style.wrapper}>
       <Link to={"/"}>
         <Logo />
       </Link>
       <div className={style.projectTitle}>
-        <h1>
-          {projectName.replace(/-/gi, " ")} &nbsp; <span>|</span>
-        </h1>{" "}
+        <h1>{projectName.replace(/-/gi, " ")}</h1>{" "}
         <a href={projectData.link} target="_blank" rel="noreferrer">
+          Open live website
           <FontAwesomeIcon
             icon={faExternalLinkSquare}
             className={style.externalLinkIcon}
           />
         </a>
       </div>
-      <br />
-      <iframe src={projectData.link} className={style.iframe}>
+      <hr className={style.hrThin} />
+      <iframe
+        src={projectData.link}
+        className={style.iframe}
+        id="iframe"
+        scrolling="no"
+      >
         {" "}
       </iframe>{" "}
       <br />

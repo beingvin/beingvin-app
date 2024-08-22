@@ -10,11 +10,11 @@ function LearnMore({ popUp, setPopUp }) {
       case "landingPage":
         return (
           <div>
-            <p>1. basic landing page of a website @ Rs4499</p>
+            <p>1. basic landing page of a website @ Rs8499</p>
             <br />
-            <p>2. standard landing page of a website @ Rs5999</p>
+            <p>2. standard landing page of a website @ Rs12499</p>
             <br />
-            <p>3. premium landing page of a website @ Rs7599</p> <br />
+            <p>3. premium landing page of a website @ Rs18499</p> <br />
             <br />
             <p className={style.reachMe}>
               If you require any further information, please feel free to reach
@@ -25,14 +25,14 @@ function LearnMore({ popUp, setPopUp }) {
       case "design":
         return (
           <div>
-            <p>1. basic redesign website of up to 4 sections/ pages @ Rs2499</p>
+            <p>1. basic redesign website of up to 4 sections/ pages @ Rs6499</p>
             <br />
             <p>
-              2. standard redesign website of up to 8 sections/ pages @ Rs4999
+              2. standard redesign website of up to 8 sections/ pages @ Rs9499
             </p>
             <br />
             <p>
-              3. premium redesign website of up to 15 sections/ pages @ Rs7999
+              3. premium redesign website of up to 15 sections/ pages @ Rs14499
             </p>{" "}
             <br />
             <br />

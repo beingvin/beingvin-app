@@ -9,6 +9,8 @@ function Projects(props) {
   const dataLength = Object.keys(data).length;
   const wrapperRef = useRef(null);
 
+
+
   // // GSAP Animation
   // useEffect(() => {
   //   gsap.registerPlugin(ScrollTrigger);
@@ -46,24 +48,21 @@ function Projects(props) {
         data.map((data) => {
           const projectName = data.name.replace(/\s+/g, "-");
           return (
-            <>
-              {" "}
-              <div key={data.id} className={style.card}>
-                <Link to={"/Projects/" + data.id + "/" + projectName}>
-                  <div className={style.image}>
-                    <img src={data.src} alt="Project" />
-                  </div>
-                </Link>
-                <div className={style.cardTitle}>
-                  <h2>{data.name}</h2>
+            <div key={data.id} className={style.card}>
+              <Link to={"/Projects/" + data.id + "/" + projectName}>
+                <div className={style.image}>
+                  <img src={data.src} alt="Project" />
                 </div>
-                <div className={style.searchItem}>
-                  {data.category.map((item) => {
-                    return <button key={item.id}>{item.type}</button>;
-                  })}
-                </div>
+              </Link>
+              <div className={style.cardTitle}>
+                <h2>{data.name}</h2>
               </div>
-            </>
+              <div className={style.searchItem}>
+                {data.category.map((item) => {
+                  return <button key={item.id}>{item.type}</button>;
+                })}
+              </div>
+            </div>
           );
         })
       ) : (
@@ -71,6 +70,7 @@ function Projects(props) {
       )}
     </div>
   );
+  
 }
 
 export default Projects;

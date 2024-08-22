@@ -19,7 +19,7 @@
             }
         ],
         "link": "./"
-    },
+    }, 
     {
         "id": "2",
         "name": "Gym",
@@ -43,24 +43,24 @@
     },
     {
         "id": "3",
-        "name": "Restaurant",
+        "name": "Skyline Real Estate",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_3.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "Premium"
+                "type": "Static"
             },
             {
                 "id": "2",
-                "type": "Multi Page"
+                "type": "Single Page"
             },
             {
                 "id": "3",
-                "type": "PHP"
+                "type": "HTML"
             }
         ],
-        "link": "./"
+        "link": "https://skylinerealestate.beingvin.com/"
     },
     {
         "id": "4",
@@ -102,11 +102,11 @@
                 "type": "Javascript"
             }
         ],
-        "link": "https://www.careplusclinic.co"
+        "link": "https://www.thecareplusclinic.com"
     },
     {
         "id": "6",
-        "name": "Blogging",
+        "name": "Learn Online",
         "description": "Proeject Details",
         "src": "images/projects/Project_6.jpg",
         "category": [
@@ -120,10 +120,10 @@
             },
             {
                 "id": "3",
-                "type": "Flask"
+                "type": "LMS"
             }
         ],
-        "link": "./"
+        "link": "https://lms.beingvin.com/"
     },
     {
         "id": "7",
@@ -148,7 +148,7 @@
     },
     {
         "id": "8",
-        "name": "Online Store",
+        "name": "School Management",
         "description": "Proeject Details",
         "src": "images/projects/Project_8.jpg",
         "category": [
@@ -162,10 +162,10 @@
             },
             {
                 "id": "3",
-                "type": "Node"
+                "type": "Wordpress"
             }
         ],
-        "link": "./"
+        "link": "https://sm.beingvin.com/"
     },
     {
         "id": "9",
@@ -232,43 +232,51 @@
     },
     {
         "id": "12",
-        "name": "Project 12",
+        "name": "Restaurant",
         "description": "Proeject Details",
         "src": "https://source.unsplash.com/random/600*400/?code",
         "category": [
             {
                 "id": "1",
-                "type": "Web Design"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "App"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "PHP"
             }
         ],
         "link": "./"
     },
     {
         "id": "13",
-        "name": "Project 13",
+        "name": "Blogging",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_13.jpg",
         "category": [
             {
                 "id": "1",
-                "type": "React"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "Landing Page"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Flask"
             }
         ],
         "link": "./"
     },
     {
         "id": "14",
-        "name": "Project 14",
+        "name": "Online Store",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_14.jpg",
         "category": [
             {
                 "id": "1",
@@ -276,14 +284,18 @@
             },
             {
                 "id": "2",
-                "type": "Landing Page"
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Node"
             }
         ],
         "link": "./"
     },
     {
         "id": "15",
-        "name": "Project 15",
+        "name": "Ahilo Charters",
         "description": "Proeject Details",
         "src": "https://source.unsplash.com/random/600*400/?code",
         "category": [
@@ -293,34 +305,34 @@
             },
             {
                 "id": "2",
-                "type": "Landing Page"
+                "type": "Multi Page"
             },
             {
                 "id": "3",
-                "type": "react"
+                "type": "Wordpress"
             }
         ],
-        "link": "./"
+        "link": "https://ahilocharters.com/"
     },
     {
         "id": "16",
-        "name": "Project 16",
+        "name": "Boatcraft",
         "description": "Proeject Details",
         "src": "https://source.unsplash.com/random/600*400/?code",
         "category": [
             {
                 "id": "1",
-                "type": "App"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "Landing Page"
+                "type": "Multi Page"
             },
             {
                 "id": "3",
-                "type": "Web Design"
+                "type": "Wordpress"
             }
         ],
-        "link": "./"
+        "link": "https://boatcraft.in/"
     }
 ]

@@ -41,14 +41,18 @@
   width: 150%;
   right: 25%;
   transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  filter: grayscale(85%);
 }
 
 .card img:hover {
   scale: 1.2;
+  filter: grayscale(10%);
 }
 
 .cardTitle h2 {
   color: var(--brand-color-light-fourth);
+  /* font-weight: 600; */
   /* border-bottom: 1px solid var(--brand-color-dark-first); */
 }
 
@@ -72,21 +76,43 @@
   /* cursor: pointer; */
 }
 
+/* Project page  */
+
 .projectTitle {
-  display: inline-block;
-  width: 300px;
-  position: absolute;
-  top: 1%;
-  right: 2%;
-  text-align: end;
+  /* display: inline-block; */
+  /* width: 300px; */
+  /* position: absolute; */
+  /* top: 1%; */
+  /* right: 2%; */
+  /* text-align: end; */
+  position: relative;
+  height: 120px;
   color: var(--light-color-second);
   /* text-align: right; */
 }
 
 .projectTitle h1 {
   display: inline-block;
-  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0px;
+  font-size: 4rem;
   font-weight: 500;
+}
+
+.projectTitle a {
+  display: inline-block;
+  color: var(--light-color-second);
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.projectTitle a:hover .externalLinkIcon {
+  scale: 1.2;
+  color: var(--brand-color-dark-first);
 }
 
 .externalLinkIcon {
@@ -97,31 +123,63 @@
   transition-duration: 0.3s;
 }
 
-.externalLinkIcon:hover {
-  color: var(--brand-color-dark-first);
-}
-
 .iframe {
   border: 0;
   width: 100%;
-  height: 700px;
-  padding: 2%;
+  background-color: var(--brand-color-light-fourth);
+  /* height: 700px; */
+  padding: 0.5%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 600px) {
-  .projectTitle {
-    width: 300px;
-  }
+.hrThin {
+  position: relative;
+  margin: 1% auto;
+  width: 80%;
+  border: none;
+  height: 0.2px;
+  background: var(--dark-color-third);
+}
 
+/* .hr {
+  position: relative;
+  margin: 4% auto;
+  width: 100%;
+  border: none;
+  height: 0.5px;
+  background: var(--light-color-first);
+} */
+
+@media only screen and (max-width: 600px) {
   .projectTitle h1 {
-    font-size: 0.9rem;
+    font-size: 1.6rem;
+    bottom: 30px;
   }
   .iframe {
     margin-top: 5%;
     height: 600px;
-
   }
-  
+  .projectTitle a {
+    font-size: 1rem;
+    /* right: 0; */
+    left: 0;
+    bottom: 0;
+  }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .projectTitle h1 {
+    font-size: 3rem;
+    bottom: 30px;
+  }
+  .iframe {
+    margin-top: 5%;
+    height: 600px;
+  }
+  .projectTitle a {
+    left: 0;
+    bottom: 0;
+  }
+}
+

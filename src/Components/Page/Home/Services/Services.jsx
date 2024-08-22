@@ -49,7 +49,7 @@ function Services() {
         <div className={style.card}>
           <h3>SINGLEPAGE SITE</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 3999
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 10999
           </span>
           <hr className={style.hrThin} />
           <p>
@@ -63,7 +63,7 @@ function Services() {
         <div className={style.card}>
           <h3>MULTIPAGE SITE</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 5999
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 14999
           </span>
           <hr className={style.hrThin} />
           <p>
@@ -77,7 +77,7 @@ function Services() {
         <div className={style.card}>
           <h3>LANDING PAGE</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 4499
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 8499
           </span>
           <hr className={style.hrThin} />
           <p>
@@ -92,7 +92,7 @@ function Services() {
         <div className={style.card}>
           <h3>SITE DESIGN ONLY</h3>
           <span>
-            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 2499
+            From <FontAwesomeIcon icon={faIndianRupeeSign} /> 6499
           </span>
           <hr className={style.hrThin} />
           <p>

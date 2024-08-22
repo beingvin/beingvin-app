@@ -113,7 +113,7 @@ function LearnMore() {
 
               <span className={style.priceValue}>
                 <FontAwesomeIcon icon={faIndianRupeeSign} />
-                <span>5999</span>
+                <span>10999</span>
               </span>
               <span className={style.timeline}>
                 Delivery Time 2-3 Days <br /> 1 Revision{" "}
@@ -189,7 +189,7 @@ function LearnMore() {
               <span className={style.starting}>Starting</span>
               <span className={style.priceValue}>
                 <FontAwesomeIcon icon={faIndianRupeeSign} />
-                <span>11999</span>
+                <span>14999</span>
               </span>
               <span className={style.timeline}>
                 Delivery Time 5-8 Days <br /> 2 Revision{" "}
@@ -264,7 +264,7 @@ function LearnMore() {
               <span className={style.starting}>Starting</span>
               <span className={style.priceValue}>
                 <FontAwesomeIcon icon={faIndianRupeeSign} />
-                <span>20999</span>
+                <span>24999</span>
               </span>
               <span className={style.timeline}>
                 Delivery Time 12-15 Days <br /> 3 Revision{" "}
