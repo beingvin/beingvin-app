@@ -33,7 +33,7 @@ function ContactMe() {
         </div>
         <h1>
           <a
-            href="https://wa.me/+919916742022?text=Hi, i need a website"
+            href="https://wa.me/+919916742022?text=Hi, I'm interested in your web development services. Can we discuss my project?"
             target="_blank"
             rel="noreferrer"
           >
