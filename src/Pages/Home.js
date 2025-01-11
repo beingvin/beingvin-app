@@ -21,7 +21,7 @@ function Home() {
       <Work />
       <Contact />
     </>
-  );
-}
+  )
+  }
 
 export default Home;

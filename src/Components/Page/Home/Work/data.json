@@ -1,24 +1,24 @@
 [
     {
         "id": "1",
-        "name": "Cafe and Wifi Hub",
+        "name": "Zentry Gaming",
         "description": "Proeject Details",
-        "src": "images/projects/Project_1.jpg",
+        "src": "images/projects/Project_1.png",
         "category": [
             {
                 "id": "1",
-                "type": "Dynamic"
+                "type": "Premium"
             },
             {
                 "id": "2",
-                "type": "Multi Page"
+                "type": "Single Page"
             },
             {
                 "id": "3",
-                "type": "Flask"
+                "type": "React"
             }
         ],
-        "link": "./"
+        "link": "https://zentrygaming.beingvin.com/"
     }, 
     {
         "id": "2",
@@ -213,7 +213,7 @@
         "id": "11",
         "name": "Easy Notes App",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_11.png",
         "category": [
             {
                 "id": "1",
@@ -234,7 +234,7 @@
         "id": "12",
         "name": "Restaurant",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/404.png",
         "category": [
             {
                 "id": "1",
@@ -297,7 +297,7 @@
         "id": "15",
         "name": "Ahilo Charters",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_15.png",
         "category": [
             {
                 "id": "1",
@@ -318,7 +318,7 @@
         "id": "16",
         "name": "Boatcraft",
         "description": "Proeject Details",
-        "src": "https://source.unsplash.com/random/600*400/?code",
+        "src": "images/projects/Project_16.png",
         "category": [
             {
                 "id": "1",
@@ -334,5 +334,25 @@
             }
         ],
         "link": "https://boatcraft.in/"
+    },{
+        "id": "17",
+        "name": "Cafe and Wifi Hub",
+        "description": "Proeject Details",
+        "src": "images/projects/Project_17.jpg",
+        "category": [
+            {
+                "id": "1",
+                "type": "Dynamic"
+            },
+            {
+                "id": "2",
+                "type": "Multi Page"
+            },
+            {
+                "id": "3",
+                "type": "Flask"
+            }
+        ],
+        "link": "./"
     }
 ]

@@ -8,6 +8,7 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   grid-auto-rows: 320px;
   gap: 30px;
+  z-index: 1;
 }
 
 .card {
@@ -15,13 +16,12 @@
   background-color: var(--dark-color-second);
   padding: 4% 6%;
   border-radius: 10px;
-  /* transition-duration: 0.8s; */
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card:hover {
   background-color: var(--dark-color-fifth);
-  transform: rotateX(180deg);
+ 
 }
 
 .card h3 {
