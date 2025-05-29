@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import style from "./style.module.css";
 import Logo from "../Home/Logo/Logo";
 import vinpic from "./img/vin (2).png";
-import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import Tools from "./Tools/Tools";
 import ContactMe from "./ContactMe/ContactMe";
 import PageTransition from "../PageTransition/PageTransition";
+import MetaTagsAbout from "../../Seo/MetaTagsAbout";
 // import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
@@ -29,14 +29,7 @@ function About() {
 
   return (
     <>
-      <Helmet>
-        <title> About | Beingvin | Full Stack Web Developer & Designer</title>
-        <meta
-          name="description"
-          content="I embarked on my journey as an IT professional More than a decade ago, and for the past two years, I have focused on honing my coding skills."
-        />
-        <link rel="canonical" href="/About" />
-      </Helmet>
+      <MetaTagsAbout />
       <section className={style.section} id="About">
         <PageTransition />
         <motion.div
