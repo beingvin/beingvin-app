@@ -3,6 +3,8 @@ import Layout from "./Layout";
 import Home from "./Home";
 import About from "../Components/Page/About/About";
 import Pricing from "../Components/Page/Home/Services/Pricing/Pricing";
+import PrivacyPolicy from "../Components/Page/PrivacyPolicy/PrivacyPolicy";
+
 import NoPage from "../Pages/NoPage";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -18,6 +20,7 @@ function AnimatePage() {
           <Route path="/About" element={<About />} />
           <Route path="/Services/Pricing" element={<Pricing />} />
           <Route path="/Projects/:id/:projectName" element={<Project />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} /> 
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

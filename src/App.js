@@ -6,6 +6,7 @@ import Preloader from "./Components/Preloader/Preloader";
 import Cursor from "./Components/Cursor/Cursor";
 import ProgessBar from "./Components/ProgressBar/ProgessBar";
 import { motion } from "framer-motion";
+import CookieConsent from "./Components/CookieConsent/CookieConsent"
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -28,6 +29,7 @@ function App() {
           <Router>
             <div className="container">
               <AnimatePage />
+              <CookieConsent />
             </div>
           </Router>
         </>
