@@ -6,7 +6,8 @@ import Preloader from "./Components/Preloader/Preloader";
 import Cursor from "./Components/Cursor/Cursor";
 import ProgessBar from "./Components/ProgressBar/ProgessBar";
 import { motion } from "framer-motion";
-import CookieConsent from "./Components/CookieConsent/CookieConsent"
+import CookieConsent from "./Components/CookieConsent/CookieConsent";
+import SchemaMarkup from "./Components/SchemaMarkup/SchemaMarkup";
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <motion.div className="app">
+      <SchemaMarkup />
       <ProgessBar />
       <Cursor />
       {preloader ? (

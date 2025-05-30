@@ -1,0 +1,18 @@
+User-agent: *
+
+# Disallow private or sensitive routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /signup/
+
+# Prevent indexing of JSON and TXT files only
+Disallow: /*.json$
+Disallow: /*.txt$
+
+# Allow everything else
+Allow: /
+
+# sitemap location 
+Sitemap: https://www.beingvin.com/sitemap.xml
