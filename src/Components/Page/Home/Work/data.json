@@ -357,7 +357,7 @@
     "link": "./"
   },
   {
-    "id": "17",
+    "id": "18",
     "name": "Sachin Travels",
     "description": "Proeject Details",
     "src": "images/projects/Project_18.jpg",
@@ -376,5 +376,26 @@
       }
     ],
     "link": "https://sachintravels.beingvin.com/"
+  },
+    {
+    "id": "19",
+    "name": "Marine Gear",
+    "description": "Proeject Details",
+    "src": "images/projects/Project_19.png",
+    "category": [
+      {
+        "id": "1",
+        "type": "Dynamic"
+      },
+      {
+        "id": "2",
+        "type": "Premium"
+      },
+      {
+        "id": "3",
+        "type": "Wordpress"
+      }
+    ],
+    "link": "https://marinegear.beingvin.com"
   }
 ]

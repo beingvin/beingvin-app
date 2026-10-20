@@ -8,6 +8,7 @@ import ProgessBar from "./Components/ProgressBar/ProgessBar";
 import { motion } from "framer-motion";
 import CookieConsent from "./Components/CookieConsent/CookieConsent";
 import SchemaManager from "./Components/Seo/SchemaMarkup/SchemaManager";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -28,7 +29,7 @@ function App() {
       ) : (
         <>
           <Router>
-            <SchemaManager />
+            <SchemaManager /> 
             <div className="container">
               <AnimatePage />
               <CookieConsent />
