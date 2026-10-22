@@ -1,19 +1,18 @@
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import style from "./style.module.css";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Tools() {
-  // // GSAP Animation
   const wrapperRef = useRef(null);
 
   useLayoutEffect(() => {
     const element = wrapperRef.current;
-    // ScrollTrigger.refresh();
+    if (!element) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       element.querySelectorAll("ul li"),
       { y: 20, opacity: 0 },
       {
@@ -25,13 +24,15 @@ function Tools() {
           trigger: element,
           scroller: "body",
           start: 400,
-          // end: "bottom 0%",
-          // markers: true,
         },
         stagger: 0.1,
       }
     );
-  });
+
+    return () => {
+      tween.kill();
+    };
+  }, []);
 
   return (
     <div className={style.tool} ref={wrapperRef}>

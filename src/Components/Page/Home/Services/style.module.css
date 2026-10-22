@@ -21,7 +21,6 @@
 
 .card:hover {
   background-color: var(--dark-color-fifth);
- 
 }
 
 .card h3 {
@@ -65,29 +64,29 @@
 }
 
 .hostingBoxOuter {
-  display: inline-block;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.534);
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 .hostingBoxInner {
   display: inline-block;
-  position: absolute;
-  height: 500px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
   width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: var(--brand-color-dark-fourth);
   background-color: var(--dark-color-second);
   padding: 4% 6%;
   border-radius: 30px;
-  /* transition-duration: 0.8s; */
-  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hostingBoxInner h1 {
@@ -105,6 +104,7 @@
   right: 50px;
   font-size: 2.5rem;
   color: var(--brand-color-dark-first);
+  cursor: pointer;
 }
 
 .reachMe {
@@ -118,7 +118,6 @@
     padding: 15% 2%;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-auto-rows: 300px;
-
     gap: 30px;
   }
   .card h3 {
@@ -129,7 +128,7 @@
   }
 
   .hostingBoxInner {
-    height: 600px;
+    max-height: 90vh;
     width: 90%;
   }
 
@@ -138,14 +137,12 @@
   }
 
   .closeBtn {
-    display: inline-block;
-    position: absolute;
     top: 15px;
     right: 30px;
     font-size: 2.5rem;
-    color: var(--brand-color-dark-first);
   }
 }
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   .wrapper {
@@ -161,7 +158,7 @@
   }
 
   .hostingBoxInner {
-    height: 550px;
+    max-height: 90vh;
     width: 90%;
   }
 
@@ -170,21 +167,16 @@
   }
 
   .closeBtn {
-    display: inline-block;
-    position: absolute;
     top: 15px;
     right: 30px;
     font-size: 2.5rem;
-    color: var(--brand-color-dark-first);
   }
 }
+
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
   .wrapper {
     padding: 8% 4%;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   }
-  /* .card p {
-    font-size: smaller;
-  } */
 }

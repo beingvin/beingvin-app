@@ -10,7 +10,7 @@ function chooseTimeframe({ setPage, formData, setFormData }) {
   return (
     <>
       <div className={style.buttons}>
-        <button
+        <button type="button"
           className={style.button}
           value="Standard"
           style={formData.timeframe === "Standard" ? btnStyle : {}}
@@ -24,7 +24,7 @@ function chooseTimeframe({ setPage, formData, setFormData }) {
         >
           Standard
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="WITHIN 1 MONTH"
           style={formData.timeframe === "WITHIN 1 MONTH" ? btnStyle : {}}
@@ -38,7 +38,7 @@ function chooseTimeframe({ setPage, formData, setFormData }) {
         >
           WITHIN 1 MONTH
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="WITHIN 2 MONTH"
           style={formData.timeframe === "WITHIN 2 MONTH" ? btnStyle : {}}
@@ -52,7 +52,7 @@ function chooseTimeframe({ setPage, formData, setFormData }) {
         >
           WITHIN 2 MONTH
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="WITHIN 4 MONTH"
           style={formData.timeframe === "WITHIN 4 MONTH" ? btnStyle : {}}

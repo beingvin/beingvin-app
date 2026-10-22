@@ -40,12 +40,17 @@
   text-decoration: underline;
 }
 
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
 .button {
   background: var(--brand-color-light-second);
   color: var(--brand-color-light-fourth);
   border: none;
   padding: 8px 16px;
-  margin-left: 1rem;
   cursor: pointer;
   border-radius: 15px;
 }
@@ -61,5 +66,9 @@
     height: 150px;
     bottom: 5%;
     right: 5%;
+  }
+
+  .actions {
+    margin-left: 0;
   }
 }

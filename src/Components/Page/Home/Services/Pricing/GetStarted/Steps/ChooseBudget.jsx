@@ -10,7 +10,7 @@ function chooseBudget({ setPage, formData, setFormData }) {
   return (
     <>
       <div className={style.buttons}>
-        <button
+        <button type="button"
           className={style.button}
           value="> 5K"
           style={formData.budget === "> 5K" ? btnStyle : {}}
@@ -24,7 +24,7 @@ function chooseBudget({ setPage, formData, setFormData }) {
         >
           {"> 5K"}
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="5K - 10K"
           style={formData.budget === "5K - 10K" ? btnStyle : {}}
@@ -39,7 +39,7 @@ function chooseBudget({ setPage, formData, setFormData }) {
           {" "}
           5K - 10K
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="10K - 15K"
           style={formData.budget === "10K - 15K" ? btnStyle : {}}
@@ -53,7 +53,7 @@ function chooseBudget({ setPage, formData, setFormData }) {
         >
           10K - 15K
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="+ 20K"
           style={formData.budget === "+ 20K" ? btnStyle : {}}

@@ -9,7 +9,11 @@ function ProgessBar() {
 
   const scaleX = useSpring(scrollYProgress);
   return (
-    <motion.div className={style.progressBar} ref={divRef} style={{ scaleX }} />
+    <motion.div
+      className={style.progressBar}
+      ref={divRef}
+      style={{ scaleX, transformOrigin: "0%" }}
+    />
   );
 }
 

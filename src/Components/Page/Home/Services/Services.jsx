@@ -5,7 +5,6 @@ import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { motion } from "framer-motion";
 import LearnMore from "./LearnMore";
 
 function Services() {
@@ -41,7 +40,7 @@ function Services() {
   }, []);
 
   return (
-    <section className={style.section}>
+    <section className={style.section} id="services">
       <div className="sectionTitle">
         <h1> •• SERVICES</h1>
       </div>

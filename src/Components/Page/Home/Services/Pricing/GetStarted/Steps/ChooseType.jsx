@@ -1,8 +1,7 @@
 import React from "react";
 import style from "../style.module.css";
-import { color } from "framer-motion";
 
-function chooseType({ setPage, formData, setFormData }) {
+function ChooseType({ setPage, formData, setFormData }) {
   const btnStyle = {
     backgroundColor: "#fe005d",
     border: "2px solid #fe005d",
@@ -11,7 +10,7 @@ function chooseType({ setPage, formData, setFormData }) {
   return (
     <>
       <div className={style.buttons}>
-        <button
+        <button type="button"
           className={style.button}
           value="Single"
           style={formData.type === "Single" ? btnStyle : {}}
@@ -25,7 +24,7 @@ function chooseType({ setPage, formData, setFormData }) {
         >
           Single
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="Multipage"
           style={formData.type === "Multipage" ? btnStyle : {}}
@@ -39,7 +38,7 @@ function chooseType({ setPage, formData, setFormData }) {
         >
           Multipage
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="Landing Page"
           style={formData.type === "Landing Page" ? btnStyle : {}}
@@ -53,7 +52,7 @@ function chooseType({ setPage, formData, setFormData }) {
         >
           Landing Page
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="Website Design"
           style={formData.type === "Website Design" ? btnStyle : {}}
@@ -72,4 +71,4 @@ function chooseType({ setPage, formData, setFormData }) {
   );
 }
 
-export default chooseType;
+export default ChooseType;

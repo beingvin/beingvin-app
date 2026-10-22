@@ -10,7 +10,7 @@ function choosePlan({ setPage, formData, setFormData }) {
   return (
     <>
       <div className={style.buttons}>
-        <button
+        <button type="button"
           className={style.button}
           value="Basic"
           style={formData.plan === "Basic" ? btnStyle : {}}
@@ -24,7 +24,7 @@ function choosePlan({ setPage, formData, setFormData }) {
         >
           Basic
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="Standard"
           style={formData.plan === "Standard" ? btnStyle : {}}
@@ -38,7 +38,7 @@ function choosePlan({ setPage, formData, setFormData }) {
         >
           Standard
         </button>
-        <button
+        <button type="button"
           className={style.button}
           value="Premium"
           style={formData.plan === "Premium" ? btnStyle : {}}

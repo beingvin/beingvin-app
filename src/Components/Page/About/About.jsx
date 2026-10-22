@@ -1,31 +1,18 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.css";
 import Logo from "../Home/Logo/Logo";
 import vinpic from "./img/vin (2).png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Tools from "./Tools/Tools";
 import ContactMe from "./ContactMe/ContactMe";
 import PageTransition from "../PageTransition/PageTransition";
 import MetaTagsAbout from "../../Seo/MetaTagsAbout";
-// import TextShpere from "./TextShpere/TextShpere";
 
 function About() {
-  const [pageTrans, setPageTrans] = useState(true);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // setTimeout(() => setPageTrans(false), 2800);
   }, []);
-
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    targetRef: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <>
@@ -88,8 +75,6 @@ function About() {
 
           {/* ------------------------- contact -------------------------- */}
           <ContactMe />
-
-          {/* <TextShpere/> */}
         </motion.div>
       </section>
     </>

@@ -23,7 +23,11 @@ function ContactMe() {
       <div className={style.chat}>
         <div className={style.socialLinks}>
           <p>
-            <a href="https://www.linkedin.com/in/beingvin" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/beingvin"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               LinkedIn
             </a>{" "}
           </p>
@@ -33,9 +37,9 @@ function ContactMe() {
         </div>
         <h1>
           <a
-            href="https://wa.me/+919916742022?text=Hi, I'm interested in your web development services. Can we discuss my project?"
+            href="https://wa.me/+919916742022?text=Hi%2C%20I%27m%20interested%20in%20your%20web%20development%20services.%20Can%20we%20discuss%20my%20project%3F"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Let's Chat
             <span>

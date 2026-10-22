@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -17,29 +16,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth(app);
-
-// firebase login
-const firebaseSignIn = async () => {
-  try {
-    await signInWithEmailAndPassword(
-      auth,
-      process.env.REACT_APP_EMAIL,
-      process.env.REACT_APP_PASSWORD
-    );
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const firebaseSignOut = async () => {
-  try {
-    await signOut(auth);
-  } catch (err) {
-    console.log(err);
-  }
-};
 
 // export
 export default db;
-export { firebaseSignIn, firebaseSignOut };

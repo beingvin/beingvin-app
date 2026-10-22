@@ -6,5 +6,6 @@
   bottom: 0;
   height: 3px;
   background-color: var(--brand-color-dark-first);
+  transform-origin: 0% 50%;
   z-index: 100;
 }

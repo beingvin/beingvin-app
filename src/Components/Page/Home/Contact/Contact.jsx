@@ -1,28 +1,27 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import db, {
-  firebaseSignIn,
-  firebaseSignOut,
-} from "../../../config/Firebase/FirebaseConfig";
-// import { Email } from "../../../config//SMTP/smtp";
+import db from "../../../config/Firebase/FirebaseConfig";
+import Email from "../../../config/SMTP/smtp";
 import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
-import { gsap, Power3 } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Contact() {
   const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME_2);
   const [submit, setSubmit] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // GSAP Animation
   const wrapperRef = useRef(null);
 
-  // gsap.registerPlugin(ScrollTrigger);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return; // Prevent double submission
+
+    setLoading(true);
+    setSubmit(false);
+    setSubmitError("");
 
     const name = e.target.Name.value;
     const email = e.target.Email.value;
@@ -30,62 +29,59 @@ function Contact() {
     const website = e.target.Website.value;
     const message = e.target.Message.value;
 
-    window.Email.send({
-      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
-      To: "pythont2021@gmail.com",
-      From: "notification@beingvin.com",
-      Subject: "Recieved New Client Details | Beingvin.com",
-      Body: `Name : ${name} <br/>
-      Email Id : ${email}  <br/>
-      Mobile No : ${phone}  <br/>
-      Website link : ${website}  <br/>
-      Message : ${message} <br>`,
-    }).then(() => {
-      const addToFirabase = async () => {
-        await firebaseSignIn();
-        await addDoc(collectionRef, {
-          Name: name,
-          Email: email,
-          Website: website,
-          Phone: phone,
-          Message: message,
-          Remark: "inquiry",
-          Time: serverTimestamp(),
-        });
-        await firebaseSignOut();
-        setSubmit(true);
-      };
-      addToFirabase();
-    });
-    e.target.reset();
+    // 1. ALWAYS save to Firestore first so inquiries are never lost
+    try {
+      await addDoc(collectionRef, {
+        Name: name,
+        Email: email,
+        Website: website,
+        Phone: phone,
+        Message: message,
+        Remark: "inquiry",
+        Time: serverTimestamp(),
+      });
+      setSubmit(true);
+      e.target.reset();
+    } catch (err) {
+      console.error("Error saving inquiry:", err);
+      setSubmitError(
+        "We couldn't confirm your inquiry was submitted. Please try again, or contact us directly."
+      );
+      setLoading(false);
+      return;
+    }
 
-    setInterval(() => setSubmit(false), 40000);
+    // 2. Safely attempt to send email notification
+    try {
+      const mailClient = (typeof window !== "undefined" && window.Email) || Email;
+      if (mailClient && mailClient.send && process.env.REACT_APP_SMTP_SECURE_TOKEN) {
+        mailClient
+          .send({
+            SecureToken: process.env.REACT_APP_SMTP_SECURE_TOKEN,
+            To: process.env.REACT_APP_NOTIFICATION_TO_EMAIL || "pythont2021@gmail.com",
+            From: process.env.REACT_APP_NOTIFICATION_FROM_EMAIL || "notification@beingvin.com",
+            Subject: "Received New Client Details | Beingvin.com",
+            Body: `Name : ${name} <br/>
+            Email Id : ${email}  <br/>
+            Mobile No : ${phone}  <br/>
+            Website link : ${website}  <br/>
+            Message : ${message} <br>`,
+          })
+          .then((response) => {
+            console.log("SMTP email response:", response);
+          })
+          .catch((mailErr) => {
+            console.warn("SMTP email notification failed or blocked:", mailErr);
+          });
+      }
+    } catch (mailEx) {
+      console.warn("Email service unavailable:", mailEx);
+    } finally {
+      setLoading(false);
+    }
+
+    setTimeout(() => setSubmit(false), 8000);
   };
-
-  // useEffect(() => {
-  //   const element = wrapperRef.current;
-
-  //   gsap.fromTo(
-  //     element,
-  //     { y: 200, opacity: 0 },
-  //     {
-  //       duration: 3,
-  //       y: 0,
-  //       opacity: 1,
-  //       ease: Power3.easeInOut,
-  //       scrollTrigger: {
-  //         trigger: element,
-  //         scroller: "body",
-  //         markers: true,
-  //         start: "top 80%",
-  //         // end: "top top",
-  //         // scrub:2
-  //       },
-  //       // stagger: 0.3,
-  //     }
-  //   );
-  //   ScrollTrigger.refresh();
-  // }, []);
 
   return (
     <section className={style.section} id="contact" ref={wrapperRef}>
@@ -98,12 +94,12 @@ function Contact() {
       <div className={style.wrapper}>
         <div className={style.talkToMe}>
           <div className={style.tagLines}>
-            <p>Let's Build Something Greate ! </p>
+            <p>Let's Build Something Great ! </p>
             <p>And take your online presence to the next level.</p>
           </div>
           <div className={style.talk}>
             <h1>
-              <a href="tel:+91 9916742022" rel="noreferrer">
+              <a href="tel:+919916742022" rel="noreferrer">
                 Let's Talk{" "}
                 <span>
                   <FontAwesomeIcon
@@ -120,7 +116,7 @@ function Contact() {
           </div>
           <div className={style.chat}>
             <a
-              href="https://wa.me/+919916742022?text= Hi, I'm interested in your web development services. Can we discuss my project?"
+              href="https://wa.me/+919916742022?text=Hi,%20I'm%20interested%20in%20your%20web%20development%20services.%20Can%20we%20discuss%20my%20project?"
               target="_blank"
               rel="noreferrer"
             >
@@ -144,6 +140,11 @@ function Contact() {
             ) : (
               ""
             )}
+            {submitError && (
+              <p className={style.submitError} role="alert">
+                {submitError}
+              </p>
+            )}
 
             <legend>GET IN TOUCH</legend>
             <input
@@ -165,9 +166,9 @@ function Contact() {
                 className={style.input}
                 name="Phone"
                 type="tel"
-                pattern="[+]{1}[0-9]{2} [0-9]{10}"
-                maxLength="14"
-                title="Type country code followed by the local number, Example: +91 1234567890"
+                pattern="[0-9+() -]{7,20}"
+                maxLength="20"
+                title="Enter a valid phone number (e.g. +91 9916742022 or 9916742022)"
                 placeholder="Your Phone"
                 required
               />
@@ -186,8 +187,12 @@ function Contact() {
               placeholder="Give a few details about what you need"
               required
             ></textarea>
-            <button className={style.submitBtn} type="submit">
-              Submit
+            <button
+              className={style.submitBtn}
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Submit"}
             </button>
           </form>
         </div>

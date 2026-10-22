@@ -1,53 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import style from "./style.module.css";
-import { motion } from "framer-motion";
 
 function Cursor() {
-  const [cursor, setCursor] = useState({
-    x: 0,
-    y: 0,
-  });
-
-  const [cursorVariant, setCursorVariant] = useState("default");
-
-  // console.log(cursor);
+  const cursorRef = useRef(null);
 
   useEffect(() => {
-    const mouseMove = (e) => {
-      setCursor({
-        x: e.clientX,
-        y: e.clientY,
-      });
+    // Only activate for devices with a fine pointer (mouse/trackpad)
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      if (cursorRef.current) {
+        cursorRef.current.style.display = "none";
+      }
+      return;
+    }
+
+    const cursorEl = cursorRef.current;
+    if (!cursorEl) return;
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let rafId;
+
+    const onMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     };
-    window.addEventListener("mousemove", mouseMove);
+
+    const render = () => {
+      cursorEl.style.transform = `translate3d(${mouseX - 6}px, ${mouseY - 6}px, 0)`;
+      rafId = requestAnimationFrame(render);
+    };
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    rafId = requestAnimationFrame(render);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
-  const variants = {
-    default: {
-      x: cursor.x - 8,
-      y: cursor.y - 8,
-    },
-    text: {
-      height: 150,
-      width: 150,
-      x: cursor.x - 75,
-      y: cursor.y - 75,
-      backgroundColor: "yellow",
-      mixBlendMode: "difference",
-    },
-  };
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
-
-  return (
-    // <motion.div
-    //   className={style.cursor}
-    //   variants={variants}
-    //   animate={cursorVariant}
-    // ></motion.div>
-    <div className={style.cursor} style={{top:cursor.y, left:cursor.x}}></div>
-  );
+  return <div ref={cursorRef} className={style.cursor}></div>;
 }
 
 export default Cursor;

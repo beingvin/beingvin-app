@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../style.module.css";
 
-function clientDetailsjsx({ formData, setFormData }) {
+function ClientDetails({ formData, setFormData, loading, submitError }) {
   return (
     <>
       <div className={style.clientDetails}>
@@ -43,7 +43,7 @@ function clientDetailsjsx({ formData, setFormData }) {
           <input
             type="url"
             placeholder="Your Website link"
-            title="You can only enter website link, Format: https://www.example.com"
+            title="You can enter website link, Format: https://www.example.com"
             className={style.input}
             value={formData.clientDetails.website}
             onChange={(e) =>
@@ -58,9 +58,9 @@ function clientDetailsjsx({ formData, setFormData }) {
           />
           <input
             type="tel"
-            pattern="[+]{1}[0-9]{2} [0-9]{10}"
-            maxLength="14"
-            title="Enter country code followed by local number, Example: +91 1234567890"
+            pattern="[0-9+() -]{7,20}"
+            maxLength="20"
+            title="Enter a valid phone number (e.g. +91 9916742022 or 9916742022)"
             placeholder="Your Phone"
             className={style.input}
             value={formData.clientDetails.mobile}
@@ -77,7 +77,7 @@ function clientDetailsjsx({ formData, setFormData }) {
           />
         </div>
         <textarea
-          name=""
+          name="additionalDetails"
           className={style.textarea}
           cols="10"
           rows="4"
@@ -92,18 +92,19 @@ function clientDetailsjsx({ formData, setFormData }) {
               },
             })
           }
-          required
         ></textarea>
+        {submitError && (
+          <p className={style.submitError} role="alert">
+            {submitError}
+          </p>
+        )}
         <div>
           <button
             type="submit"
             className={style.submitBtn}
-            // onClick={(e) => {
-            //   e.preventDefault();
-            //   console.log(formData);
-            // }}
+            disabled={loading}
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </div>
       </div>
@@ -111,4 +112,4 @@ function clientDetailsjsx({ formData, setFormData }) {
   );
 }
 
-export default clientDetailsjsx;
+export default ClientDetails;

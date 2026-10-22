@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./style.module.css";
+import Logo from "../Home/Logo/Logo";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.container}>
+      <div style={{ marginBottom: "2rem" }}>
+        <Link to="/">
+          <Logo />
+        </Link>
+      </div>
+
       <h1 className={styles.heading}>Privacy Policy</h1>
 
       <p className={styles.paragraph}>
@@ -61,6 +73,20 @@ const PrivacyPolicy = () => {
         For questions regarding this privacy policy, please email:
       </p>
       <p className={styles.email}>support@beingvin.com</p>
+
+      <div style={{ marginTop: "3rem" }}>
+        <Link
+          to="/"
+          style={{
+            color: "var(--brand-color-dark-first, #fe005d)",
+            textDecoration: "none",
+            fontSize: "1rem",
+            fontWeight: "500",
+          }}
+        >
+          &larr; Back To Home
+        </Link>
+      </div>
     </div>
   );
 };

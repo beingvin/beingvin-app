@@ -116,6 +116,11 @@
   margin: 1%;
 }
 
+.submitError {
+  color: #b00020;
+  margin: 0.5rem 0;
+}
+
 .form .submitBtn {
   font-weight: 900;
   margin: 2%;

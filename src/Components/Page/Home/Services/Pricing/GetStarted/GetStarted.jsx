@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./style.module.css";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faClose, faL } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faClose } from "@fortawesome/free-solid-svg-icons";
 import ChoosePlan from "./Steps/ChoosePlan";
 import ChooseType from "./Steps/ChooseType";
 import ProjectDetails from "./Steps/ProjectDetails";
@@ -10,16 +10,14 @@ import ChooseBudget from "./Steps/ChooseBudget";
 import ChooseTimeframe from "./Steps/ChooseTimeframe";
 import ClientDetails from "./Steps/ClientDetails";
 import ThankYou from "./Steps/ThankYou";
-// import { Email } from "../../../../../config/SMTP/smtp";
-import db, {
-  firebaseSignIn,
-  firebaseSignOut,
-} from "../../../../../config/Firebase/FirebaseConfig";
+import db from "../../../../../config/Firebase/FirebaseConfig";
+import Email from "../../../../../config/SMTP/smtp";
 import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
 
 function GetStarted({ setGetStarted }) {
   const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [formData, setFormData] = useState({
     type: "",
     plan: "",
@@ -92,10 +90,10 @@ function GetStarted({ setGetStarted }) {
             formData={formData}
             setFormData={setFormData}
             setPage={setPage}
+            loading={loading}
+            submitError={submitError}
           />
         );
-      // case 7:
-      //   return <h1>Placing your Order please wait... </h1>;
       case 7:
         return <ThankYou />;
 
@@ -107,54 +105,69 @@ function GetStarted({ setGetStarted }) {
   // Add order to database
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    if (loading) return;
     setLoading(true);
+    setSubmitError("");
 
-    await window.Email.send({
-      SecureToken: "81e3a2bc-8503-4a05-994e-75f5c6bfa553",
-      To: "pythont2021@gmail.com",
-      From: "notification@beingvin.com",
-      Subject: "New Project Order Received | Beingvin.com",
-      Body: `Name : ${formData.clientDetails.name} <br/> 
-      Email Id : ${formData.clientDetails.email}  <br/> 
-      Mobile No : ${formData.clientDetails.mobile}  <br/>
-      Webiste : ${formData.clientDetails.website}  <br/>  
-      Additional details : ${formData.clientDetails.adDetails} <br>  
-      Project Type : ${formData.type} <br/> 
-      Project Plan : ${formData.plan}  <br/>  
-      Project Details : ${formData.proDetails}  <br/>  
-      Budget : ${formData.budget}  <br/>  
-      Timeframe : ${formData.timeframe}  <br/>`,
-    })
-      .then(() => {
-        const addToFirabase = async () => {
-          await firebaseSignIn();
-          await addDoc(collectionRef, {
-            Name: formData.clientDetails.name,
-            Email: formData.clientDetails.email,
-            Website: formData.clientDetails.website,
-            Phone: formData.clientDetails.mobile,
-            ProjectType: formData.type,
-            ProjectPlan: formData.plan,
-            ProjectBudget: formData.budget,
-            ProjectDetails: formData.proDetails,
-            ProjectTimeframe: formData.timeframe,
-            AdditionalDetails: formData.clientDetails.adDetails,
-            Remark: "To be started",
-            Time: serverTimestamp(),
-          });
-          await firebaseSignOut();
-        };
-        addToFirabase();
-        setTimeout(() => {
-          setLoading(false);
-          setPage((currentPage) => currentPage + 1);
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Sorry, Something went wrong !! \n Try again.. ");
+    // 1. ALWAYS save order to Firestore first so leads are never lost
+    try {
+      await addDoc(collectionRef, {
+        Name: formData.clientDetails.name,
+        Email: formData.clientDetails.email,
+        Website: formData.clientDetails.website,
+        Phone: formData.clientDetails.mobile,
+        ProjectType: formData.type,
+        ProjectPlan: formData.plan,
+        ProjectBudget: formData.budget,
+        ProjectDetails: formData.proDetails,
+        ProjectTimeframe: formData.timeframe,
+        AdditionalDetails: formData.clientDetails.adDetails,
+        Remark: "To be started",
+        Time: serverTimestamp(),
       });
+    } catch (err) {
+      console.error("Error saving order to database:", err);
+      setSubmitError(
+        "We couldn't confirm your inquiry was submitted. Please try again, or contact us directly."
+      );
+      setLoading(false);
+      return;
+    }
+
+    // 2. Safely attempt to send email alert
+    try {
+      const mailClient = (typeof window !== "undefined" && window.Email) || Email;
+      if (mailClient && mailClient.send && process.env.REACT_APP_SMTP_SECURE_TOKEN) {
+        mailClient
+          .send({
+            SecureToken: process.env.REACT_APP_SMTP_SECURE_TOKEN,
+            To: process.env.REACT_APP_NOTIFICATION_TO_EMAIL || "pythont2021@gmail.com",
+            From: process.env.REACT_APP_NOTIFICATION_FROM_EMAIL || "notification@beingvin.com",
+            Subject: "New Project Order Received | Beingvin.com",
+            Body: `Name : ${formData.clientDetails.name} <br/> 
+            Email Id : ${formData.clientDetails.email}  <br/> 
+            Mobile No : ${formData.clientDetails.mobile}  <br/>
+            Website : ${formData.clientDetails.website}  <br/>  
+            Additional details : ${formData.clientDetails.adDetails} <br>  
+            Project Type : ${formData.type} <br/> 
+            Project Plan : ${formData.plan}  <br/>  
+            Project Details : ${formData.proDetails}  <br/>  
+            Budget : ${formData.budget}  <br/>  
+            Timeframe : ${formData.timeframe}  <br/>`,
+          })
+          .then((response) => {
+            console.log("SMTP email response:", response);
+          })
+          .catch((mailErr) => {
+            console.warn("SMTP email notification failed or blocked:", mailErr);
+          });
+      }
+    } catch (mailEx) {
+      console.warn("Email service unavailable:", mailEx);
+    }
+
+    setLoading(false);
+    setPage((currentPage) => currentPage + 1);
     e.target.reset();
   };
 

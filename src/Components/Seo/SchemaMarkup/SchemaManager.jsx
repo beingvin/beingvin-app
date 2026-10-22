@@ -17,9 +17,11 @@ const SchemaManager = () => {
               "name": "Vin",
               "url": "https://beingvin.com",
               "sameAs": [
-                "https://www.linkedin.com/in/vin",
-                "https://github.com/vin",
-                "https://twitter.com/vin"
+                "https://www.linkedin.com/in/beingvin",
+                "https://github.com/beingvin",
+                "https://twitter.com/beingvin",
+                "https://www.facebook.com/beingvin",
+                "https://instagram.com/beingvin"
               ],
               "jobTitle": "Full Stack Web Developer & Designer",
               "image": "https://beingvin.com/images/favicon_io/android-chrome-512x512.png",
@@ -115,12 +117,7 @@ const SchemaManager = () => {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "url": "https://beingvin.com",
-            "name": "Beingvin Portfolio",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://beingvin.com/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
+            "name": "Beingvin Portfolio"
           }
         `}
       </script>

@@ -2,7 +2,7 @@ import React from "react";
 import style from "./style.module.css";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose} from "@fortawesome/free-solid-svg-icons";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 function LearnMore({ popUp, setPopUp }) {
   const displayBody = (text) => {
@@ -102,43 +102,34 @@ function LearnMore({ popUp, setPopUp }) {
     <div className={style.hostingBoxOuter} onClick={() => setPopUp("")}>
       <motion.div
         initial={{
-          top: "65%",
+          top: "50%",
           left: "50%",
-          transform: { translateX: "-50%", translateY: "-50%" },
-          display: "none",
+          transform: "translate(-50%, -50%) scale(0.9)",
           opacity: 0,
         }}
         animate={{
           top: "50%",
           left: "50%",
-          display: "inline-block",
+          transform: "translate(-50%, -50%) scale(1)",
           opacity: 1,
         }}
-        exit={{ opacity: 0 }}
+        exit={{ opacity: 0, transform: "translate(-50%, -50%) scale(0.9)" }}
         transition={{
-          delay: 0.2,
-          duration: 0.5,
-          type: "spring",
-          stiffness: 100,
+          duration: 0.3,
           ease: [0.6, 0.1, 0.05, 0.9],
         }}
         className={style.hostingBoxInner}
+        onClick={(e) => e.stopPropagation()}
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            duration: 0.5,
-            type: "spring",
-            stiffness: 100,
-            ease: [0.6, 0.1, 0.05, 0.9],
-          }}
+        <div
           className={style.closeBtn}
+          onClick={() => setPopUp("")}
+          role="button"
+          tabIndex={0}
+          aria-label="Close modal"
         >
-          {" "}
-          <FontAwesomeIcon icon={faClose} onClick={() => setPopUp("")} />{" "}
-        </motion.div>
+          <FontAwesomeIcon icon={faClose} />
+        </div>
         <h1>Choose your plan</h1>
         <hr className={style.hrThin} />
         {displayBody(popUp)}

@@ -27,7 +27,8 @@ function Work() {
   };
 
   const handleChange = (e) => {
-    return setQuery(e.target.value);
+    setQuery(e.target.value);
+    setCurrentPage(1);
   };
 
   // Pagination

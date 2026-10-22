@@ -1,21 +1,27 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowDown19 } from "@fortawesome/free-solid-svg-icons";
 import style from "./style.module.css";
-
 
 function ScrollDown() {
   const scroll = () => {
-    // window.scrollTo({ 0, 500, behavior: "smooth" });
-    window.scrollTo({
-      top: 600,
-      left: 0,
-      behavior: "smooth",
-    });
+    const services = document.getElementById("services");
+    if (services) {
+      services.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <div className={style.scroll} onClick={scroll}>
+    <div
+      className={style.scroll}
+      onClick={scroll}
+      role="button"
+      tabIndex={0}
+      aria-label="Scroll down to services"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
