@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# Beingvin — Full Stack Web Developer & Designer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Live Site](https://img.shields.io/badge/Live_Site-beingvin.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://beingvin.com)
+[![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-## Available Scripts
+A modern, highly-interactive, responsive portfolio and client onboarding web application built for **Beingvin** — showcasing full-stack web development, UI/UX design, interactive client quote estimation, and project case studies.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Fluid Animations & Micro-interactions:**
+  - Smooth page transitions powered by **Framer Motion** (`AnimatePresence`).
+  - Scroll and timeline animations using **GSAP** and **ScrollMagic**.
+  - Interactive custom cursor tracker and real-time scroll progress indicator.
+  - Animated preloader experience on initial load.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Interactive Client Estimator & Pricing:**
+  - Multi-step interactive project inquiry wizard (`GetStarted`):
+    - Choose service type, budget range, preferred timeline, and project specifications.
+    - Automated lead capture saved directly to Firebase Firestore.
+    - WhatsApp quick-chat integration with pre-filled enquiry parameters.
 
-### `npm test`
+- **Dynamic Work & Portfolio Showcase:**
+  - Filterable project grid with pagination.
+  - Dedicated project detail view with image carousels, technology tags, and live preview links.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **SEO & Social Optimization:**
+  - Dynamic meta tags and Open Graph / Twitter Card support using **React Helmet**.
+  - Structured data with **JSON-LD Schema Markup** (`SchemaManager`) for rich search engine results.
+  - Search engine crawlers setup with `robots.txt` and `sitemap.xml`.
 
-### `npm run build`
+- **Compliance & Privacy:**
+  - GDPR-friendly Cookie Consent banner.
+  - Dedicated Privacy Policy documentation page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend Framework** | [React 18](https://react.dev/) (Create React App) |
+| **Routing** | [React Router v6](https://reactrouter.com/) |
+| **Styling** | Sass (SCSS), CSS Modules, Vanilla CSS |
+| **Animation & Motion** | [Framer Motion](https://www.framer.com/motion/), [GSAP](https://greensock.com/), ScrollMagic |
+| **Database & Cloud** | [Firebase Firestore](https://firebase.google.com/docs/firestore) |
+| **SEO & Metadata** | React Helmet, JSON-LD Schema |
+| **Icons & Media** | FontAwesome SVG Icons, React Multi Carousel |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Project Directory Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```text
+beingvin-app/
+├── public/
+│   ├── images/              # Favicons, project screenshots, and asset media
+│   ├── index.html           # HTML entry point and external scripts (SMTP.js)
+│   ├── robots.txt           # Crawler instructions
+│   └── sitemap.xml          # Search engine site index
+├── src/
+│   ├── Components/
+│   │   ├── config/          # Firebase and SMTP communication configs
+│   │   ├── CookieConsent/   # User consent banner
+│   │   ├── Cursor/          # Custom mouse cursor tracker
+│   │   ├── Page/
+│   │   │   ├── About/       # About profile, technical skills, and tools
+│   │   │   ├── Home/        # Hero, Services, Work, and Contact sections
+│   │   │   └── PrivacyPolicy/
+│   │   ├── Preloader/       # Initial site loader
+│   │   ├── ProgressBar/     # Reading/scroll progress bar
+│   │   └── Seo/             # Helmet meta tags & Schema JSON-LD manager
+│   ├── Pages/               # Route components (Home, Layout, AnimatePage, 404)
+│   ├── css/                 # Global styles and app reset
+│   ├── App.js               # Root application wrapper
+│   └── index.js             # React DOM rendering entry point
+├── package.json
+└── README.md
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (`v16.x` or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. Clone the Repository
 
-### Code Splitting
+```bash
+git clone https://github.com/beingvin/beingvin-app.git
+cd beingvin-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. Install Dependencies
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 3. Environment Variables Configuration
 
-### Making a Progressive Web App
+Create a `.env.local` file in the root directory and configure your Firebase credentials:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+REACT_APP_API_KEY=your_firebase_api_key
+REACT_APP_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_DATABASE_URL=https://your_project_id.firebaseio.com
+REACT_APP_PROJECT_ID=your_project_id
+REACT_APP_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_APP_ID=your_app_id
+REACT_APP_MEASUREMENT_ID=your_measurement_id
+```
 
-### Advanced Configuration
+### 4. Run the Development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+```
 
-### Deployment
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📦 Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The compiled output will be generated inside the `build/` directory, ready to be deployed to your preferred hosting provider (e.g., Hostinger, Vercel, Firebase Hosting, Netlify).
+
+---
+
+## 📄 License & Copyright
+
+© 2024–Present **Beingvin**. All rights reserved.  
+Unauthorized duplication or commercial distribution of this project's code, branding, and design assets without prior written consent is strictly prohibited. For inquiries, reach out via [beingvin.com](https://beingvin.com) or `support@beingvin.com`.
