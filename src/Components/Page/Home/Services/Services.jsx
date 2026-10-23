@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { gsap, Power3 } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import style from "./style.module.css";
 import services from "./servicesData";
+import LearnMore from "./LearnMore";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Services() {
   const wrapperRef = useRef(null);
+  const [activeService, setActiveService] = useState(null);
+  const closeLearnMore = useCallback(() => setActiveService(null), []);
 
   useEffect(() => {
     const element = wrapperRef.current;
@@ -49,23 +52,24 @@ function Services() {
         {services.map((service) => (
           <li className={style.card} key={service.slug}>
             <h2>{service.title}</h2>
+            <hr className={style.hrThin} />
             <p>{service.description}</p>
-            <h3 className={style.deliverablesHeading}>What’s included</h3>
-            <ul className={style.deliverables}>
-              {service.deliverables.map((deliverable) => (
-                <li key={deliverable}>{deliverable}</li>
-              ))}
-            </ul>
-            <Link
+            <button
               className={style.cardLink}
-              to={`/?service=${service.slug}#contact`}
-              aria-label={`Explore ${service.title}`}
+              type="button"
+              onClick={() => setActiveService(service)}
+              aria-haspopup="dialog"
             >
-              Explore Service
-            </Link>
+              Know More
+            </button>
           </li>
         ))}
       </ul>
+      <AnimatePresence>
+        {activeService && (
+          <LearnMore service={activeService} onClose={closeLearnMore} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

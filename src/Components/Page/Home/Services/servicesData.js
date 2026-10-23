@@ -3,6 +3,8 @@ const services = [
     slug: "website-design-development",
     title: "Website Design & Development",
     description:
+      "Responsive websites that present your brand clearly and make it easy for customers to take the next step.",
+    details:
       "Modern, responsive, high-performance websites designed to strengthen brands, improve user experience, and convert visitors into customers.",
     deliverables: [
       "Business and portfolio websites",
@@ -15,6 +17,8 @@ const services = [
     slug: "custom-web-applications",
     title: "Custom Web Applications",
     description:
+      "Purpose-built web apps that simplify business workflows and support digital products as they grow.",
+    details:
       "Custom-built web applications that streamline operations, solve business problems, and support scalable digital products.",
     deliverables: [
       "SaaS platforms",
@@ -27,6 +31,8 @@ const services = [
     slug: "ai-solutions-workflow-automation",
     title: "AI Solutions & Workflow Automation",
     description:
+      "AI integrations and automated workflows to reduce repetitive tasks and connect the tools your business uses.",
+    details:
       "Practical AI-powered solutions and automated workflows that reduce repetitive tasks, improve efficiency, and connect business systems.",
     deliverables: [
       "AI integrations and assistants",
@@ -39,6 +45,8 @@ const services = [
     slug: "ai-content-ugc-videos",
     title: "AI Content Creation & UGC Videos",
     description:
+      "AI-assisted visuals and short-form video concepts for social media, products, and advertising campaigns.",
+    details:
       "AI-assisted creative production for brands that need engaging visual content for social media, product marketing, and advertising campaigns.",
     deliverables: [
       "Short-form video content",
@@ -51,6 +59,8 @@ const services = [
     slug: "digital-advertising-campaign-management",
     title: "Digital Advertising & Campaign Management",
     description:
+      "Plan, launch, and refine campaigns with audience testing, conversion tracking, and clear reporting.",
+    details:
       "Data-driven advertising campaigns designed to reach relevant audiences, generate qualified leads, and improve marketing performance.",
     deliverables: [
       "Campaign strategy and setup",

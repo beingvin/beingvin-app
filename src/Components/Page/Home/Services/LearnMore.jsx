@@ -1,140 +1,146 @@
-import React from "react";
-import style from "./style.module.css";
+import React, { useCallback, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import style from "./style.module.css";
 
-function LearnMore({ popUp, setPopUp }) {
-  const displayBody = (text) => {
-    switch (text) {
-      case "landingPage":
-        return (
-          <div>
-            <p>1. basic landing page of a website @ Rs8499</p>
-            <br />
-            <p>2. standard landing page of a website @ Rs12499</p>
-            <br />
-            <p>3. premium landing page of a website @ Rs18499</p> <br />
-            <br />
-            <p className={style.reachMe}>
-              If you require any further information, please feel free to reach
-              out to me.
-            </p>
-          </div>
-        );
-      case "design":
-        return (
-          <div>
-            <p>1. basic redesign website of up to 4 sections/ pages @ Rs6499</p>
-            <br />
-            <p>
-              2. standard redesign website of up to 8 sections/ pages @ Rs9499
-            </p>
-            <br />
-            <p>
-              3. premium redesign website of up to 15 sections/ pages @ Rs14499
-            </p>{" "}
-            <br />
-            <br />
-            <p className={style.reachMe}>
-              If you require any further information, please feel free to reach
-              out to me.
-            </p>
-          </div>
-        );
-      case "revamp":
-        return (
-          <div>
-            <p>
-              1. All bug fixing and basic redesign website and development of up
-              to 4 sections/ pages @ Rs7999
-            </p>
-            <br />
-            <p>
-              2. All bug fixing and standard redesign website and development of
-              up to 8 sections/ pages @ Rs12999
-            </p>
-            <br />
-            <p>
-              3. All bug fixing and premium redesign website and development of
-              up to 15 sections/ pages @ Rs22999
-            </p>{" "}
-            <br />
-            <br />
-            <p className={style.reachMe}>
-              If you require any further information, please feel free to reach
-              out to me.
-            </p>
-          </div>
-        );
-      case "hosting":
-        return (
-          <div>
-            <p>
-              1. Single Website transfer to new host or domain + SSL setup @
-              Rs999{" "}
-            </p>
-            <br />
-            <p>
-              2. Single Website transfer + SSL setup + Domain transfer to new
-              registrar @ Rs1599{" "}
-            </p>
-            <br />
-            <p>
-              3. Single Website transfer + SSL Setup + Domain transfer + Email
-              migration to new hosting/company @ Rs2599{" "}
-            </p>{" "}
-            <br />
-            <br />
-            <p className={style.reachMe}>
-              If you require any further information, please feel free to reach
-              out to me.
-            </p>
-          </div>
-        );
+function LearnMore({ service, onClose }) {
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const scrollLockRef = useRef(null);
 
-      default:
-        return "";
+  const releaseScrollLock = useCallback(() => {
+    const scrollLock = scrollLockRef.current;
+    if (!scrollLock) return;
+
+    scrollLock.container.style.overflow = scrollLock.previousOverflow || "";
+    scrollLockRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    const previousActiveElement = document.activeElement;
+    const scrollContainer = document.querySelector(".container");
+    const previousOverflow = scrollContainer?.style.overflow;
+
+    if (scrollContainer) {
+      scrollContainer.style.overflow = "hidden";
+      scrollLockRef.current = {
+        container: scrollContainer,
+        previousOverflow,
+      };
     }
-  };
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusableElements = dialogRef.current?.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusableElements?.length) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      releaseScrollLock();
+      previousActiveElement?.focus?.();
+    };
+  }, [onClose, releaseScrollLock]);
 
   return (
-    <div className={style.hostingBoxOuter} onClick={() => setPopUp("")}>
-      <motion.div
-        initial={{
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%) scale(0.9)",
-          opacity: 0,
-        }}
-        animate={{
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%) scale(1)",
-          opacity: 1,
-        }}
-        exit={{ opacity: 0, transform: "translate(-50%, -50%) scale(0.9)" }}
-        transition={{
-          duration: 0.3,
-          ease: [0.6, 0.1, 0.05, 0.9],
-        }}
-        className={style.hostingBoxInner}
-        onClick={(e) => e.stopPropagation()}
+    <motion.div
+      className={style.modalBackdrop}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <motion.section
+        ref={dialogRef}
+        className={style.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`${service.slug}-dialog-title`}
+        aria-describedby={`${service.slug}-dialog-description`}
+        initial={{ y: 16, scale: 0.98 }}
+        animate={{ y: 0, scale: 1 }}
+        exit={{ y: 12, scale: 0.98 }}
+        transition={{ duration: 0.2 }}
       >
-        <div
+        <button
+          ref={closeButtonRef}
           className={style.closeBtn}
-          onClick={() => setPopUp("")}
-          role="button"
-          tabIndex={0}
-          aria-label="Close modal"
+          type="button"
+          onClick={onClose}
+          aria-label={`Close ${service.title} details`}
         >
-          <FontAwesomeIcon icon={faClose} />
+          <FontAwesomeIcon icon={faClose} aria-hidden="true" />
+        </button>
+        <p className={style.modalEyebrow}>Service details</p>
+        <h2 className={style.modalTitle} id={`${service.slug}-dialog-title`}>
+          {service.title}
+        </h2>
+        <p
+          className={style.modalDescription}
+          id={`${service.slug}-dialog-description`}
+        >
+          {service.details}
+        </p>
+        <h3 className={style.modalSubheading}>Services include</h3>
+        <ul className={style.modalList}>
+          {service.deliverables.map((deliverable) => (
+            <li key={deliverable}>{deliverable}</li>
+          ))}
+        </ul>
+        <div className={style.modalActions}>
+          {service.slug === "website-design-development" && (
+            <Link
+              className={style.modalCta}
+              to="/Services/Pricing"
+              onClick={() => {
+                releaseScrollLock();
+                onClose();
+              }}
+            >
+              View Pricing
+            </Link>
+          )}
+          <Link
+            className={style.modalCta}
+            to={`/?service=${service.slug}#contact`}
+            onClick={() => {
+              releaseScrollLock();
+              onClose();
+            }}
+          >
+            Enquire about this service
+          </Link>
         </div>
-        <h1>Choose your plan</h1>
-        <hr className={style.hrThin} />
-        {displayBody(popUp)}
-      </motion.div>
-    </div>
+      </motion.section>
+    </motion.div>
   );
 }
 

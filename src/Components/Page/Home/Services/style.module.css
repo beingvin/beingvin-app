@@ -8,94 +8,73 @@
   margin: 0;
   padding: 4% 4%;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+  grid-auto-rows: minmax(320px, auto);
+  gap: 30px;
   list-style: none;
   z-index: 1;
 }
 
 .card {
-  grid-column: span 2;
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  min-height: 360px;
-  padding: 28px;
+  min-height: 320px;
+  padding: 4% 6%;
   background-color: var(--dark-color-second);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    transform 180ms ease;
-}
-
-.card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.card:nth-child(5) {
-  grid-column: 4 / span 2;
+    background-color 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card:hover {
   background-color: var(--dark-color-fifth);
-  border-color: var(--brand-color-dark-first);
-  transform: translateY(-3px);
 }
 
 .card h2 {
-  margin: 0 0 14px;
+  margin: 0;
   color: var(--brand-color-light-fourth);
-  font-size: clamp(1.25rem, 1.6vw, 1.65rem);
+  font-size: 2rem;
   line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hrThin {
+  position: relative;
+  width: 90%;
+  height: 1px;
+  margin: 5% 0;
+  border: 0;
+  background-color: var(--light-color-first);
 }
 
 .card p {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: var(--light-color-second);
-  line-height: 1.65;
-}
-
-.deliverablesHeading {
-  margin: 0 0 8px;
-  color: var(--brand-color-light-third);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.deliverables {
-  display: grid;
-  gap: 6px;
-  margin: 0 0 24px;
-  padding-left: 20px;
-  color: var(--light-color-second);
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
-.deliverables li::marker {
-  color: var(--brand-color-dark-first);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .cardLink {
-  align-self: flex-start;
-  margin-top: auto;
-  padding: 10px 16px;
-  border: 1px solid var(--brand-color-dark-first);
+  position: absolute;
+  bottom: 30px;
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid var(--brand-color-light-first);
+  background-color: transparent;
   border-radius: 20px;
-  color: var(--brand-color-light-fourth);
-  font-weight: 600;
+  color: var(--brand-color-dark-fourth);
+  font-weight: 500;
   text-decoration: none;
-  transition:
-    color 180ms ease,
-    background-color 180ms ease;
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 .cardLink:hover,
 .cardLink:focus-visible {
   background-color: var(--brand-color-dark-first);
-  color: var(--brand-color-light-fourth);
+  color: var(--brand-color-dark-fourth);
 }
 
 .cardLink:focus-visible {
@@ -103,34 +82,191 @@
   outline-offset: 3px;
 }
 
+.modalBackdrop {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  display: inline-block;
+  position: relative;
+  width: 44%;
+  max-width: 680px;
+  height: 75vh;
+  max-height: 75vh;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4% 6%;
+  border-radius: 30px;
+  color: var(--brand-color-dark-fourth);
+  background-color: var(--dark-color-second);
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: inline-block;
+  border: 0;
+  background: transparent;
+  color: var(--brand-color-dark-first);
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.closeBtn:hover,
+.closeBtn:focus-visible {
+  background-color: transparent;
+  color: var(--brand-color-light-first);
+}
+
+.closeBtn:focus-visible,
+.modalCta:focus-visible {
+  outline: 2px solid var(--brand-color-light-fourth);
+  outline-offset: 3px;
+}
+
+.modalEyebrow {
+  margin: 0 54px 10px 0;
+  color: var(--brand-color-light-first);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.modalTitle {
+  margin: 5% 0 20px;
+  color: var(--brand-color-dark-fourth);
+  font-size: 2em;
+  line-height: normal;
+}
+
+.modalDescription {
+  margin: 0 0 24px;
+  color: var(--light-color-second);
+  font-size: 1rem;
+  line-height: normal;
+}
+
+.modalSubheading {
+  margin: 0 0 12px;
+  color: var(--brand-color-light-fourth);
+  font-size: 1rem;
+}
+
+.modalList {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 28px;
+  padding-left: 22px;
+  color: var(--light-color-second);
+  line-height: normal;
+}
+
+.modalList li::marker {
+  color: var(--brand-color-dark-first);
+}
+
+.modalActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cardLink,
+.modalCta {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.modalCta {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid var(--brand-color-light-first);
+  border-radius: 20px;
+  background-color: transparent;
+  color: var(--brand-color-dark-fourth);
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.modalCta:hover {
+  background-color: var(--brand-color-dark-first);
+  color: var(--brand-color-dark-fourth);
+}
+
 @media (max-width: 900px) {
   .wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    padding: 4% 3%;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 90%;
   }
 
-  .card,
-  .card:nth-child(4),
-  .card:nth-child(5) {
-    grid-column: auto;
+  .closeBtn {
+    top: 15px;
+    right: 30px;
+  }
+
+  .modalTitle {
+    margin-top: 15%;
   }
 }
 
 @media (max-width: 600px) {
   .wrapper {
     grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: minmax(300px, auto);
     gap: 16px;
     padding: 8% 2%;
   }
 
   .card {
-    min-height: 0;
-    padding: 24px;
+    min-height: 300px;
+    padding: 6% 7%;
   }
 
   .card h2 {
-    font-size: 1.35rem;
+    font-size: 1.6rem;
+  }
+
+  .modal {
+    height: 75vh;
+    max-height: 75vh;
+    padding: 4% 6%;
+    border-radius: 30px;
+  }
+
+  .closeBtn {
+    top: 15px;
+    right: 30px;
+    font-size: 2.5rem;
+  }
+
+  .modalTitle {
+    margin-top: 25%;
   }
 }
 
@@ -140,7 +276,12 @@
     transition: none;
   }
 
+  .closeBtn,
+  .modalCta {
+    transition: none;
+  }
+
   .card:hover {
-    transform: none;
+    background-color: var(--dark-color-second);
   }
 }
