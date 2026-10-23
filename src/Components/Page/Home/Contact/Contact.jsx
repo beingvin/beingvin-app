@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -6,14 +7,35 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import db from "../../../config/Firebase/FirebaseConfig";
 import Email from "../../../config/SMTP/smtp";
 import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
+import services from "../Services/servicesData";
 
 function Contact() {
+  const location = useLocation();
   const collectionRef = collection(db, process.env.REACT_APP_COLLECTION_NAME_2);
   const [submit, setSubmit] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [selectedService, setSelectedService] = useState(null);
 
   const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const serviceSlug = new URLSearchParams(location.search).get("service");
+    const service = services.find((item) => item.slug === serviceSlug) || null;
+    setSelectedService(service);
+    setMessage(service ? `I'm interested in ${service.title}.` : "");
+
+    if (location.hash === "#contact") {
+      const frame = window.requestAnimationFrame(() => {
+        document.getElementById("contact")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+  }, [location.hash, location.key, location.search]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +49,7 @@ function Contact() {
     const email = e.target.Email.value;
     const phone = e.target.Phone.value;
     const website = e.target.Website.value;
-    const message = e.target.Message.value;
+    const inquiryMessage = e.target.Message.value;
 
     // 1. ALWAYS save to Firestore first so inquiries are never lost
     try {
@@ -36,12 +58,15 @@ function Contact() {
         Email: email,
         Website: website,
         Phone: phone,
-        Message: message,
+        Message: inquiryMessage,
+        Service: selectedService?.title || "",
         Remark: "inquiry",
         Time: serverTimestamp(),
       });
       setSubmit(true);
       e.target.reset();
+      setMessage("");
+      setSelectedService(null);
     } catch (err) {
       console.error("Error saving inquiry:", err);
       setSubmitError(
@@ -65,7 +90,8 @@ function Contact() {
             Email Id : ${email}  <br/>
             Mobile No : ${phone}  <br/>
             Website link : ${website}  <br/>
-            Message : ${message} <br>`,
+            Service : ${selectedService?.title || "Not specified"} <br/>
+            Message : ${inquiryMessage} <br>`,
           })
           .then((response) => {
             console.log("SMTP email response:", response);
@@ -182,6 +208,8 @@ function Contact() {
             <textarea
               className={style.textarea}
               name="Message"
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
               rows="4"
               cols="30"
               placeholder="Give a few details about what you need"
